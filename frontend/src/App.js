@@ -3,6 +3,8 @@ import Header from './components/Header';
 import AddVehicle from './components/AddVehicle';
 import { BrowserRouter as BRouter, Switch, Route } from "react-router-dom";
 import Home from './components/Home';
+import Footer from './components/Footer';
+import HireBus from './components/HireBus';
 
 const App =()=> {
   return (
@@ -16,6 +18,10 @@ const App =()=> {
             <Switch>
               <Route exact path="/" component={Home} />
             </Switch>
+            <Switch>
+              <Route exact path="/hirebus" component={HireBus} />
+            </Switch>
+            <Footer/> 
           </main>
         </BRouter> 
       );
