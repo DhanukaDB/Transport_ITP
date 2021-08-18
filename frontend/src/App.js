@@ -17,10 +17,12 @@ const App =()=> {
               <Route exact path="/" component={Home} />
             </Switch>
           </main>
-          
         </BRouter> 
       );
     };
+
+    //test
+
    
 
 export default App;
