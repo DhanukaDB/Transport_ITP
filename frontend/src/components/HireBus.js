@@ -20,66 +20,66 @@ function Hirebus() {
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Row>
           <Form.Group as={Col} md="4" controlId="validationCustom01">
-            <Form.Label>vehicleID</Form.Label> 
+            <Form.Label>From</Form.Label> 
             <Form.Control
               required
               type="text"
-              placeholder="vehicleID"
-              defaultValue=""
-              id="vehicleID"
+              placeholder="From"
+              defaultValue="Colombo"
+              id="from"
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
           <Form.Group as={Col} md="4" controlId="validationCustom02">
-            <Form.Label>Vehicle Model</Form.Label>
+            <Form.Label>To</Form.Label>
             <Form.Control
               required
               type="text"
-              placeholder="Vehicle Model"
-              defaultValue=""
-              id="vModel"
+              placeholder="To"
+              defaultValue="Kandy"
+              id="to1"
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
           <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-            <Form.Label>Manufactured Year</Form.Label>
+            <Form.Label>NIC number</Form.Label>
             <InputGroup hasValidation>
               <InputGroup.Prepend>
                 <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
               </InputGroup.Prepend>
               <Form.Control
                 type="text"
-                placeholder="Manufactured Year"
+                placeholder="NIC number"
                 aria-describedby="inputGroupPrepend"
                 required
                 id="manufacYear"
               />
               <Form.Control.Feedback type="invalid">
-                Select Manufactured year!
+                Select NIC number!
               </Form.Control.Feedback>
             </InputGroup>
           </Form.Group>
         </Form.Row>
         <Form.Row>
           <Form.Group as={Col} md="6" controlId="validationCustom03">
-            <Form.Label>Owner Name</Form.Label>
+            <Form.Label>Name</Form.Label>
             <Form.Control type="text" placeholder="City" required id="manufacYear"/>
             <Form.Control.Feedback type="invalid">
-              Select Owner's name!
+              Select Your name!
             </Form.Control.Feedback>
           </Form.Group>
           <Form.Group as={Col} md="3" controlId="validationCustom04">
-            <Form.Label>State</Form.Label>
-            <Form.Control type="text" placeholder="State" required />
+            <Form.Label>Date</Form.Label>
+            <Form.Control type="text" placeholder="Date" required />
             <Form.Control.Feedback type="invalid">
-              Please provide a valid state.
+              Please provide a valid Date.
             </Form.Control.Feedback>
           </Form.Group>
           <Form.Group as={Col} md="3" controlId="validationCustom05">
-            <Form.Label>Zip</Form.Label>
-            <Form.Control type="text" placeholder="Zip" required />
+            <Form.Label>Comment</Form.Label>
+            <Form.Control type="text" placeholder="Comment" required />
             <Form.Control.Feedback type="invalid">
-              Please provide a valid zip.
+              Add a Comment.
             </Form.Control.Feedback>
           </Form.Group>
         </Form.Row>
