@@ -5,6 +5,7 @@ import { BrowserRouter as BRouter, Switch, Route } from "react-router-dom";
 import Home from './components/Home';
 import Footer from './components/Footer';
 import HireBus from './components/HireBus';
+import AboutUS from './components/AboutUs';
 
 const App =()=> {
   return (
@@ -22,6 +23,9 @@ const App =()=> {
               <Route exact path="/hirebus" component={HireBus} />
             </Switch>
             <Footer/> 
+            <Switch>
+              <Route exact path="/aboutus" component={AboutUS} />
+            </Switch>
           </main>
         </BRouter> 
       );
