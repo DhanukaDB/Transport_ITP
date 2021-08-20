@@ -28,11 +28,11 @@ function AddVehicle() {
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Form.Row>
         <Form.Group as={Col} md="4" controlId="validationCustom01">
-          <Form.Label>vehicleID</Form.Label> 
+          <Form.Label>Vehicle Number</Form.Label> 
           <Form.Control
             required
             type="text"
-            placeholder="vehicleID"
+            placeholder="Vehicle Number"
             defaultValue=""
             id="vehicleID"
           />
@@ -50,20 +50,20 @@ function AddVehicle() {
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-          <Form.Label>Manufactured Year</Form.Label>
+          <Form.Label>NIC Number</Form.Label>
           <InputGroup hasValidation>
             <InputGroup.Prepend>
               <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
             </InputGroup.Prepend>
             <Form.Control
               type="text"
-              placeholder="Manufactured Year"
+              placeholder="NIC Number"
               aria-describedby="inputGroupPrepend"
               required
-              id="manufacYear"
+              id="nicNum"
             />
             <Form.Control.Feedback type="invalid">
-              Select Manufactured year!
+              Select NIC Number!
             </Form.Control.Feedback>
           </InputGroup>
         </Form.Group>
@@ -71,23 +71,23 @@ function AddVehicle() {
       <Form.Row>
         <Form.Group as={Col} md="6" controlId="validationCustom03">
           <Form.Label>Owner Name</Form.Label>
-          <Form.Control type="text" placeholder="City" required id="manufacYear"/>
+          <Form.Control type="text" placeholder="Owner Name" required id="manufacYear"/>
           <Form.Control.Feedback type="invalid">
             Select Owner's name!
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="3" controlId="validationCustom04">
-          <Form.Label>State</Form.Label>
-          <Form.Control type="text" placeholder="State" required />
+          <Form.Label>Manufactured Year</Form.Label>
+          <Form.Control type="text" placeholder="Manufactured Year" required />
           <Form.Control.Feedback type="invalid">
-            Please provide a valid state.
+            Please provide a valid Manufactured Year.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="3" controlId="validationCustom05">
-          <Form.Label>Zip</Form.Label>
-          <Form.Control type="text" placeholder="Zip" required />
+          <Form.Label>Vehicle Type</Form.Label>
+          <Form.Control type="text" placeholder="Vehicle Type" required />
           <Form.Control.Feedback type="invalid">
-            Please provide a valid zip.
+            Please provide a valid Vehicle Type.
           </Form.Control.Feedback>
         </Form.Group>
       </Form.Row>

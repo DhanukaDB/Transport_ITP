@@ -17,7 +17,7 @@ function Header(){
       <Nav.Link href="#booking">Buy Tickets</Nav.Link>
       <Nav.Link href="#pricing">Timetables</Nav.Link>
       <NavDropdown title="More" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Hire Bus</NavDropdown.Item>
+        <NavDropdown.Item href="/hirebus">Hire Bus</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Feedbacks</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">About us</NavDropdown.Item>
         <NavDropdown.Divider />
