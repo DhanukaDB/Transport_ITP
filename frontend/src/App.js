@@ -5,7 +5,7 @@ import { BrowserRouter as BRouter, Switch, Route } from "react-router-dom";
 import Home from './components/Home';
 import Footer from './components/Footer';
 import HireBus from './components/HireBus';
-
+import Faq from './components/Faq';
 const App =()=> {
   return (
   
@@ -20,6 +20,9 @@ const App =()=> {
             </Switch>
             <Switch>
               <Route exact path="/hirebus" component={HireBus} />
+            </Switch>
+            <Switch>
+              <Route exact path="/faq" component={Faq} />
             </Switch>
             <Footer/> 
           </main>
