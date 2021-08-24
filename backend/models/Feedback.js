@@ -35,7 +35,7 @@ const feedbackSchema = new Schema({
 
     passengerFeedback :{
         type: Boolean,
-        required :true
+    
     },
 
     driverFeedback :{
