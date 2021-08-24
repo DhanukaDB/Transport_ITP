@@ -34,5 +34,9 @@ connection.once("open",()=>{
 const vehicleRouter = require("./routes/vehicle.js");
 app.use("/vehicle",vehicleRouter); 
 
+const feedbackRouter =require("./routes/Feedback.js");
+
+app.use("/Feedback",feedbackRouter);
+
 app.listen(PORT, () => {
     console.log(`Server running on port no :${PORT}`)})
