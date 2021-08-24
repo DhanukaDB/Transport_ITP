@@ -43,12 +43,11 @@ router.route("/").get((req,res)=>{               //view
  })
 
 //update
-router.route("/update/:fid").put(async(req,res)=> {
-       let userId= req.params.fid;
-       const {feedbackID,username,email,type,contactNumber,message,passengerFeedback,driverFeedback} =req.body;
+router.route("/update/:feedbackID").put(async(req,res)=> {
+       let userId= req.params.feedbackID;
+       const { username,email,type,contactNumber,message,passengerFeedback,driverFeedback} =req.body; //destructure
 
-       const updateStudent= {
-        feedbackID,
+       const updateFeedback= {       
         username,
         email,
         type,
@@ -58,8 +57,8 @@ router.route("/update/:fid").put(async(req,res)=> {
         driverFeedback
        }
 
-       const update = await Feedback.findByIdAndUpdate(userId, updateFeedback).then(() =>{
-        res.status(200).send({status: "User updated",user:update})
+       const update = await Feedback.findOneAndUpdate(userId, updateFeedback).then(() =>{
+        res.status(200).send({status: "User updated"})
        }).catch((err)=>{
            console.log(err);
            res.status(500).send({status: "Error with update data", error:err.message});
@@ -67,10 +66,10 @@ router.route("/update/:fid").put(async(req,res)=> {
         
 })
 
-router.route("/delete/:fid").delete(async(req,res) =>{
-       let userId=req.params.fid;
+router.route("/delete/:feedbackID").delete(async(req,res) =>{
+       let userId=req.params.feedbackID;
 
-       await Feedback.findByIdAndDelete(userId).then(() =>{
+       await Feedback.findOneAndDelete(userId).then(() =>{
         res.status(200).send({status: "User deleted"})
     }).catch((err)=>{
         console.log(err);
@@ -78,4 +77,6 @@ router.route("/delete/:fid").delete(async(req,res) =>{
     })
        
 })
+ 
+
 module.exports = router;
