@@ -34,5 +34,12 @@ connection.once("open",()=>{
 const vehicleRouter = require("./routes/vehicle.js");
 app.use("/vehicle",vehicleRouter); 
 
+//give access to employee router file
+const employeeRouter = require("./routes/Employees.js");
+app.use("/employee", employeeRouter);//1st parameter is the url name to call js file
+//give access to salaryInfo router file
+const salaryRouter = require("./routes/SalaryInfo");
+app.use("/salary", salaryRouter);//1st parameter is the url name to call js file
+
 app.listen(PORT, () => {
     console.log(`Server running on port no :${PORT}`)})
