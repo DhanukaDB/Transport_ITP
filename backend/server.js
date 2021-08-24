@@ -33,10 +33,16 @@ connection.once("open",()=>{
 
 const vehicleRouter = require("./routes/vehicle.js");
 app.use("/vehicle",vehicleRouter); 
+ 
 
 const feedbackRouter =require("./routes/Feedback.js");
 
 app.use("/Feedback",feedbackRouter);
+
+const reviewRouter =require("./routes/Review.js");
+
+app.use("/Review",reviewRouter);
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port no :${PORT}`)})
