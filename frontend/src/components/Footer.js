@@ -11,7 +11,8 @@ function Footer(){
     <footer><body>
        <Button variant="#">FAQ 💡</Button>
        <Button variant="#">CONTACT US 📲</Button>
-       <Button variant="#">ABOUT US 🏷️</Button>
+     
+<Link to= "/aboutus"><Button variant="/aboutus">ABOUT US 🏷️</Button> </Link>
      <center> <p>Copyright @ {curr_year}</p></center>
     </body></footer>
 

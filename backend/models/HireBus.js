@@ -2,30 +2,30 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const vehicleSchema =  new Schema({
+const hirebuschema =  new Schema({
 
-    vehicleNo : {
+    name : {
         type : String,
         required: true
     },
 
-    vModel : {
+    mobileNumber : {
+        type : Number,
+        required: true
+    },
+    from : {
         type : String,
         required: true
     },
-    nicNo : {
-        type : String,
-        
-    },
-    ownerName:{
+    to1:{
         type:String,
         required: true
     },
-    manufacYear :{
-        type: Number,
+    date :{
+        type: String,
         required: true
     },
-    vType :{
+    questions :{
         type:String,
         required: true
     },
@@ -35,6 +35,6 @@ const vehicleSchema =  new Schema({
 
 })
 
-const Vehicle = mongoose.model("Vehicle",vehicleSchema);
+const Hirebus = mongoose.model("Hirebus",hirebuschema);
 
-module.exports = Vehicle;   
+module.exports = Hirebus;   
