@@ -19,7 +19,7 @@ function Header(){
       <NavDropdown title="More" id="collasible-nav-dropdown">
         <NavDropdown.Item href="/hirebus">Hire Bus</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Feedbacks</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">About us</NavDropdown.Item>
+        <NavDropdown.Item href="/aboutus">About us</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Packages</NavDropdown.Item>
       </NavDropdown>
