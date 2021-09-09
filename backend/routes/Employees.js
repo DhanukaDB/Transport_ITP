@@ -5,7 +5,7 @@ let Employee = require("../models/Employee");
 router.route("/add").post((req,res)=>{
     const empID = req.body.empID;
     const full_name = req.body.full_name;
-    const dob = Date(req.body.dob);
+    const dob = req.body.dob;
     const age = Number(req.body.age);
     const gender = req.body.gender;
     const nic = req.body.nic;
@@ -14,6 +14,7 @@ router.route("/add").post((req,res)=>{
     const phoneNo = Number(req.body.phoneNo);
     const email = req.body.email;
     const add = req.body.add;
+    const regDate = Date(req.body.regDate);
 
     const newEmployee = new Employee({
         empID,
@@ -26,7 +27,8 @@ router.route("/add").post((req,res)=>{
         marital_status,
         phoneNo,
         email,
-        add
+        add,
+        regDate
     })
 
     newEmployee.save().then(()=>{
@@ -47,13 +49,13 @@ router.route("/").get((req,res)=>{
 })
 
 //update route
-router.route("/update/:id").put(async(req,res)=>{
-    let userId = req.params.id;//id comes as a url parameter
+router.route("/update/:empID").put(async(req,res)=>{
+    let userId = req.params.empID;//id comes as a url parameter
     //destructure-frontend variables pass to backend as a object
     const {full_name,dob,age,gender,nic,nationality,marital_status,phoneNo,email,add} = req.body;
 
     const updateEmployee = {
-        empID,
+        
         full_name,
         dob,
         age,
@@ -63,9 +65,10 @@ router.route("/update/:id").put(async(req,res)=>{
         marital_status,
         phoneNo,
         email,
-        add
+        add,
+        
     }
-    const update = await Employee.findByIdAndUpdate(userId,updateEmployee)
+    const update = await Employee.findOneAndUpdate({empID:userId},updateEmployee)
     .then(()=>{
         res.status(200).send({status:"User updated"})
     }).catch((err)=>{
@@ -76,9 +79,9 @@ router.route("/update/:id").put(async(req,res)=>{
 })
 
 //delete route
-router.route("/delete/:id").delete(async(req,res)=>{
-    let userId = req.params.id;
-    await Employee.findByIdAndDelete(userId).then(()=>{
+router.route("/delete/:empID").delete(async(req,res)=>{
+    let userId = req.params.empID;
+    await Employee.findOneAndDelete({empID:userId}).then(()=>{
         res.status(200).send({status:"User deleted"});
     }).catch((err)=>{
         console.log(err.message);
@@ -87,9 +90,9 @@ router.route("/delete/:id").delete(async(req,res)=>{
 })
 
 //get data of one employee
-router.route("/get/:id").get(async(req,res)=>{
-    let userId = req.params.id;
-    const user = await Employee.findById(userId).then((employee)=>{
+router.route("/get/:empID").get(async(req,res)=>{
+    let userId = req.params.empID;
+    const user = await Employee.findOne({empID:userId}).then((employee)=>{
         res.status(200).send({status:"User fetched", employee});
     }).catch((err)=>{
         console.log(err.message);

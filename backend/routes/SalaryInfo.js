@@ -2,13 +2,13 @@ const router = require("express").Router();
 let Salary = require("../models/Salaryinfo");
 
 //add salary details route
-router.route("/add").post((req,res)=>{
+router.route("/enter").post((req,res)=>{
     const empID = req.body.empID;
-    const basicSalary = Number(req.body.basicSalary);
-    const OT = Number(req.body.OT); 
-    const allowances = Number(req.body.allowances);
-    const payrollDeduct = Number(req.body.payrollDeduct);
-    const netSalary = Number(req.body.netSalary);
+    const basicSalary = req.body.basicSalary;
+    const OT = req.body.OT; 
+    const allowances = req.body.allowances;
+    const payrollDeduct = req.body.payrollDeduct;
+    const netSalary = req.body.netSalary;
     const salaryPeriod = req.body.salaryPeriod;
 
     const newSalary = new Salary({
@@ -39,10 +39,10 @@ router.route("/").get((req,res)=>{
 })
 
 //update route
-router.route("/update/:id").put(async(req,res)=>{
-    let userId = req.params.id;//id comes as a url parameter
+router.route("/edit/:empID").put(async(req,res)=>{
+    let userId = req.params.empID;//id comes as a url parameter
     //destructure-frontend variables pass to backend as a object
-    const {empID ,
+    const {
         basicSalary,
         OT, 
         allowances,
@@ -51,7 +51,7 @@ router.route("/update/:id").put(async(req,res)=>{
         salaryPeriod} = req.body;
 
     const updateSalary = {
-        empID ,
+        
         basicSalary,
         OT, 
         allowances,
@@ -59,7 +59,7 @@ router.route("/update/:id").put(async(req,res)=>{
         netSalary,
         salaryPeriod
     }
-    const update = await Salary.findByIdAndUpdate(userId,updateSalary)
+    const update = await Salary.findOneAndUpdate({empID:userId},updateSalary)
     .then(()=>{
         res.status(200).send({status:"Salary details updated"})
     }).catch((err)=>{
@@ -70,9 +70,9 @@ router.route("/update/:id").put(async(req,res)=>{
 })
 
 //delete route
-router.route("/delete/:id").delete(async(req,res)=>{
-    let userId = req.params.id;
-    await Salary.findByIdAndDelete(userId).then(()=>{
+router.route("/remove/:empID").delete(async(req,res)=>{
+    let userId = req.params.empID;
+    await Salary.findOneAndDelete({empID:userId}).then(()=>{
         res.status(200).send({status:"Salary details deleted"});
     }).catch((err)=>{
         console.log(err.message);
@@ -81,10 +81,10 @@ router.route("/delete/:id").delete(async(req,res)=>{
 })
 
 //get data of one salary 
-router.route("/get/:id").get(async(req,res)=>{
-    let userId = req.params.id;
-    const user = await Salary.findById(userId).then((salary)=>{
-        res.status(200).send({status:"Salary details fetched", salary});
+router.route("/fetch/:empID").get(async(req,res)=>{
+    let userId = req.params.empID;
+    const user = await Salary.findOne({empID:userId}).then((salary)=>{
+        res.status(200).send({status:"Salary Record fetched", salary});
     }).catch((err)=>{
         console.log(err.message);
         res.status(500).send({status:"Error with fetching data", error:err.message});
