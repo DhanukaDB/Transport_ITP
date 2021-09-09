@@ -1,6 +1,8 @@
 import './App.css';
 import Header from './components/Header';
 import AddVehicle from './components/AddVehicle';
+import AllVehicle from './components/AllVehicle';
+import VehicleDetails from './components/VehicleDetails';
 import { BrowserRouter as BRouter, Switch, Route } from "react-router-dom";
 import Home from './components/Home';
 import Footer from './components/Footer';
@@ -15,6 +17,12 @@ const App =()=> {
             <Header/>
             <Switch>
               <Route exact path="/addvehicle" component={AddVehicle} />
+            </Switch>
+            <Switch>
+              <Route exact path="/allvehicle" component={AllVehicle} />
+            </Switch>
+            <Switch>
+              <Route exact path="/vehicledetails/:id" component={VehicleDetails} />
             </Switch>
             <Switch>
               <Route exact path="/" component={Home} />

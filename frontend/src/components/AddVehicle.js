@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import axios from "axios";
 
+
 import { Form, Button,Col,InputGroup} from "react-bootstrap";
 
 function AddVehicle(){
@@ -29,6 +30,9 @@ function AddVehicle(){
     axios.post("http://localhost:5000/vehicle/create",newVehicle).then(()=>{
 
       alert("Vehicle Added Successfully");
+    window.location = `/allvehicle`;
+
+
     
       setvehicleNo("");
       setvModel("");
