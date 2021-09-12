@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import HireBus from './components/HireBus';
 import AboutUS from './components/AboutUs';
+import AdminPanel from './components/AdminPanel';
 
 const App =()=> {
   return (
@@ -25,6 +26,11 @@ const App =()=> {
             <Footer/> 
             <Switch>
               <Route exact path="/aboutus" component={AboutUS} />
+            </Switch>
+            <Switch>
+            <Route path="/adminPanel" exact>
+              <AdminPanel/>
+            </Route> 
             </Switch>
           </main>
         </BRouter> 
