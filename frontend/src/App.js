@@ -10,13 +10,21 @@ import HireBus from './components/HireBus';
 import AboutUS from './components/AboutUs';
 import EditVehicleDetails from './components/EditVehicleDetails';
 import VHome from './components/VehicleHome';
+import DeleteVehicle from './components/DeleteVehicle';
 
 //it20190798
-import DeleteVehicle from './components/DeleteVehicle';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
 import AllPassengers from './components/AllPassengers';
+
+
+//IT20205256
+import AddPayment from './components/AddPayment';
+import AllPayment from './components/AllPayments';
+import Aboutus from './components/AboutUs';
+import Successpage from './components/Success';
+import UpdatePayment from './components/Updatepayment';
 
 const App =()=> {
   return (
@@ -51,7 +59,7 @@ const App =()=> {
             <Switch>
               <Route exact path="/vehicledelete/:id" component={DeleteVehicle} />
             </Switch>
-
+            
 
             <Route path = "/signin">
          <Signin/>
@@ -70,6 +78,27 @@ const App =()=> {
        </Route>
       
 
+       
+
+
+
+       {/* Kishan's */}
+       <Switch>
+              <Route exact path="/about" component={Aboutus} />
+            </Switch>
+            <Switch>
+              <Route exact path="/addpayment" component={AddPayment} />
+            </Switch>
+            <Switch>
+              <Route exact path="/allpayment" component={AllPayment} />
+            </Switch>
+            <Switch>
+              <Route exact path="/success" component={Successpage} />
+            </Switch>
+            <Switch>
+              <Route exact path="/updatepayment" component={UpdatePayment} />
+            </Switch>
+          
             <Footer/> 
 
           </main>
