@@ -31,8 +31,8 @@ const salarySchema = new Schema({
 
     },
     netSalary : {
-        type : Number,
-        required : true//backend validation
+        type : Number
+        
 
     },
     salaryPeriod : {
