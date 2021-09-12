@@ -29,7 +29,7 @@ router.route("/enter").post((req,res)=>{
 })
 
 //get all employees salary details to frontend route
-router.route("/").get((req,res)=>{
+router.route("/getall").get((req,res)=>{
     Salary.find().then((salary)=>{
         res.json(salary)
     }).catch((err)=>{
