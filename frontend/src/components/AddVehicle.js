@@ -1,8 +1,8 @@
 import React,{useState} from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
-
-import { Form, Button,Col,InputGroup} from "react-bootstrap";
+import {Form, Button} from "react-bootstrap";
 
 function AddVehicle(){
 
@@ -52,12 +52,13 @@ function AddVehicle(){
   }
 
   return(
-
+    <div>
+    <center><h1>Add Vehicle</h1></center>
 
     <Form onSubmit={sendData}>
   <Form.Group className="container" controlId="vehicleNo">
     <Form.Label>Vehicle Number</Form.Label>
-    <Form.Control type="text"  placeholder="Enter Vehicle Number" onChange={(e)=>{
+    <Form.Control type="text" required placeholder="Enter Vehicle Number" onChange={(e)=>{
 
       setvehicleNo(e.target.value);
 
@@ -69,7 +70,7 @@ function AddVehicle(){
 
   <Form.Group className="container" controlId="vModel">
     <Form.Label>Vehicle Model</Form.Label>
-    <Form.Control type="text" placeholder="Enter Vehicle Number" onChange={(e)=>{
+    <Form.Control type="text" required placeholder="Enter Vehicle Number" onChange={(e)=>{
 
 setvModel(e.target.value);
 
@@ -78,7 +79,7 @@ setvModel(e.target.value);
 
   <Form.Group className="container" controlId="nicNo">
     <Form.Label>Nic Number</Form.Label>
-    <Form.Control type="text" placeholder="Enter NIC Number" onChange={(e)=>{
+    <Form.Control type="text" required placeholder="Enter NIC Number" onChange={(e)=>{
 
 setnicNo(e.target.value);
 
@@ -87,7 +88,7 @@ setnicNo(e.target.value);
 
   <Form.Group className="container" controlId="ownerName">
     <Form.Label>Owner Name</Form.Label>
-    <Form.Control type="text" placeholder="Enter Owner Name" onChange={(e)=>{
+    <Form.Control type="text" required placeholder="Enter Owner Name" onChange={(e)=>{
 
 setownerName(e.target.value);
 
@@ -96,7 +97,7 @@ setownerName(e.target.value);
 
   <Form.Group className="container" controlId="manufacYear">
     <Form.Label>Manufactured Year</Form.Label>
-    <Form.Control type="text" placeholder="Enter Manufactured Year" onChange={(e)=>{
+    <Form.Control type="text" required placeholder="Enter Manufactured Year" onChange={(e)=>{
 
 setmanufacYear(e.target.value);
 
@@ -105,7 +106,7 @@ setmanufacYear(e.target.value);
 
   <Form.Group className="container" controlId="vType">
     <Form.Label>Vehicle Typer</Form.Label>
-    <Form.Control type="text" placeholder="Enter Vehicle Typer" onChange={(e)=>{
+    <Form.Control type="text" required placeholder="Enter Vehicle Typer" onChange={(e)=>{
 
 setvType(e.target.value);
 
@@ -115,14 +116,18 @@ setvType(e.target.value);
 
 
   <Form.Group className="container" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
+    <Form.Check type="checkbox" required label="Vehicle details checked" />
 
     <Button variant="primary" type="submit">
     Submit
   </Button>
+  <Link to ="/vhome"> <Button variant="info">Go  Back To Vehicle home</Button></Link>
+
+
   </Form.Group>
  
 </Form>
+</div>
     
   );
 

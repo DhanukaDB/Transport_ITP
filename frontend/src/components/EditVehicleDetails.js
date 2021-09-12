@@ -6,7 +6,7 @@ import { Form, Button} from "react-bootstrap";
 
 
 
-function VehicleDetails (props){
+function EditVehicleDetails (props){
 
     const [_id, set_id] = useState("");
     const [vehicleNo, setvehicleNo] = useState("");
@@ -17,7 +17,7 @@ function VehicleDetails (props){
     const [vType, setvType] = useState("");
 
     const [vehicles, setVehicles] = useState([]);
-   
+
     useEffect(() =>{
         function getVehicles(){
 
@@ -86,15 +86,13 @@ function VehicleDetails (props){
       props.history.push("/vehicledelete/"+_id);
   }
 
-     
+    
   
 
     return(
         <div>
 
 <center><h1>Vehicle Details</h1></center>
-
-
 
         <Form onSubmit={sendData}>
 
@@ -179,4 +177,4 @@ function VehicleDetails (props){
       </div>
     )
 }
-export default VehicleDetails;
+export default EditVehicleDetails;

@@ -96,7 +96,8 @@ router.route("/get/:id").get(async (req, res) =>{
 
     const vehicle = await Vehicle.findById(vehicleID)
     .then((vehicle)=>{
-        res.status(200).send({status: "Vehicle fetched", vehicle: vehicle});
+        // res.status(200).send({status: "Vehicle fetched", vehicle: vehicle});
+        res.json(vehicle);
         
     }).catch((err) =>{
         console.log(err.message)

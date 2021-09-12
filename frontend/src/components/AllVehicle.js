@@ -6,9 +6,13 @@ import {Button} from "react-bootstrap";
 
 
 
-function AllVehicle(){
+
+
+function AllVehicle(props){
 
    const [vehicles, setVehicles] = useState([]);
+    const [search, setSearch] = useState("");
+
 
    useEffect(() =>{
     function getVehicles(){
@@ -21,6 +25,13 @@ function AllVehicle(){
     getVehicles();
    },[])
    
+   //"VehicleDetails/+_id //check this 
+   //try with find one
+
+   function Update(_id) {
+      console.log(_id)
+      props.history.push("/vehicledetails/"+_id);
+  }
 
   return (
    
@@ -31,11 +42,16 @@ function AllVehicle(){
      
         
            
-     
+   
  
+ 
+ <br/>
         
       <Table striped bordered hover variant="dark">
   <thead>
+  <input type="text" placeholder = "Search vehicle number " onChange ={(e) =>{
+  setSearch(e.target.value);
+}} />
     <tr>
       <th scope="col">Vehicle id</th>
       <th scope="col">Vehicle Number</th>
@@ -45,21 +61,32 @@ function AllVehicle(){
     </tr>
   </thead>
   <tbody>
-  {vehicles.map((Vehicle) => (
-    <tr>
-     
-     <td><Link to="vehicle/${Vehicle:_id}">    
- <Button variant="outline-primary">{Vehicle._id}</Button>{' '}
- </Link>
-    </td>
-      <td scope="row">{Vehicle.vehicleNo}</td>
-      <td scope="row">{Vehicle.vModel}</td>
-      <td scope="row">{Vehicle.vType}</td>
-     
+
+  {vehicles.filter(Vehicle => {
+                          if(search == ""){
+                              return Vehicle
+                          }
+                          else if(Vehicle.vehicleNo.toLowerCase().includes(search.toLowerCase())){
+                              return Vehicle
+                          }
+                      }).
     
+    
+  map((Vehicle) => {
+
+    return(
+      <tr key={Vehicle._id}>
+      
+      <td> <Button variant="outline-primary" onClick={()=>Update(Vehicle._id)}>{Vehicle._id}</Button></td>
+      <td>{Vehicle.vehicleNo}</td>
+      <td>{Vehicle.vModel}</td>
+      <td>{Vehicle.vType}</td>
+     
     </tr>
+    );
+    })} 
+
    
-   ))}
     </tbody>
 </Table>
 

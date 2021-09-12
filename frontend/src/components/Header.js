@@ -25,8 +25,7 @@ function Header(){
       </NavDropdown>
     </Nav>
     <Nav>
-      <Nav.Link href="#deets">Sign in</Nav.Link>
-      <Nav.Link href="#deets">Sign up</Nav.Link>
+    
       <Nav.Link eventKey={2} href="#Siyatha">
       👤
         </Nav.Link>
