@@ -55,6 +55,11 @@ app.use("/salary", salaryRouter);//1st parameter is the url name to call js file
 const passegerRouter = require("./routes/passengers.js");
 app.use("/passenger", passegerRouter);
 
+//IT20205256-Payment
+const paymentRouter = require("./routes/payments.js");
+app.use("/payment",paymentRouter);
+
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port no :${PORT}`)})
