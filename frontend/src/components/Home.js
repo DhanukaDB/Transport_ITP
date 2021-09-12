@@ -9,12 +9,7 @@ function Home(){
         
 <div>
  
-<Image src="https://res.cloudinary.com/db-group/image/upload/v1628443620/ITP/Vehicle/LeBus-interior-luxury-coach-bus-background_tmuyry.jpg" fluid />
-
-<Link to="/addvehicle">
- <Button variant="outline-primary">Primary</Button>{' '}
- </Link>
-
+<Image src="https://res.cloudinary.com/hidl3r/image/upload/v1631381654/itp/LeBus-interior-luxury-coach-bus-background_pdzuvu.jpg" fluid />
 
 
  
