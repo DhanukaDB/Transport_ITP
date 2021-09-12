@@ -10,8 +10,13 @@ import HireBus from './components/HireBus';
 import AboutUS from './components/AboutUs';
 import EditVehicleDetails from './components/EditVehicleDetails';
 import VHome from './components/VehicleHome';
-import DeleteVehicle from './components/DeleteVehicle';
 
+//it20190798
+import DeleteVehicle from './components/DeleteVehicle';
+import Signin from './components/Signin';
+import Signup from './components/Signup';
+import Profile from './components/Profile';
+import AllPassengers from './components/AllPassengers';
 
 const App =()=> {
   return (
@@ -46,7 +51,27 @@ const App =()=> {
             <Switch>
               <Route exact path="/vehicledelete/:id" component={DeleteVehicle} />
             </Switch>
+
+
+            <Route path = "/signin">
+         <Signin/>
+      </Route>
+
+      <Route path = "/signup">
+          <Signup/>
+      </Route>
+
+       <Route path = "/profile/:email" exact>
+          <Profile/>
+       </Route>
+       
+       <Route path = "/AllPassengers">
+          <AllPassengers/>
+       </Route>
+      
+
             <Footer/> 
+
           </main>
         </BRouter> 
       );
