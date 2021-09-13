@@ -35,7 +35,7 @@ import UpdateEmployee from './components/UpdateEmployee';
 import DeleteEmployee from './components/DeleteEmployee';
 import SalaryDetailsList from './components/SalaryDetailsList';
 import EmployeeManagementHome from './components/EmployeeManagementHome';
-
+import AdminPanel from './components/AdminPanel';
 
 const App =()=> {
   return (
@@ -113,7 +113,11 @@ const App =()=> {
 
          {/* Sayuri */}
         
-         
+            <Switch>
+              <Route path="/adminPanel" exact>
+                <AdminPanel/>
+              </Route> 
+            </Switch> 
             <Switch> 
               <Route path="/employeeManagementHome" exact>
                 <EmployeeManagementHome/>
