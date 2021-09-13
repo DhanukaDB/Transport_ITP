@@ -25,7 +25,7 @@ export default function AddEmployee() {
             return
         }
         else if(!(full_name.trim().length > 5)){
-            alert("Invalid Full Name!")
+            alert("Invalid Full Name!");
             return
         }
        
