@@ -123,7 +123,7 @@ const App =()=> {
                 <EmployeeManagementHome/>
               </Route>
             </Switch>
-            <div className="body"> 
+            <div className="bodyEmp"> 
             <Switch><Route exact path="/add" component={AddEmployee}/></Switch>
             <Switch><Route exact path="/update/:id" component={UpdateEmployee}/></Switch>
             <Switch><Route exact path="/delete/:id" component={DeleteEmployee}/></Switch>

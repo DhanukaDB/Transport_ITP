@@ -1,4 +1,4 @@
-.body {
+.bodyEmp {
     background-image: url(../empBackgpic.jpg);
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@
     text-decoration: none !important
   }
 
-.containerHome {
+.containerHomeEmp {
     text-align: center;
     background-image: url(../empHome.jpg);
     background-size: cover;
@@ -23,37 +23,32 @@
     
 }  
 
-.custom {
+.customEmp{
   width: 100px !important;
 }
 
-.customhome{
+.customhomeEmp{
   width: 250px !important;
   height: 50px;
   
 }
-.bodyHome{
+.bodyHomeEmp{
   margin-top: 200px;
   margin-bottom: 200px;
 }
 
-.table{
- margin: 12px,12px,12px,12px;
- padding: 12px,12px,12px,12px;
- 
-}
-.form-control{
+.form-controlEmp{
   border-radius: 1.5em;
   border-color: 1px solid #ced4da;
 }
-.btn{
+.btnEmp{
   border-radius: 0.5em;
   width: 170px;
   height: 45px;
   text-align: center;
   
 }
-.form {
+.formEmp {
   background-color:rgb(245, 247, 247);
   border-radius: 20px;
   box-sizing: border-box;
