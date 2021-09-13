@@ -80,7 +80,7 @@ export default function AddSalaryDetails(){
                     }}/>
                 </div>
                 
-                <button type="submit" className="btn btn-secondary">Add Record</button>
+                <button type="submit" className="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;Add Record</button>
             </form><br/><br/>
         </div>
     )

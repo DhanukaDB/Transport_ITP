@@ -158,7 +158,7 @@ export default function UpdateEmployee() {
                     }}required/>
                 </div>
               
-                <button type="submit" className="btn btn-secondary">Edit</button>
+                <button type="submit" className="btn btn-warning"><i className="fas fa-edit"></i>&nbsp;Edit</button>
             </form><br/><br/>
         </div>
     )

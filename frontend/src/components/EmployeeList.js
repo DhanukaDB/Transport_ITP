@@ -60,8 +60,8 @@ export default function EmployeeList() {
                     <td valign="middle">{val.phoneNo}</td>
                     <td valign="middle">{val.email}</td>
 
-                    <td><button className="btn btn-primary custom"><a className="nounderline" href={`/update/${val.empID}`} style={{color:'white'}} >Edit</a></button><br/><br/>
-                    <button className="btn btn-primary custom"><a className="nounderline" href={`/delete/${val.empID}`} style={{color:'white'}} >Delete</a></button></td>
+                    <td><button className="btn btn-primary custom"><a className="nounderline" href={`/update/${val.empID}`} style={{color:'white'}} ><i className="fas fa-edit"></i>&nbsp;Edit</a></button><br/><br/>
+                    <button className="btn btn-danger custom"><a className="nounderline" href={`/delete/${val.empID}`} style={{color:'white'}} ><i className="fas fa-trash-alt"></i>&nbsp;Delete</a></button></td>
                   </tr>
                   
                 </tbody>

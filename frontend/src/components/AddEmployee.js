@@ -140,7 +140,7 @@ export default function AddEmployee() {
                     }}required/>
                 </div><br/><br/>
                 
-                <button type="submit" className="btn btn-primary">Register</button>
+                <button type="submit" className="btn btn-primary"><i class="fas fa-user-plus"></i>&nbsp;Register</button>
             </form><br/><br/>
         </div>
     )

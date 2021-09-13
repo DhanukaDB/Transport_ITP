@@ -57,7 +57,7 @@ export default function FetchEmployee() {
             <Link to="/allemployee" className="nav-link">Back</Link>
          </nav><br/>
             <h1>Employee ID : {id}</h1><br/>
-            <Table striped bordered hover variant="light">
+            <table className="table">
             <tr><th  style={{textAlign:"left"}} scope="col">Full Name  </th>  <td style={{textAlign:"left"}}>{full_name}</td></tr>
             <tr><th  style={{textAlign:"left"}} scope="col">DOB </th> <td style={{textAlign:"left"}}>{dob}</td></tr>
             <tr><th  style={{textAlign:"left"}} scope="col">Age </th> <td style={{textAlign:"left"}}>{age}</td></tr>
@@ -71,7 +71,7 @@ export default function FetchEmployee() {
             <tr><th  style={{textAlign:"left"}} scope="col">Registered Date </th> <td style={{textAlign:"left"}}>{regDate}</td></tr>
                                 
             
-            </Table><br/><br/>
+            </table><br/><br/>
             
         </div>
     )

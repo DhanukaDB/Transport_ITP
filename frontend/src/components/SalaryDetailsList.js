@@ -63,14 +63,14 @@ export default function SalaryDetailsList() {
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">{val.empID}</th>
-                    <td>Rs.{val.basicSalary}</td>
-                    <td>Rs.{val.OT}</td>
-                    <td>Rs.{val.allowances}</td>                    
-                    <td>Rs.{val.payrollDeduct}</td>
-                    <td>{val.salaryPeriod}</td>
+                    <th valign="middle" scope="row">{val.empID}</th>
+                    <td valign="middle">Rs.{val.basicSalary}</td>
+                    <td valign="middle">Rs.{val.OT}</td>
+                    <td valign="middle">Rs.{val.allowances}</td>                    
+                    <td valign="middle">Rs.{val.payrollDeduct}</td>
+                    <td valign="middle">{val.salaryPeriod}</td>
 
-                    <td><button className="btn btn-primary custom" onClick={()=>{onDelete(val.empID)}}>Delete</button></td>
+                    <td><button className="btn btn-danger custom" onClick={()=>{onDelete(val.empID)}}><i className="fas fa-trash-alt"></i>&nbsp;Delete</button></td>
 
                   </tr>
                   

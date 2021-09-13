@@ -116,7 +116,7 @@ export default function DeleteEmployee() {
                     <input type="text" className="form-control" id="regDate" value={regDate} disabled="disabled"/>
                 </div>
               
-                <button type="submit" className="btn btn-primary">Delete</button>
+                <button type="submit" className="btn btn-danger"><i className="fas fa-trash-alt"></i>&nbsp;Delete</button>
             </form><br/><br/>
 
         </div>
