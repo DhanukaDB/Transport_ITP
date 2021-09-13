@@ -3,6 +3,7 @@ import {Link,useHistory} from 'react-router-dom'
 import {Col,Image} from "react-bootstrap";
 import { useState} from 'react';
 import axois from "axios";
+import {Form, Button} from "react-bootstrap";
 
 
 
@@ -30,11 +31,11 @@ const Signup = () => {
             password
         }
          console.log(newPassenger)  
-         alert("Success");
+         
 
 
          axois.post("http://localhost:5000/passenger/add", newPassenger).then(() => {
-             alert("Student Added")
+             alert("Registration Success")
              history.push('/signin')
 
          }).catch((err) =>{
@@ -44,7 +45,7 @@ const Signup = () => {
 
     return (
         <div>
-            <form onSubmit={sendData}>
+            <Form onSubmit={sendData}>
         <div className = "mycard">
             
            <div className= "card auth-card">
@@ -52,20 +53,22 @@ const Signup = () => {
                <div >
            <Col xs={1} md={12}  >
                
-      <Image className="im" src="ulogin.png" roundedCircle />
+      <Image className="im" src="https://res.cloudinary.com/hidl3r/image/upload/v1631475740/itp/pngwing.com_ktdfmg.png" roundedCircle />
     </Col>
                <h1>Sign Up</h1>
 </div>
                  
+                <br/>
+                
                <input 
                 type = "text"
-                placeholder = "User name"
+                placeholder = "Username"
                 id="username"
                 value = {username}
                 onChange={(e) => setUsername (e.target.value)}
                 />
 
-                 
+                 <br/>
                <input 
                 type = "text"
                 placeholder = "Nic"
@@ -73,7 +76,7 @@ const Signup = () => {
                 value = {nic}
                 onChange={(e) => setNic (e.target.value)}
                 />
-
+                <br/>
 
                <input 
                 type = "text"
@@ -82,7 +85,7 @@ const Signup = () => {
                 value = {email}
                 onChange={(e) => setEmail (e.target.value)}
                 />
-                
+                <br/>
                 
                <input 
                 type = "text"
@@ -91,7 +94,7 @@ const Signup = () => {
                 value = {phoneno}
                 onChange={(e) => setPhoneno (e.target.value)}
                 />
-
+                <br/>
                 <input
                  type ="password"
                  placeholder="Password"
@@ -101,12 +104,12 @@ const Signup = () => {
                  />
                  <br></br>
                  
-                 <button className= "btn waves-effect waves-light #64b5f6 blue lighten-2" 
+                 <Button className= "btn waves-effect waves-light #64b5f6 blue lighten-2" 
                     
                  type="submit">
          
                       Signup
-                 </button>
+                 </Button>
                  
 
                  <br></br>
@@ -118,7 +121,7 @@ const Signup = () => {
 
 
         </div>
-        </form>
+        </Form>
 </div>
 
 
@@ -126,4 +129,4 @@ const Signup = () => {
     )
 }
 
-export default Signup
+export default Signup;

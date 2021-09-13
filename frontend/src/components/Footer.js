@@ -14,6 +14,8 @@ function Footer(){
      
 <Link to= "/aboutus"><Button variant="/aboutus">ABOUT US 🏷️</Button> </Link>
      <center> <p>Copyright @ {curr_year}</p></center>
+
+     <img src="https://img.icons8.com/material/24/fa314a/youtube--v1.png"/>
     </body></footer>
 
   )

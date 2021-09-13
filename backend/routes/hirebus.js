@@ -12,7 +12,7 @@ router.route("/create").post((req,res)=>{
     const date = req.body.date;
     const questions = req.body.questions;
 
-const newHireBus = new Hirebus({
+const newHireBus = new hirebus({
 
     name,
     mobileNumber,

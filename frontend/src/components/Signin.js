@@ -2,6 +2,8 @@ import React from "react";
 import {Link,useHistory} from  'react-router-dom'
 import { useState} from 'react';
 import axois from "axios";
+import {Form, Button} from "react-bootstrap";
+
 const Signin = (props) => {
 
     const history = useHistory()
@@ -33,8 +35,9 @@ const Signin = (props) => {
 
          axois.post("http://localhost:5000/passenger/signin", newPassenger).then(() => {
              alert("Sign in successfully")
-           window.location ='/profile/+{email}'
-           //  history.push('/')
+           
+             history.push('/')
+             //window.location ='/profile/+{email}'
 
          }).catch((err) =>{
              
@@ -43,18 +46,15 @@ const Signin = (props) => {
 
     }
        
-    function edit({email}) {
-        console.log({email})
-        props.history.push("/profile/"+{email});
-    }
+    
 
     return (
         <div>
-        <form onSubmit={sendData}>
+        <form className="container" onSubmit={sendData}>
         <div className = "mycard">
            <div className= "card auth-card">
                <h2>Sign In</h2>
-                  
+                  <br/>
                <input 
                 type = "text"
                 placeholder = "Email"
@@ -62,7 +62,7 @@ const Signin = (props) => {
                 value = {email}
                 onChange={(e) => setEmail (e.target.value)}
                 />
-
+                  <br></br>
 
                 <input
                  type ="password"
@@ -72,7 +72,7 @@ const Signin = (props) => {
                  onChange={(e) => setPassword (e.target.value)}
                  />
                 <br></br>
-                 <button onClick={()=>edit(email)} className = "btn waves-effect waves-light #64b5f6 blue lighten-2">
+                 <button  className = "btn waves-effect waves-light #64b5f6 blue lighten-2">
                       Signin
                  </button>
                  

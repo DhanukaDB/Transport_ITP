@@ -37,6 +37,9 @@ import SalaryDetailsList from './components/SalaryDetailsList';
 import EmployeeManagementHome from './components/EmployeeManagementHome';
 import AdminPanel from './components/AdminPanel';
 
+//It20201982
+import Timetable from './components/Timetable'
+
 const App =()=> {
   return (
   
@@ -62,7 +65,7 @@ const App =()=> {
               <Route exact path="/aboutus" component={AboutUS} />
             </Switch>
             <Switch>
-              <Route exact path="/editvdetails" component={EditVehicleDetails} />
+              <Route exact path="/editvdetails/:id" component={EditVehicleDetails} />
             </Switch>
             <Switch>
               <Route exact path="/vhome" component={VHome} />
@@ -71,29 +74,31 @@ const App =()=> {
               <Route exact path="/vehicledelete/:id" component={DeleteVehicle} />
             </Switch>
             
+            
+{/* IT20190798 */}
 
-            <Route path = "/signin">
-         <Signin/>
-      </Route>
+            <Switch>
+              <Route exact path="/signin" component={Signin} />
+            </Switch>
 
-      <Route path = "/signup">
-          <Signup/>
-      </Route>
+            <Switch>
+              <Route exact path="/signup" component={Signup} />
+            </Switch>
 
-       <Route path = "/profile/:email" exact>
-          <Profile/>
-       </Route>
-       
-       <Route path = "/AllPassengers">
-          <AllPassengers/>
-       </Route>
-      
+            <Switch>
+              <Route exact path="/profile/:email" component={Profile} />
+            </Switch>
 
-       
+            <Switch>
+              <Route exact path="/AllPassengers" component={AllPassengers} />
+            </Switch>
+            
+            
+        
 
 
 
-       {/* Kishan's */}
+ {/* Kishan's */}
        <Switch>
               <Route exact path="/about" component={Aboutus} />
             </Switch>
@@ -134,7 +139,8 @@ const App =()=> {
             </div>
          
 
-
+      {/* Uditha */}
+      <Switch><Route exact path="/timetable" component={Timetable}/></Switch>
 
             <Footer/> 
 

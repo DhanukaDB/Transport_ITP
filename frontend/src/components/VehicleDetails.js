@@ -16,7 +16,7 @@ function VehicleDetails (props){
     const [manufacYear, setmanufacYear] = useState("");
     const [vType, setvType] = useState("");
 
-    const [vehicles, setVehicles] = useState([]);
+    const [vehicles, ] = useState([]);
    
     useEffect(() =>{
         function getVehicles(){
@@ -25,7 +25,7 @@ function VehicleDetails (props){
             console.log(_id);
             axios.get("http://localhost:5000/vehicle/get/"+_id).then((res) =>{
               
-               setVehicles(res.data);
+             
                set_id(res.data._id);
                setvehicleNo(res.data.vehicleNo);
                setvModel(res.data.vModel);
@@ -86,6 +86,10 @@ function VehicleDetails (props){
       props.history.push("/vehicledelete/"+_id);
   }
 
+  function Edit(_id) {
+    console.log(_id)
+    props.history.push("/editvdetails/"+_id);
+}
      
   
 
@@ -107,7 +111,7 @@ function VehicleDetails (props){
         <Form.Group className="container" controlId="vehicleNo">
           <Form.Label>Vehicle Number</Form.Label>
           
-          <Form.Control type="text"  value = {vehicleNo} placeholder="Enter Vehicle Number" onChange={(e)=>{
+          <Form.Control type="text" readonly="readonly" value = {vehicleNo} placeholder="Enter Vehicle Number" onChange={(e)=>{
       
             setvehicleNo(e.target.value);
       
@@ -118,7 +122,7 @@ function VehicleDetails (props){
       
         <Form.Group className="container" controlId="vModel">
           <Form.Label>Vehicle Model</Form.Label>
-          <Form.Control type="text"  value = {vModel} placeholder="Enter Vehicle Number" onChange={(e)=>{
+          <Form.Control type="text" readonly="readonly" value = {vModel} placeholder="Enter Vehicle Number" onChange={(e)=>{
       
       setvModel(e.target.value);
       
@@ -127,7 +131,7 @@ function VehicleDetails (props){
       
         <Form.Group className="container" controlId="nicNo">
           <Form.Label>Nic Number</Form.Label>
-          <Form.Control type="text"  value = {nicNo} placeholder="Enter NIC Number" onChange={(e)=>{
+          <Form.Control type="text" readonly="readonly" value = {nicNo} placeholder="Enter NIC Number" onChange={(e)=>{
       
       setnicNo(e.target.value);
       
@@ -136,7 +140,7 @@ function VehicleDetails (props){
       
         <Form.Group className="container" controlId="ownerName">
           <Form.Label>Owner Name</Form.Label>
-          <Form.Control type="text"  value = {ownerName} placeholder="Enter Owner Name" onChange={(e)=>{
+          <Form.Control type="text" readonly="readonly" value = {ownerName} placeholder="Enter Owner Name" onChange={(e)=>{
       
       setownerName(e.target.value);
       
@@ -145,7 +149,7 @@ function VehicleDetails (props){
       
         <Form.Group className="container" controlId="manufacYear">
           <Form.Label>Manufactured Year</Form.Label>
-          <Form.Control type="text"  value = {manufacYear} placeholder="Enter Manufactured Year" onChange={(e)=>{
+          <Form.Control type="text" readonly="readonly" value = {manufacYear} placeholder="Enter Manufactured Year" onChange={(e)=>{
       
       setmanufacYear(e.target.value);
       
@@ -154,7 +158,7 @@ function VehicleDetails (props){
       
         <Form.Group className="container" controlId="vType">
           <Form.Label>Vehicle Typer</Form.Label>
-          <Form.Control type="text"  value = {vType} placeholder="Enter Vehicle Typer" onChange={(e)=>{
+          <Form.Control type="text" readonly="readonly" value = {vType} placeholder="Enter Vehicle Typer" onChange={(e)=>{
       
       setvType(e.target.value);
       
@@ -166,7 +170,7 @@ function VehicleDetails (props){
         <Form.Group className="container" controlId="formBasicCheckbox">
          
       
-          <Button type="submit" variant="outline-warning">Confirm Edit Details</Button>{' '}
+          <Button type="submit" variant="outline-warning" onClick={()=>Edit(_id)}>Edit Details</Button>{' '}
           
           <Button variant="outline-danger" onClick={()=>Delete(_id)}>Delete Details</Button>{' '}
           <Link to ="/vhome"> <Button variant="info">Go  Back To Vehicle home</Button></Link>
@@ -174,7 +178,7 @@ function VehicleDetails (props){
        
       </Form>
 
-      
+      <br/>
 
       </div>
     )

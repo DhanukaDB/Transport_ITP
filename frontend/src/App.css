@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -36,3 +38,114 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+.mycard{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  
+}
+.auth-card{
+  
+  padding: 20px;
+  max-height: 1600px;
+  text-align: center;
+  max-width: 600px;
+  margin: 10px auto;
+
+    
+}
+
+.im{
+  max-width: 70px;
+}
+
+
+.uname {
+  text-align: center;
+}
+
+/* 
+.bgimg{
+
+  background-image: url("https://res.cloudinary.com/hidl3r/image/upload/v1631381654/itp/LeBus-interior-luxury-coach-bus-background_pdzuvu.jpg");
+}
+
+ */
+
+ .time {
+  font-family: "Source Code Pro";
+   background: transparent;
+   position: relative;
+   bottom: 200px;
+   left: 150px;
+   cursor: pointer;
+   width: 250px;
+   height: 120px;
+   outline: none;
+   border: 1px solid #ca6695;
+   font-size: 30px;
+   color:rgb(33, 150, 150);
+ }
+
+ .time:hover {
+  transition: 1s ease-in-out;
+  transform: rotate(-15deg);
+  stroke-dashoffset: -480;
+  color:rgb(150, 95, 33);
+  
+
+}
+
+
+.booknow {
+  font-family: "Source Code Pro";
+   background: transparent;
+   position: relative;
+   bottom: 200px;
+   left: 350px;
+   cursor: pointer;
+   width: 250px;
+   height: 120px;
+   outline: none;
+   border: 1px solid #ca6695;
+   font-size: 30px;
+   color:rgb(33, 150, 150);
+ }
+
+ .booknow:hover {
+  transition: 1s ease-in-out;
+  transform: rotate(15deg);
+  stroke-dashoffset: -480;
+  color:rgb(150, 95, 33);
+  
+
+}
+
+
+.contactnow {
+  font-family: "Source Code Pro";
+   background: transparent;
+   position: relative;
+   bottom: 200px;
+   left: 550px;
+   cursor: pointer;
+   width: 250px;
+   height: 120px;
+   outline: none;
+   border: 1px solid #ca6695;
+   font-size: 30px;
+   color:rgb(33, 150, 150);
+ }
+
+ .contactnow:hover {
+  transition: 1s ease-in-out;
+  transform: rotate(-15deg);
+  stroke-dashoffset: -480;
+  color:rgb(150, 95, 33);
+  
+
+}
+

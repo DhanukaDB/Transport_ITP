@@ -86,13 +86,14 @@ function EditVehicleDetails (props){
       props.history.push("/vehicledelete/"+_id);
   }
 
+ 
     
   
 
     return(
         <div>
 
-<center><h1>Vehicle Details</h1></center>
+<center><h1>Edit Vehicle Details</h1></center>
 
         <Form onSubmit={sendData}>
 
@@ -172,7 +173,7 @@ function EditVehicleDetails (props){
        
       </Form>
 
-      
+      <br/>
 
       </div>
     )

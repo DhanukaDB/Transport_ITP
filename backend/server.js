@@ -31,10 +31,15 @@ connection.once("open",()=>{
     console.log("MongoDB connection Success!!!");
 })
 
+//IT20207236
 const vehicleRouter = require("./routes/vehicle.js");
 app.use("/vehicle",vehicleRouter); 
+
+const hirebusRouter = require("./routes/hirebus.js");
+app.use("/hirebus",hirebusRouter); 
  
 
+//Thisara
 const feedbackRouter =require("./routes/Feedback.js");
 
 app.use("/Feedback",feedbackRouter);
@@ -44,6 +49,7 @@ const reviewRouter =require("./routes/Review.js");
 app.use("/Review",reviewRouter);
 
 
+//Sayuri
 //give access to employee router file
 const employeeRouter = require("./routes/Employees.js");
 app.use("/employee", employeeRouter);//1st parameter is the url name to call js file

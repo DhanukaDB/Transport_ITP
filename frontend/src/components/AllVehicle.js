@@ -99,7 +99,8 @@ function AllVehicle(props){
  <Button variant="outline-primary">Add Vehicle</Button>{' '}
  </Link>
     
-
+ <br/>
+ 
     </div>
     
   )
