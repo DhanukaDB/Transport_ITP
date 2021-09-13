@@ -36,9 +36,10 @@ export default function AddFeedback(){  //adding function
 
     return(
  
-     <div>
+     <div> <br></br>
         <h1 class="font-italic">Complaints and Feedback</h1>
        <h3 class="font-italic " >Show us some love....</h3>
+       <br></br>
         <form className="container"  onSubmit={sendData} > 
 
 <div className="form-group">
@@ -74,7 +75,7 @@ export default function AddFeedback(){  //adding function
     Complaint
   </label>
 </div>
-
+<br></br>
 <div class="form-group">
     <label for="contactNumber">Enter Contact Number</label>
     <input type="text" class="form-control" id="contactNumber" aria-describedby="em" placeholder="Contact Number" onChange={(e) =>{
@@ -90,7 +91,7 @@ export default function AddFeedback(){  //adding function
      }}></textarea>
   </div>
 
-  <button type="submit" class="btn btn-dark">Submit</button> <a href="/readf" class="btn btn-dark">Submit and View</a>
+  <button type="submit" class="btn btn-dark">Submit</button> <a href="/readf" class="btn btn-dark">View some feedbacks</a>
 
 </form>
 
