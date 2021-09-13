@@ -26,6 +26,17 @@ import Aboutus from './components/AboutUs';
 import Successpage from './components/Success';
 import UpdatePayment from './components/Updatepayment';
 
+//IT20197032
+import AddEmployee from './components/AddEmployee';
+import EmployeeList from './components/EmployeeList';
+import AddSalaryDetails from './components/AddSalaryDetails';
+import FetchEmployee from './components/FetchEmployee';
+import UpdateEmployee from './components/UpdateEmployee';
+import DeleteEmployee from './components/DeleteEmployee';
+import SalaryDetailsList from './components/SalaryDetailsList';
+import EmployeeManagementHome from './components/EmployeeManagementHome';
+import AdminPanel from './components/AdminPanel';
+
 const App =()=> {
   return (
   
@@ -99,6 +110,32 @@ const App =()=> {
               <Route exact path="/updatepayment" component={UpdatePayment} />
             </Switch>
           
+
+         {/* Sayuri */}
+        
+            <Switch>
+              <Route path="/adminPanel" exact>
+                <AdminPanel/>
+              </Route> 
+            </Switch> 
+            <Switch> 
+              <Route path="/employeeManagementHome" exact>
+                <EmployeeManagementHome/>
+              </Route>
+            </Switch>
+            <div className="body"> 
+            <Switch><Route exact path="/add" component={AddEmployee}/></Switch>
+            <Switch><Route exact path="/update/:id" component={UpdateEmployee}/></Switch>
+            <Switch><Route exact path="/delete/:id" component={DeleteEmployee}/></Switch>
+            <Switch><Route exact path="/enter" component={AddSalaryDetails}/></Switch>
+            <Switch><Route exact path="/get/:id" component={FetchEmployee}/></Switch>
+            <Switch><Route exact path="/allemployee" component={EmployeeList}/></Switch>
+            <Switch><Route exact path="/getall" component={SalaryDetailsList}/></Switch>
+            </div>
+         
+
+
+
             <Footer/> 
 
           </main>

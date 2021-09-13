@@ -7,7 +7,8 @@ const employeeSchema = new Schema({
     //properties declare
     empID : {
         type : String,
-        required : true//backend validation
+        required : true,//backend validation
+        unique: true
 
     },
     full_name : {
@@ -17,7 +18,7 @@ const employeeSchema = new Schema({
     },
     
     dob : {
-        type : Date,
+        type : String,
         required : true//backend validation
 
     },
@@ -58,6 +59,10 @@ const employeeSchema = new Schema({
         type : String,
         required : true//backend validation
 
+    },
+    regDate :{
+        type : Date,
+        required : true
     },
 })
 //data coming from routes go to DB through models

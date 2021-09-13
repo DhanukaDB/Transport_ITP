@@ -7,32 +7,33 @@ const salarySchema = new Schema({
     //properties declare
     empID : {
         type : String,
-        required : true//backend validation
+        required : true,//backend validation
+        unique: true
 
     },
     basicSalary : {
-        type : Number,
+        type : String,
         required : true//backend validation
 
     },
     OT : {
-        type : Number,
+        type : String,
         required : true//backend validation
 
     }, 
     allowances : {
-        type : Number,
+        type : String,
         required : true//backend validation
 
     },
     payrollDeduct : {
-        type : Number,
+        type : String,
         required : true//backend validation
 
     },
     netSalary : {
-        type : Number,
-        required : true//backend validation
+        type : String
+        
 
     },
     salaryPeriod : {

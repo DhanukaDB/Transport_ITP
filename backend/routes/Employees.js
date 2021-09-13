@@ -39,7 +39,7 @@ router.route("/add").post((req,res)=>{
 })
 
 //get all employees details to frontend route
-router.route("/").get((req,res)=>{
+router.route("/allemployee").get((req,res)=>{
     Employee.find().then((employees)=>{
         res.json(employees)
     }).catch((err)=>{

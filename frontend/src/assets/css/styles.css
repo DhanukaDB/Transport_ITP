@@ -1,0 +1,65 @@
+.body {
+    background-image: url(../empBackgpic.jpg);
+    margin: 0;
+    padding: 0;
+    width: cover;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  }
+
+.nounderline {
+    text-decoration: none !important
+  }
+
+.containerHome {
+    text-align: center;
+    background-image: url(../empHome.jpg);
+    background-size: cover;
+    font-family: monospace;
+    height: 800px;
+    width: cover;
+
+    
+}  
+
+.custom {
+  width: 100px !important;
+}
+
+.customhome{
+  width: 250px !important;
+  height: 50px;
+  
+}
+.bodyHome{
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.table{
+ margin: 12px,12px,12px,12px;
+ padding: 12px,12px,12px,12px;
+ 
+}
+.form-control{
+  border-radius: 1.5em;
+  border-color: 1px solid #ced4da;
+}
+.btn{
+  border-radius: 0.5em;
+  width: 170px;
+  height: 45px;
+  text-align: center;
+  
+}
+.form {
+  background-color:rgb(245, 247, 247);
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: cover;
+  padding: 20px;
+  width: 1000px;
+  
+  
+}
