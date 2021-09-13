@@ -17,7 +17,9 @@ import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
 import AllPassengers from './components/AllPassengers';
-
+import UserHandler from './components/UserHandler';
+import UserLevel from './components/UserLevel';
+import EditUserLevel from './components/EditUserLevel';
 
 //IT20205256
 import AddPayment from './components/AddPayment';
@@ -71,25 +73,37 @@ const App =()=> {
               <Route exact path="/vehicledelete/:id" component={DeleteVehicle} />
             </Switch>
             
+{/* IT20190798 */}
 
-            <Route path = "/signin">
-         <Signin/>
-      </Route>
+<Switch>
+              <Route exact path="/signin" component={Signin} />
+            </Switch>
 
-      <Route path = "/signup">
-          <Signup/>
-      </Route>
+            <Switch>
+              <Route exact path="/signup" component={Signup} />
+            </Switch>
 
-       <Route path = "/profile/:email" exact>
-          <Profile/>
-       </Route>
+            <Switch>
+              <Route exact path="/profile/:email" component={Profile} />
+            </Switch>
+
+            <Switch>
+              <Route exact path="/AllPassengers" component={AllPassengers} />
+            </Switch>
+
+            <Switch>
+              <Route exact path="/userhandler" component={UserHandler} />
+            </Switch>
+
+            <Switch>
+              <Route exact path="/userlevel" component={UserLevel} />
+            </Switch>
+
+            <Switch>
+              <Route exact path="/edituserlevel" component={EditUserLevel} />
+            </Switch>
        
-       <Route path = "/AllPassengers">
-          <AllPassengers/>
-       </Route>
-      
-
-       
+            
 
 
 
