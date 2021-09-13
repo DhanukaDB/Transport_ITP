@@ -22,13 +22,13 @@ export default function AllFeedbacks(){
  
 
     useEffect(() =>{ //view all the feedbacks
-        axios.get(`http://localhost:8070/Feedback/readf`).then((response) => { //pass response as a function
+        axios.get(`http://localhost:5000/Feedback/readf`).then((response) => { //pass response as a function
           SetFeedbackList(response.data);
         });
       }, []);
 
       const onDelete = (_id) => { //delete data row
-        axios.delete(`http://localhost:8070/Feedback/deletef/${_id}`).then((response)=>{ 
+        axios.delete(`http://localhost:5000/Feedback/deletef/${_id}`).then((response)=>{ 
         alert("deleted successfully");
           feedbackList.map(response.data)
       })

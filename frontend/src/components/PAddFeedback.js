@@ -26,7 +26,7 @@ export default function AddFeedback(){  //adding function
 
       }
 
-     axios.post(`http://localhost:8070/feedback/addf`, newFeedback).then(() =>{  //route from the backend
+     axios.post(`http://localhost:5000/feedback/addf`, newFeedback).then(() =>{  //route from the backend
 
         alert("Student Added") //display if adding is successful
      }).catch((err) =>{   //display error if adding is not successful
