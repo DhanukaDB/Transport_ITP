@@ -12,7 +12,7 @@ export default function EmployeeManagementHome(){
             <br/><br/>
                 <table className="container">
                 <tr>
-                <td><button className="btn btn-primary customhome"><a className="nounderline" href={`/`} style={{color:"white"}} >Employee Details</a></button></td>
+                <td><button className="btn btn-primary customhome"><a className="nounderline" href={`/allemployee`} style={{color:"white"}} >Employee Details</a></button></td>
                 <td><button className="btn btn-primary customhome"><a className="nounderline" href={`/add`}  style={{color:"white"}}>Register Employee</a></button></td>
                 <td><button className="btn btn-primary customhome"><a className="nounderline" href={`/getall`}  style={{color:"white"}}>Salary Details</a></button></td>
                 <td><button className="btn btn-primary customhome"><a className="nounderline" href={`/enter`}  style={{color:"white"}}>Add Salary</a></button></td>

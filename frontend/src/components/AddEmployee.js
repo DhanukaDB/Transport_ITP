@@ -22,16 +22,13 @@ export default function AddEmployee() {
 
         if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){
             alert("Invalid Email!");
-            
+            return
         }
         else if(!(full_name.trim().length > 5)){
             alert("Invalid Full Name!")
-            
+            return
         }
-        else if(!(empID.length<6)){
-            alert("Invalid Employee ID");
-            
-        }
+       
 
         e.preventDefault();//to prevent normal behavior of submit
         
@@ -53,7 +50,7 @@ export default function AddEmployee() {
        
         axios.post("http://localhost:5000/employee/add",newEmployee).then(()=>{
             alert("Employee Added");
-            window.location = `/`;
+            window.location = `/allemployee`;
             
         }).catch((err)=>{
             alert("err");

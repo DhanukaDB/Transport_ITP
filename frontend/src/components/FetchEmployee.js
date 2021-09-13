@@ -2,6 +2,7 @@ import React,{useState,useEffect} from "react";
 import axios from "axios";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { Table } from "react-bootstrap";
 
 export default function FetchEmployee() {
     
@@ -23,7 +24,7 @@ export default function FetchEmployee() {
 
     useEffect(()=>{
         
-            axios.get(`http://localhost:8070/employee/get/${id}`).then((res)=>{
+            axios.get(`http://localhost:5000/employee/get/${id}`).then((res)=>{
                 console.log(res.data.employee);
 
                 console.log(res.data.employee.full_name);
@@ -53,10 +54,10 @@ export default function FetchEmployee() {
         
         <div className="container"><br/><br/>
          <nav className="nav">
-            <Link to="/" className="nav-link">Back</Link>
+            <Link to="/allemployee" className="nav-link">Back</Link>
          </nav><br/>
             <h1>Employee ID : {id}</h1><br/>
-            <table className="table">
+            <Table striped bordered hover variant="light">
             <tr><th  style={{textAlign:"left"}} scope="col">Full Name  </th>  <td style={{textAlign:"left"}}>{full_name}</td></tr>
             <tr><th  style={{textAlign:"left"}} scope="col">DOB </th> <td style={{textAlign:"left"}}>{dob}</td></tr>
             <tr><th  style={{textAlign:"left"}} scope="col">Age </th> <td style={{textAlign:"left"}}>{age}</td></tr>
@@ -70,7 +71,7 @@ export default function FetchEmployee() {
             <tr><th  style={{textAlign:"left"}} scope="col">Registered Date </th> <td style={{textAlign:"left"}}>{regDate}</td></tr>
                                 
             
-            </table><br/><br/>
+            </Table><br/><br/>
             
         </div>
     )

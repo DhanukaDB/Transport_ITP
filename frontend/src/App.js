@@ -112,25 +112,24 @@ const App =()=> {
           
 
          {/* Sayuri */}
-         <Switch>
-            <Switch>
-              <Route path="/adminPanel" exact>
-                <AdminPanel/>
-              </Route>
-            </Switch>
+        
+         
             <Switch> 
               <Route path="/employeeManagementHome" exact>
                 <EmployeeManagementHome/>
               </Route>
             </Switch>
-            <Switch><Route path="/add" exact component={AddEmployee}/></Switch>
-            <Switch><Route path="/update/:id" exact component={UpdateEmployee}/></Switch>
-            <Switch><Route path="/delete/:id" exact component={DeleteEmployee}/></Switch>
-            <Switch><Route path="/enter" exact component={AddSalaryDetails}/></Switch>
-            <Switch><Route path="/get/:id" exact component={FetchEmployee}/></Switch>
-            <Switch><Route path="/" exact component={EmployeeList}/></Switch>
-            <Switch><Route path="/getall" exact component={SalaryDetailsList}/></Switch>
-         </Switch>
+            <div className="body"> 
+            <Switch><Route exact path="/add" component={AddEmployee}/></Switch>
+            <Switch><Route exact path="/update/:id" component={UpdateEmployee}/></Switch>
+            <Switch><Route exact path="/delete/:id" component={DeleteEmployee}/></Switch>
+            <Switch><Route exact path="/enter" component={AddSalaryDetails}/></Switch>
+            <Switch><Route exact path="/get/:id" component={FetchEmployee}/></Switch>
+            <Switch><Route exact path="/allemployee" component={EmployeeList}/></Switch>
+            <Switch><Route exact path="/getall" component={SalaryDetailsList}/></Switch>
+            </div>
+         
+
 
 
             <Footer/> 

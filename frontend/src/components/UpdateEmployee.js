@@ -77,7 +77,7 @@ export default function UpdateEmployee() {
 
         axios.put(`http://localhost:5000/employee/update/${id}`, updateEmployee).then(()=>{
             alert("Employee Updated");
-            window.location = `/`;
+            window.location = `/allemployee`;
             
         }).catch((err)=>{
             console.log(err);
@@ -89,7 +89,7 @@ export default function UpdateEmployee() {
     return(
         <div className="container"><br/>
         <nav className="nav">
-            <Link to="/" className="nav-link">Back</Link>
+            <Link to="/allemployee" className="nav-link">Back</Link>
          </nav><br/><br/>
             <h1>Edit Employee Details</h1><br/>
             <form className="form" onSubmit={onSubmit}>

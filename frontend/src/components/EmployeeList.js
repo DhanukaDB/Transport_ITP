@@ -11,7 +11,7 @@ export default function EmployeeList() {
     useEffect(()=>{
         function getEmployees(){
             //code segment related to from where data get and how
-            axios.get("http://localhost:5000/employee/").then((res)=>{
+            axios.get("http://localhost:5000/employee/allemployee").then((res)=>{
                 console.log(res.data);
                 setemployees(res.data);
             }).catch((err)=>{

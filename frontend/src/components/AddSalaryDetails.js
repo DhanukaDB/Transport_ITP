@@ -15,12 +15,6 @@ export default function AddSalaryDetails(){
     
     function sendSalData(e){
 
-        if(!(empID.length<6)){
-            alert("Invalid Employee ID");
-            return
-        }
-
-
         e.preventDefault();//to prevent normal behavior of submit
        
         const newSalary ={
