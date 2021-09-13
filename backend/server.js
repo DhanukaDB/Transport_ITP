@@ -60,6 +60,9 @@ const paymentRouter = require("./routes/payments.js");
 app.use("/payment",paymentRouter);
 
 
+//IT20192532
+const postRoutes = require("./routes/bookings");
+app.use(postRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running on port no :${PORT}`)})

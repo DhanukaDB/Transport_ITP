@@ -26,6 +26,15 @@ import Aboutus from './components/AboutUs';
 import Successpage from './components/Success';
 import UpdatePayment from './components/Updatepayment';
 
+//IT20192532
+import React, {Component} from 'react';
+import {BrowserRouter,Route} from 'react-router-dom';
+import Allbooking from './components/Allbooking';
+import AddBooking from './components/AddBooking';
+import EditBooking from './components/EditBooking';
+import BookingDetails from './components/BookingDetails';
+import ReservationManagement from './components/ReservationManagement';
+
 const App =()=> {
   return (
   
@@ -77,7 +86,19 @@ const App =()=> {
           <AllPassengers/>
        </Route>
       
+{/*charya*/}
+  <BrowserRouter>
+  <div className = "card auth-card">
+ 
+    <Route exact path="/"  component={ReservationManagement}/>
+    <Route exact path="/all"  component={Allbooking}/>
+    <Route exact path="/add" component={AddBooking}/>
+    <Route exact path="/edit/:id"  component={EditBooking}/>
+    <Route exact path="/post/:id" component={BookingDetails}/>
 
+  
+  </div>
+</BrowserRouter> 
        
 
 
@@ -99,6 +120,7 @@ const App =()=> {
               <Route exact path="/updatepayment" component={UpdatePayment} />
             </Switch>
           
+        
             <Footer/> 
 
           </main>

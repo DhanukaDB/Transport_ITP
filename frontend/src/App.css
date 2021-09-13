@@ -36,3 +36,46 @@
     transform: rotate(360deg);
   }
 }
+
+.reservationManagement{
+   
+  background: url('./assets/bus5.jpg') no-repeat center/cover;
+   height: 720px ;
+   }
+.overlay{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 400px;
+   color: black;
+  justify-content: center;
+   
+}
+.b1{
+  width: 300px;
+   border-radius: 10px;
+   border:2px solid blue;
+   letter-spacing: 2px;
+   padding: 8px;
+   background-color: blue;
+   color: white;
+   font-weight: 700;
+   margin: 50px 550px;
+   transition: background-color 0.4s;
+
+}
+.b1:hover{
+   cursor: pointer;
+   background-color: transparent;
+}
+
+.reserve{
+   background: url('./assets/bus2.jpg') no-repeat center/cover;
+   height: 1000px ;
+}
+.book{
+   background: url('./assets/bus4.jpg') no-repeat center/cover;
+   height: 250px ;
+   
+   
+}
