@@ -37,6 +37,8 @@ export default function AddFeedback(){  //adding function
     return(
  
      <div>
+        <h1 class="font-italic">Complaints and Feedback</h1>
+       <h3 class="font-italic " >Show us some love....</h3>
         <form className="container"  onSubmit={sendData} > 
 
 <div className="form-group">
@@ -88,9 +90,8 @@ export default function AddFeedback(){  //adding function
      }}></textarea>
   </div>
 
-  
-  <button type="submit" class="btn btn-primary">Submit</button> <a href="/readf" class="btn btn-primary">View</a> <a href="/${id}" class="btn btn-primary">View yours</a>
-       
+  <button type="submit" class="btn btn-dark">Submit</button> <a href="/readf" class="btn btn-dark">Submit and View</a>
+
 </form>
 
  
