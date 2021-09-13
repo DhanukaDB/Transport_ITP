@@ -24,7 +24,7 @@ export default function UpdateEmployee() {
 
     useEffect(()=>{
        
-            axios.get(`http://localhost:5000/employee/get/${id}`).then((res)=>{
+            axios.get(`http://localhost:5000/employee/getemp/${id}`).then((res)=>{
                 console.log(res.data);
                 console.log(res.data.employee.full_name);
                 setEmpID(res.data.employee.empID);
@@ -75,7 +75,7 @@ export default function UpdateEmployee() {
             add
         }
 
-        axios.put(`http://localhost:5000/employee/update/${id}`, updateEmployee).then(()=>{
+        axios.put(`http://localhost:5000/employee/updateemp/${id}`, updateEmployee).then(()=>{
             alert("Employee Updated");
             window.location = `/allemployee`;
             

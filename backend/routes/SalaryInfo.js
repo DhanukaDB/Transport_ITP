@@ -2,7 +2,7 @@ const router = require("express").Router();
 let Salary = require("../models/Salaryinfo");
 
 //add salary details route
-router.route("/enter").post((req,res)=>{
+router.route("/entersal").post((req,res)=>{
     const empID = req.body.empID;
     const basicSalary = req.body.basicSalary;
     const OT = req.body.OT; 
@@ -29,7 +29,7 @@ router.route("/enter").post((req,res)=>{
 })
 
 //get all employees salary details to frontend route
-router.route("/getall").get((req,res)=>{
+router.route("/getallsal").get((req,res)=>{
     Salary.find().then((salary)=>{
         res.json(salary)
     }).catch((err)=>{
@@ -39,7 +39,7 @@ router.route("/getall").get((req,res)=>{
 })
 
 //update route
-router.route("/edit/:empID").put(async(req,res)=>{
+router.route("/editsal/:empID").put(async(req,res)=>{
     let userId = req.params.empID;//id comes as a url parameter
     //destructure-frontend variables pass to backend as a object
     const {
@@ -70,7 +70,7 @@ router.route("/edit/:empID").put(async(req,res)=>{
 })
 
 //delete route
-router.route("/remove/:empID").delete(async(req,res)=>{
+router.route("/removesal/:empID").delete(async(req,res)=>{
     let userId = req.params.empID;
     await Salary.findOneAndDelete({empID:userId}).then(()=>{
         res.status(200).send({status:"Salary details deleted"});
@@ -81,7 +81,7 @@ router.route("/remove/:empID").delete(async(req,res)=>{
 })
 
 //get data of one salary 
-router.route("/fetch/:empID").get(async(req,res)=>{
+router.route("/fetchsal/:empID").get(async(req,res)=>{
     let userId = req.params.empID;
     const user = await Salary.findOne({empID:userId}).then((salary)=>{
         res.status(200).send({status:"Salary Record fetched", salary});

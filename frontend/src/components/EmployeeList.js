@@ -50,7 +50,7 @@ export default function EmployeeList() {
                 <tbody >
                   <tr>
                     <th valign="middle" scope="row">
-                      <a href={`/get/${val.empID}`} style={{textDecoration:'none'}}>
+                      <a href={`/getemp/${val.empID}`} style={{textDecoration:'none'}}>
                       {val.empID}
                       </a>
                       </th>
@@ -60,8 +60,8 @@ export default function EmployeeList() {
                     <td valign="middle">{val.phoneNo}</td>
                     <td valign="middle">{val.email}</td>
 
-                    <td><button className="btn btnEmp btn-primary custom"><a className="nounderline" href={`/update/${val.empID}`} style={{color:'white'}} ><i className="fas fa-edit"></i>&nbsp;Edit</a></button><br/><br/>
-                    <button className="btn btnEmp btn-danger custom"><a className="nounderline" href={`/delete/${val.empID}`} style={{color:'white'}} ><i className="fas fa-trash-alt"></i>&nbsp;Delete</a></button></td>
+                    <td><button className="btn btnEmp btn-primary custom"><a className="nounderline" href={`/updateemp/${val.empID}`} style={{color:'white'}} ><i className="fas fa-edit"></i>&nbsp;Edit</a></button><br/><br/>
+                    <button className="btn btnEmp btn-danger custom"><a className="nounderline" href={`/deleteemp/${val.empID}`} style={{color:'white'}} ><i className="fas fa-trash-alt"></i>&nbsp;Delete</a></button></td>
                   </tr>
                   
                 </tbody>

@@ -124,13 +124,13 @@ const App =()=> {
               </Route>
             </Switch>
             <div className="bodyEmp"> 
-            <Switch><Route exact path="/add" component={AddEmployee}/></Switch>
-            <Switch><Route exact path="/update/:id" component={UpdateEmployee}/></Switch>
-            <Switch><Route exact path="/delete/:id" component={DeleteEmployee}/></Switch>
-            <Switch><Route exact path="/enter" component={AddSalaryDetails}/></Switch>
-            <Switch><Route exact path="/get/:id" component={FetchEmployee}/></Switch>
+            <Switch><Route exact path="/addemp" component={AddEmployee}/></Switch>
+            <Switch><Route exact path="/updateemp/:id" component={UpdateEmployee}/></Switch>
+            <Switch><Route exact path="/deleteemp/:id" component={DeleteEmployee}/></Switch>
+            <Switch><Route exact path="/entersal" component={AddSalaryDetails}/></Switch>
+            <Switch><Route exact path="/getemp/:id" component={FetchEmployee}/></Switch>
             <Switch><Route exact path="/allemployee" component={EmployeeList}/></Switch>
-            <Switch><Route exact path="/getall" component={SalaryDetailsList}/></Switch>
+            <Switch><Route exact path="/getallsal" component={SalaryDetailsList}/></Switch>
             </div>
          
 

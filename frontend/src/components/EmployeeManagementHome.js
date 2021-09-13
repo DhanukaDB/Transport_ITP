@@ -13,9 +13,9 @@ export default function EmployeeManagementHome(){
                 <table className="container">
                 <tr>
                 <td><button className="btn btnEmp btn-primary customhomeEmp"><a className="nounderline" href={`/allemployee`} style={{color:"white"}}><i class="fas fa-address-card"></i>&nbsp;Employee Details</a></button></td>
-                <td><button className="btn btnEmp btn-primary customhomeEmp"><a className="nounderline" href={`/add`}  style={{color:"white"}}><i class="fas fa-user-plus"></i>&nbsp;Register Employee</a></button></td>
-                <td><button className="btn btnEmp btn-primary customhomeEmp"><a className="nounderline" href={`/getall`}  style={{color:"white"}}><i class="fas fa-info-circle"></i>&nbsp;Salary Details</a></button></td>
-                <td><button className="btn btnEmp btn-primary customhomeEmp"><a className="nounderline" href={`/enter`}  style={{color:"white"}}><i class="fas fa-plus"></i>&nbsp;Add Salary</a></button></td>
+                <td><button className="btn btnEmp btn-primary customhomeEmp"><a className="nounderline" href={`/addemp`}  style={{color:"white"}}><i class="fas fa-user-plus"></i>&nbsp;Register Employee</a></button></td>
+                <td><button className="btn btnEmp btn-primary customhomeEmp"><a className="nounderline" href={`/getallsal`}  style={{color:"white"}}><i class="fas fa-info-circle"></i>&nbsp;Salary Details</a></button></td>
+                <td><button className="btn btnEmp btn-primary customhomeEmp"><a className="nounderline" href={`/entersal`}  style={{color:"white"}}><i class="fas fa-plus"></i>&nbsp;Add Salary</a></button></td>
                 </tr>
                 </table>
             </div>
