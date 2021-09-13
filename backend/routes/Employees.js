@@ -2,7 +2,7 @@ const router = require("express").Router();
 let Employee = require("../models/Employee");
 
 //add employee route
-router.route("/add").post((req,res)=>{
+router.route("/addemp").post((req,res)=>{
     const empID = req.body.empID;
     const full_name = req.body.full_name;
     const dob = req.body.dob;
@@ -49,7 +49,7 @@ router.route("/allemployee").get((req,res)=>{
 })
 
 //update route
-router.route("/update/:empID").put(async(req,res)=>{
+router.route("/updateemp/:empID").put(async(req,res)=>{
     let userId = req.params.empID;//id comes as a url parameter
     //destructure-frontend variables pass to backend as a object
     const {full_name,dob,age,gender,nic,nationality,marital_status,phoneNo,email,add} = req.body;
@@ -79,7 +79,7 @@ router.route("/update/:empID").put(async(req,res)=>{
 })
 
 //delete route
-router.route("/delete/:empID").delete(async(req,res)=>{
+router.route("/deleteemp/:empID").delete(async(req,res)=>{
     let userId = req.params.empID;
     await Employee.findOneAndDelete({empID:userId}).then(()=>{
         res.status(200).send({status:"User deleted"});
@@ -90,7 +90,7 @@ router.route("/delete/:empID").delete(async(req,res)=>{
 })
 
 //get data of one employee
-router.route("/get/:empID").get(async(req,res)=>{
+router.route("/getemp/:empID").get(async(req,res)=>{
     let userId = req.params.empID;
     const user = await Employee.findOne({empID:userId}).then((employee)=>{
         res.status(200).send({status:"User fetched", employee});

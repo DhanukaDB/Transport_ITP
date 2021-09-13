@@ -48,7 +48,7 @@ export default function AddEmployee() {
             regDate
         }
        
-        axios.post("http://localhost:5000/employee/add",newEmployee).then(()=>{
+        axios.post("http://localhost:5000/employee/addemp",newEmployee).then(()=>{
             alert("Employee Added");
             window.location = `/allemployee`;
             

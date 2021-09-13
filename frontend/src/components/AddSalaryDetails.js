@@ -26,9 +26,9 @@ export default function AddSalaryDetails(){
             salaryPeriod
         }
       
-        axios.post("http://localhost:5000/salary/enter",newSalary).then(()=>{
+        axios.post("http://localhost:5000/salary/entersal",newSalary).then(()=>{
             alert("New Salary Record Added");
-            window.location = `/getall`;
+            window.location = `/getallsal`;
             
         }).catch((err)=>{
             alert("err");

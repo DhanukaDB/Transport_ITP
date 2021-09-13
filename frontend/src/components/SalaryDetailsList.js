@@ -12,7 +12,7 @@ export default function SalaryDetailsList() {
     useEffect(()=>{
         function getSalaryList(){
             //code segment related to from where data get and how
-            axios.get("http://localhost:5000/salary/getall").then((res)=>{
+            axios.get("http://localhost:5000/salary/getallsal").then((res)=>{
                 console.log(res.data);
                 setsalary(res.data);
             }).catch((err)=>{
@@ -25,9 +25,9 @@ export default function SalaryDetailsList() {
 
     function onDelete(id)  {
       
-      axios.delete(`http://localhost:5000/salary/remove/${id}`).then(()=>{
+      axios.delete(`http://localhost:5000/salary/removesal/${id}`).then(()=>{
           alert("Salary Record Deleted");
-          window.location = `/getall`;
+          window.location = `/getallsal`;
           
       }).catch((err)=>{
           console.log(err);

@@ -24,7 +24,7 @@ export default function FetchEmployee() {
 
     useEffect(()=>{
         
-            axios.get(`http://localhost:5000/employee/get/${id}`).then((res)=>{
+            axios.get(`http://localhost:5000/employee/getemp/${id}`).then((res)=>{
                 console.log(res.data.employee);
 
                 console.log(res.data.employee.full_name);
