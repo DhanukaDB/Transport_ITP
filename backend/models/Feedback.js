@@ -1,49 +1,39 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose'); //export
+const Schema = mongoose.Schema; //store attributes in schema
 
-const feedbackSchema = new Schema({
+const feedbackSchema = new Schema({ //create new object
 
-    feedbackID :{
-        type: String,
-        required :true
-    },
-
+     
+  //properties
     username :{
-        type: String,
-        required :true
+        type: String, //data type
+        required :true //validation
     },
 
     email :{
-        type: String,
-        required :true
+        type: String, //data type
+        required :true //validation
     },
 
     type :{
-        type: String,
-        required :true
+        type: String, //data type
+        required :true //validation
+         
     },
 
     contactNumber :{
-        type: String,
-        required :true
+        type: String, //data type
+        required :true //validation
     },
 
     message :{
-        type: String,
-        required :true
+        type: String, //data type
+        required :true //validation
     },
 
-    passengerFeedback :{
-        type: Boolean,
     
-    },
-
-    driverFeedback :{
-        type: Boolean,
-        
-    }
 })
 
-const Feedback = mongoose.model("Feedback",feedbackSchema);
+const Feedback = mongoose.model("Feedback",feedbackSchema); //feedback schema data goes to feedback table
 
 module.exports = Feedback;
