@@ -30,7 +30,7 @@ export default function EmployeeList() {
             <Link to="/employeeManagementHome" className="nav-link">Home</Link>
           </nav><br/>
           <form className="d-flex">
-                <input className="form-control me-2" type="search" placeholder="Search" />
+                <input className="form-control form-controlEmp me-2" type="search" placeholder="Search" />
                 
           </form><br/><br/>
             <h1 style={{textAlign:'center'}}>Employee List</h1><hr/><br/>
@@ -60,8 +60,8 @@ export default function EmployeeList() {
                     <td valign="middle">{val.phoneNo}</td>
                     <td valign="middle">{val.email}</td>
 
-                    <td><button className="btn btn-primary custom"><a className="nounderline" href={`/update/${val.empID}`} style={{color:'white'}} ><i className="fas fa-edit"></i>&nbsp;Edit</a></button><br/><br/>
-                    <button className="btn btn-danger custom"><a className="nounderline" href={`/delete/${val.empID}`} style={{color:'white'}} ><i className="fas fa-trash-alt"></i>&nbsp;Delete</a></button></td>
+                    <td><button className="btn btnEmp btn-primary custom"><a className="nounderline" href={`/update/${val.empID}`} style={{color:'white'}} ><i className="fas fa-edit"></i>&nbsp;Edit</a></button><br/><br/>
+                    <button className="btn btnEmp btn-danger custom"><a className="nounderline" href={`/delete/${val.empID}`} style={{color:'white'}} ><i className="fas fa-trash-alt"></i>&nbsp;Delete</a></button></td>
                   </tr>
                   
                 </tbody>

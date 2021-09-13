@@ -92,73 +92,73 @@ export default function UpdateEmployee() {
             <Link to="/allemployee" className="nav-link">Back</Link>
          </nav><br/><br/>
             <h1>Edit Employee Details</h1><br/>
-            <form className="form" onSubmit={onSubmit}>
+            <form className="form formEmp" onSubmit={onSubmit}>
                 <div className="mb-3">
                     <label for="empID" className="form-label">Employee ID</label>
-                    <input type="text" className="form-control" id="empID" value={id} disabled="disabled"/>
+                    <input type="text" className="form-control form-controlEmp" id="empID" value={id} disabled="disabled"/>
                 </div>
                 <div className="mb-3">
                     <label for="full_name" className="form-label">Full Name</label>
-                    <input type="text" className="form-control" id="full_name" value={full_name} onChange={(e)=>{
+                    <input type="text" className="form-control form-controlEmp" id="full_name" value={full_name} onChange={(e)=>{
                         setfull_name(e.target.value);//updating state using value taken from the form 
                     }} required/>
                 </div>
                 <div className="mb-3">
                     <label for="dob" className="form-label">Date of Birth</label>
-                    <input type="text" className="form-control" id="dob" value={dob} onChange={(e)=>{
+                    <input type="text" className="form-control form-controlEmp" id="dob" value={dob} onChange={(e)=>{
                         setdob(e.target.value);//updating state using value taken from the form 
                     }} disabled="disabled"/>
                 </div>
                 <div className="mb-3">
                     <label for="age" className="form-label">Age</label>
-                    <input type="number" class="form-control" id="age" min="18" max="70" value={age} onChange={(e)=>{
+                    <input type="number" class="form-control form-controlEmp" id="age" min="18" max="70" value={age} onChange={(e)=>{
                         setage(e.target.value);//updating state using value taken from the form 
                     }} disabled="disabled"/>
                 </div>
                 <div className="mb-3">
                     <label for="gender" className="form-label">Gender</label>
-                    <input type="text" className="form-control" id="gender" value={gender} onChange={(e)=>{
+                    <input type="text" className="form-control form-controlEmp" id="gender" value={gender} onChange={(e)=>{
                         setgender(e.target.value);//updating state using value taken from the form 
                     }} disabled="disabled"/>
                 </div>
                 <div className="mb-3">
                     <label for="nic" className="form-label">NIC</label>
-                    <input type="text" className="form-control" id="nic" maxlength="10" value={nic} onChange={(e)=>{
+                    <input type="text" className="form-control form-controlEmp" id="nic" maxlength="10" value={nic} onChange={(e)=>{
                         setnic(e.target.value);//updating state using value taken from the form 
                     }} disabled="disabled"/>
                 </div>
                 <div className="mb-3">
                     <label for="nationality" className="form-label">Nationality</label>
-                    <input type="text" className="form-control" id="nationality" value={nationality} onChange={(e)=>{
+                    <input type="text" className="form-control form-controlEmp" id="nationality" value={nationality} onChange={(e)=>{
                         setnationality(e.target.value);//updating state using value taken from the form 
                     }} required/>
                 </div>
                 <div className="mb-3">
                     <label for="marital_status" className="form-label">Marital Status</label>
-                    <input type="text" className="form-control" id="marital_status" value={marital_status} onChange={(e)=>{
+                    <input type="text" className="form-control form-controlEmp" id="marital_status" value={marital_status} onChange={(e)=>{
                         setmarital_status(e.target.value);//updating state using value taken from the form 
                     }} required/>
                 </div>
                 <div className="mb-3">
                     <label for="phoneNo" className="form-label">Contact Number</label>
-                    <input type="text" className="form-control" id="phoneNo" maxlength="10" value={phoneNo} onChange={(e)=>{
+                    <input type="text" className="form-control form-controlEmp" id="phoneNo" maxlength="10" value={phoneNo} onChange={(e)=>{
                         setphoneNo(e.target.value);//updating state using value taken from the form 
                     }} required/>
                 </div>
                 <div className="mb-3">
                     <label for="email" className="form-label">Email Address</label>
-                    <input type="email" className="form-control" id="email" value={email} onChange={(e)=>{
+                    <input type="email" className="form-control form-controlEmp" id="email" value={email} onChange={(e)=>{
                         setemail(e.target.value);//updating state using value taken from the form 
                     }}required/>
                 </div>
                 <div className="mb-3">
                     <label for="add" className="form-label">Postal Address</label>
-                    <input type="text" className="form-control" id="add" value={add} onChange={(e)=>{
+                    <input type="text" className="form-control form-controlEmp" id="add" value={add} onChange={(e)=>{
                         setadd(e.target.value);//updating state using value taken from the form 
                     }}required/>
                 </div>
               
-                <button type="submit" className="btn btn-warning"><i className="fas fa-edit"></i>&nbsp;Edit</button>
+                <button type="submit" className="btn btnEmp btn-warning"><i className="fas fa-edit"></i>&nbsp;Edit</button>
             </form><br/><br/>
         </div>
     )

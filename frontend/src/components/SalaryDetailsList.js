@@ -43,7 +43,7 @@ export default function SalaryDetailsList() {
         </nav><br/><br/> 
             <div className="container">
           <form className="d-flex">
-                <input className="form-control me-2" type="search" placeholder="Search" />
+                <input className="form-control form-controlEmp me-2" type="search" placeholder="Search" />
                 
           </form><br/><br/>
             <h1 style={{textAlign:'center'}}>Salary Details</h1><hr/>
@@ -70,7 +70,7 @@ export default function SalaryDetailsList() {
                     <td valign="middle">Rs.{val.payrollDeduct}</td>
                     <td valign="middle">{val.salaryPeriod}</td>
 
-                    <td><button className="btn btn-danger custom" onClick={()=>{onDelete(val.empID)}}><i className="fas fa-trash-alt"></i>&nbsp;Delete</button></td>
+                    <td><button className="btn btnEmp btn-danger customEmp" onClick={()=>{onDelete(val.empID)}}><i className="fas fa-trash-alt"></i>&nbsp;Delete</button></td>
 
                   </tr>
                   
