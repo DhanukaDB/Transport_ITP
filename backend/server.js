@@ -59,6 +59,11 @@ app.use("/passenger", passegerRouter);
 const paymentRouter = require("./routes/payments.js");
 app.use("/payment",paymentRouter);
 
+//IT20192532-Reservation
+//import routes
+const postRoutes = require("./routes/bookings");
+//route middleware
+app.use(postRoutes);
 
 
 app.listen(PORT, () => {

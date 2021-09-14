@@ -39,6 +39,14 @@ import SalaryDetailsList from './components/SalaryDetailsList';
 import EmployeeManagementHome from './components/EmployeeManagementHome';
 import AdminPanel from './components/AdminPanel';
 
+//IT20192532
+import Allbooking from './components/Allbooking';
+import AddBooking from './components/AddBooking';
+import EditBooking from './components/EditBooking';
+import BookingDetails from './components/BookingDetails';
+import ReservationManagement from './components/ReservationManagement';
+
+
 const App =()=> {
   return (
   
@@ -148,7 +156,20 @@ const App =()=> {
             </div>
          
 
+{/*charya*/}
 
+<div className = "card auth-card">
+ <Switch>
+    <Route exact path="/reservationHome"  exact>
+      <ReservationManagement/>
+      </Route>
+      </Switch>
+
+    <Switch><Route exact path="/all"  component={Allbooking}/></Switch>
+    <Switch><Route exact path="/addRes" component={AddBooking}/></Switch>
+    <Switch><Route exact path="/editRes/:id"  component={EditBooking}/></Switch>
+    <Switch><Route exact path="/postRes/:id" component={BookingDetails}/></Switch>
+  </div>
 
             <Footer/> 
 
