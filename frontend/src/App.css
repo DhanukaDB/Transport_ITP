@@ -121,5 +121,74 @@ body {
    background: url('./assets/bus4.jpg') no-repeat center/cover;
    height: 250px ;
    
-   
+ 
+  
 }
+
+
+/* IT20207236 */
+
+.time {
+  font-family: "Source Code Pro";
+   background: transparent;
+   position: relative;
+   bottom: 250px;
+   left: 150px;
+   cursor: pointer;
+   width: 250px;
+   height: 120px;
+   outline: none;
+   border: 1px solid #ca6695;
+   font-size: 30px;
+   color:rgb(33, 150, 150);
+ }
+
+ .time:hover {
+  transition: 1s ease-in-out;
+  transform: rotate(-15deg);
+  stroke-dashoffset: -480;
+  color:rgb(150, 95, 33);
+  
+
+}
+
+
+.booknow {
+  font-family: "Source Code Pro";
+   background: transparent;
+   position: relative;
+   bottom: 250px;
+   left: 350px;
+   cursor: pointer;
+   width: 250px;
+   height: 120px;
+   outline: none;
+   border: 1px solid #ca6695;
+   font-size: 30px;
+   color:rgb(33, 150, 150);
+ }
+
+ .booknow:hover {
+  transition: 1s ease-in-out;
+  transform: rotate(15deg);
+  stroke-dashoffset: -480;
+  color:rgb(150, 95, 33);
+  
+
+}
+
+
+.contactnow {
+  font-family: "Source Code Pro";
+   background: transparent;
+   position: relative;
+   bottom: 250px;
+   left: 550px;
+   cursor: pointer;
+   width: 250px;
+   height: 120px;
+   outline: none;
+   border: 1px solid #ca6695;
+   font-size: 30px;
+   color:rgb(33, 150, 150);
+ }
