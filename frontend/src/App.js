@@ -51,6 +51,13 @@ import ViewTimetable from './components/Viewtimetable';
 import AddTimetable from './components/Timetable';
 
 
+//IT20201296
+import CreateDriver from "./components/CreateDriver";
+import DriverDetails from "./components/DriverDetails";
+import EditDriver from "./components/EditDriver";
+import Homedriver from "./components/Homedriver";
+
+
 const App =()=> {
   return (
   
@@ -180,6 +187,20 @@ const App =()=> {
   <Route exact path="/addtimetable" component={AddTimetable} />
   <Route exact path="/ViewTimetable" component={ViewTimetable} />
 </Switch>
+
+
+
+    {/*Dishma*/}
+          
+    <div className="centainer">
+            <Switch><Route path="/driverhome" exact component={Homedriver}></Route></Switch>
+            <Switch><Route path="/adddriver" component ={CreateDriver}></Route></Switch>
+            <Switch><Route path="/editdriver/:id" component={EditDriver}></Route></Switch>
+            <Switch><Route path="/driverdetails/:id" component={DriverDetails}></Route></Switch>
+        
+         </div>
+
+
             <Footer/> 
 
           </main>

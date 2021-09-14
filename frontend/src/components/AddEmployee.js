@@ -19,13 +19,21 @@ export default function AddEmployee() {
     
 
     function sendData(e){
-
+        //form input validations
         if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){
             alert("Invalid Email!");
             return
         }
         else if(!(full_name.trim().length > 5)){
-            alert("Invalid Full Name!");
+            alert("Invalid Full Name!")
+            return
+        }
+        else if(nic.trim().length != 10){
+            alert("Invalid NIC number!");
+            return
+        }
+        else if(phoneNo.trim().length != 10){
+            alert("Invalid Phone Number!");
             return
         }
        

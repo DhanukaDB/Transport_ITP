@@ -69,6 +69,10 @@ app.use(postRoutes);
 const timeRouter = require("./routes/times.js");
 app.use("/time",timeRouter);
 
+//IT20201296 Driver management
+const driverRoutes = require('./routes/driver.js');
+app.use(driverRoutes);
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port no :${PORT}`)})
