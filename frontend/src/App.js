@@ -39,18 +39,6 @@ import SalaryDetailsList from './components/SalaryDetailsList';
 import EmployeeManagementHome from './components/EmployeeManagementHome';
 import AdminPanel from './components/AdminPanel';
 
-//IT20198954
-import './App.css';
-import AddFeedback from "./components/PAddFeedback";
-import EAddFeedback from "./components/EAddFeedback";
-import AllFeedbacks from './components/PAllFeedbacks';
-import EAllFeedbacks from './components/EAllFeedback';
-import AdminAllFeedbacks from './components/AdminViewFeedbacks';
-import AdminAllEmpFeedbacks from './components/AdminViewDriverFeedbacks';
-import Header from './components/Header';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import feedbackHandler from './components/FeedbackAdminHome';
-
 const App =()=> {
   return (
   
@@ -159,18 +147,7 @@ const App =()=> {
             <Switch><Route exact path="/getallsal" component={SalaryDetailsList}/></Switch>
             </div>
          
-         {/* thisara  */}
-           
-        <switch>
-          <Route exact path="/feedbackHandler" exact />
-           </switch>     
-            <switch>  <Route path="/addf" exact component={AddFeedback} />  </switch>
-            <switch>  <Route path="/readf" exact component={AllFeedbacks} /> </switch>
-            <switch>   <Route path="/addfe" exact component={EAddFeedback} /></switch>
-            <switch>  <Route path="/readfe" exact component={EAllFeedbacks} /></switch>
-            <switch>  <Route path="/readfadmin" exact component={AdminAllFeedbacks} /></switch>
-            <switch>  <Route path="/readfeadmin" exact component={AdminAllEmpFeedbacks} /></switch>
-           
+
 
 
             <Footer/> 

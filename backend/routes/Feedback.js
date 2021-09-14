@@ -1,36 +1,39 @@
 const router= require("express").Router();
-const { disconnect } = require("mongoose");
 let Feedback = require("../models/Feedback");
 
-//add feedback
-router.route("/addf").post((req,res)=> {
+router.route("/add").post((req,res)=> {
 
+
+    const feedbackID=req.body.feedbackID;
     const username = req.body.username;
     const email=req.body.email;
     const type=req.body.type;
     const contactNumber=req.body.contactNumber;
-    const message=req.body.message 
+    const message=req.body.message;
+    const passengerFeedback=req.body.passengerFeedback;
+    const driverFeedback=req.body.riverFeedback
 
-    const newFeedback= new Feedback({ //new feedback object
-    
+    const newFeedback= new Feedback({
+        feedbackID,
         username,
         email,
         type,
         contactNumber,
-        message 
+        message,
+        passengerFeedback,
+        driverFeedback
     })
 
     newFeedback.save().then(()=>{
         //to be executed if successful
         res.json("Feedback Added")
-    }).catch((err)=>{ //execute if not successful
+    }).catch((err)=>{
               console.log(err);
     })
 
 })
 
- //view all the data from table by passenger
-router.route("/readf").get((req,res)=>{              
+router.route("/").get((req,res)=>{               //view
       Feedback.find().then((Feedback)=>{
             res.json(Feedback)
       }) .catch((err)=>{
@@ -39,37 +42,10 @@ router.route("/readf").get((req,res)=>{
    
  })
 
- //view all the data from table by admin
-router.route("/readfadmin").get((req,res)=>{              
-    Feedback.find().then((Feedback)=>{
-          res.json(Feedback)
-    }) .catch((err)=>{
-         console.log(err)
-    })
- 
-})
-
-  
- //view a specific feedback by id
- router.route("/getf/:id").get(async(req,res)=> {
-    
-
-    let userId= req.params.id;
-    const user= await Feedback.findById(userId)
-    .then((feedback) =>{
-        res.status(200).send({ status : "user fetched",feedback})
-
-    }).catch(()=> {
-        console.log(err.message);
-        res.status(500).send({status: "Error with fetch user"});
-    })
- })
-  
-
-//update a feedback
-router.route("/updatef/:id").put(async(req,res)=> {
-       let userId= req.params.id; //passing id through url as a parameter
-       const { username,email,type,contactNumber,message } =req.body; //destructure frontend variables passing to backend through a object
+//update
+router.route("/update/:feedbackID").put(async(req,res)=> {
+       let userId= req.params.feedbackID;
+       const { username,email,type,contactNumber,message,passengerFeedback,driverFeedback} =req.body; //destructure
 
        const updateFeedback= {       
         username,
@@ -77,10 +53,11 @@ router.route("/updatef/:id").put(async(req,res)=> {
         type,
         contactNumber,
         message,
-         
+        passengerFeedback,
+        driverFeedback
        }
 
-       const update = await Feedback.findByIdAndUpdate(userId, updateFeedback).then(() =>{
+       const update = await Feedback.findOneAndUpdate(userId, updateFeedback).then(() =>{
         res.status(200).send({status: "User updated"})
        }).catch((err)=>{
            console.log(err);
@@ -89,11 +66,10 @@ router.route("/updatef/:id").put(async(req,res)=> {
         
 })
 
-//delete feedback
-router.route("/deletef/:id").delete(async(req,res) =>{
-       let userId=req.params.id;
+router.route("/delete/:feedbackID").delete(async(req,res) =>{
+       let userId=req.params.feedbackID;
 
-       await Feedback.findByIdAndDelete(userId).then(() =>{
+       await Feedback.findOneAndDelete(userId).then(() =>{
         res.status(200).send({status: "User deleted"})
     }).catch((err)=>{
         console.log(err);
@@ -101,5 +77,6 @@ router.route("/deletef/:id").delete(async(req,res) =>{
     })
        
 })
+ 
 
 module.exports = router;
