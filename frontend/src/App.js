@@ -39,6 +39,13 @@ import SalaryDetailsList from './components/SalaryDetailsList';
 import EmployeeManagementHome from './components/EmployeeManagementHome';
 import AdminPanel from './components/AdminPanel';
 
+//IT20201296
+
+import CreateDriver from "./components/CreateDriver";
+import DriverDetails from "./components/DriverDetails";
+import EditDriver from "./components/EditDriver";
+import Homedriver from "./components/Homedriver";
+
 const App =()=> {
   return (
   
@@ -147,7 +154,15 @@ const App =()=> {
             <Switch><Route exact path="/getallsal" component={SalaryDetailsList}/></Switch>
             </div>
          
-
+          {/*Dishma*/}
+          
+          <div className="centainer">
+            <Switch><Route path="/driverhome" exact component={Homedriver}></Route></Switch>
+            <Switch><Route path="/adddriver" component ={CreateDriver}></Route></Switch>
+            <Switch><Route path="/editdriver/:id" component={EditDriver}></Route></Switch>
+            <Switch><Route path="/driverdetails/:id" component={DriverDetails}></Route></Switch>
+        
+         </div>
 
 
             <Footer/> 

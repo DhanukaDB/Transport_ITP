@@ -59,6 +59,10 @@ app.use("/passenger", passegerRouter);
 const paymentRouter = require("./routes/payments.js");
 app.use("/payment",paymentRouter);
 
+//IT20201296 Driver management
+const driverRoutes = require('./routes/driver.js');
+app.use(driverRoutes);
+
 
 
 app.listen(PORT, () => {

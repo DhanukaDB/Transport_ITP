@@ -55,7 +55,11 @@ export default function UpdateEmployee() {
             return
         }
         else if(!(full_name.trim().length > 5)){
-            alert("Invalid Full Name!")
+            alert("Invalid Full Name!");
+            return
+        }
+        else if(phoneNo.trim().length != 10){
+            alert("Invalid Phone Number!");
             return
         }
        
