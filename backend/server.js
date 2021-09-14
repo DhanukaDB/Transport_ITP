@@ -65,6 +65,10 @@ const postRoutes = require("./routes/bookings");
 //route middleware
 app.use(postRoutes);
 
+//IT20201982-Time table
+const timeRouter = require("./routes/times.js");
+app.use("/time",timeRouter);
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port no :${PORT}`)})
