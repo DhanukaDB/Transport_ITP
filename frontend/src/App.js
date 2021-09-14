@@ -39,6 +39,10 @@ import SalaryDetailsList from './components/SalaryDetailsList';
 import EmployeeManagementHome from './components/EmployeeManagementHome';
 import AdminPanel from './components/AdminPanel';
 
+//IT20201982
+import ViewTimetable from './Components/Viewtimetable';
+import AddTimetable from './Components/Timetable';
+
 const App =()=> {
   return (
   
@@ -148,6 +152,11 @@ const App =()=> {
             </div>
          
 
+           {/* Uditha */}
+           <Switch>
+           <Route exact path="/addtimetable" component={AddTimetable} />
+           <Route exact path="/ViewTimetable" component={ViewTimetable} />
+           </Switch>
 
 
             <Footer/> 

@@ -60,6 +60,10 @@ const paymentRouter = require("./routes/payments.js");
 app.use("/payment",paymentRouter);
 
 
+//IT20201982- Timetable
+const timeRouter = require("./routes/times.js");
+app.use("/time",timeRouter);
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port no :${PORT}`)})
