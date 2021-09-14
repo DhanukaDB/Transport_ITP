@@ -46,6 +46,10 @@ import EditBooking from './components/EditBooking';
 import BookingDetails from './components/BookingDetails';
 import ReservationManagement from './components/ReservationManagement';
 
+//IT20201982
+import ViewTimetable from './components/Viewtimetable';
+import AddTimetable from './components/Timetable';
+
 
 const App =()=> {
   return (
@@ -171,6 +175,11 @@ const App =()=> {
     <Switch><Route exact path="/postRes/:id" component={BookingDetails}/></Switch>
   </div>
 
+  {/* Uditha */}
+  <Switch>
+  <Route exact path="/addtimetable" component={AddTimetable} />
+  <Route exact path="/ViewTimetable" component={ViewTimetable} />
+</Switch>
             <Footer/> 
 
           </main>
