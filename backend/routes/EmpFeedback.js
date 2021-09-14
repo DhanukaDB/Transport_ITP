@@ -1,9 +1,9 @@
 const router= require("express").Router();
 const { disconnect } = require("mongoose");
-let Feedback = require("../models/Feedback");
+let EmpFeedback = require("../models/EmpFeedback");
 
-//add feedback
-router.route("/addf").post((req,res)=> {
+//add feedback by driver
+router.route("/addfe").post((req,res)=> {
 
     const username = req.body.username;
     const email=req.body.email;
@@ -11,7 +11,7 @@ router.route("/addf").post((req,res)=> {
     const contactNumber=req.body.contactNumber;
     const message=req.body.message 
 
-    const newFeedback= new Feedback({ //new feedback object
+    const newEmpFeedback= new EmpFeedback({ //new feedback object
     
         username,
         email,
@@ -20,7 +20,7 @@ router.route("/addf").post((req,res)=> {
         message 
     })
 
-    newFeedback.save().then(()=>{
+    newEmpFeedback.save().then(()=>{
         //to be executed if successful
         res.json("Feedback Added")
     }).catch((err)=>{ //execute if not successful
@@ -29,10 +29,10 @@ router.route("/addf").post((req,res)=> {
 
 })
 
- //view all the data from table by passenger
-router.route("/readf").get((req,res)=>{              
-      Feedback.find().then((Feedback)=>{
-            res.json(Feedback)
+ //view all the data from table by drivers
+router.route("/readfe").get((req,res)=>{              
+      EmpFeedback.find().then((EmpFeedback)=>{
+            res.json(EmpFeedback)
       }) .catch((err)=>{
            console.log(err)
       })
@@ -40,9 +40,9 @@ router.route("/readf").get((req,res)=>{
  })
 
  //view all the data from table by admin
-router.route("/readfadmin").get((req,res)=>{              
-    Feedback.find().then((Feedback)=>{
-          res.json(Feedback)
+router.route("/readfeadmin").get((req,res)=>{              
+    EmpFeedback.find().then((EmpFeedback)=>{
+          res.json(EmpFeedback)
     }) .catch((err)=>{
          console.log(err)
     })
@@ -50,28 +50,12 @@ router.route("/readfadmin").get((req,res)=>{
 })
 
   
- //view a specific feedback by id
- router.route("/getf/:id").get(async(req,res)=> {
-    
-
-    let userId= req.params.id;
-    const user= await Feedback.findById(userId)
-    .then((feedback) =>{
-        res.status(200).send({ status : "user fetched",feedback})
-
-    }).catch(()=> {
-        console.log(err.message);
-        res.status(500).send({status: "Error with fetch user"});
-    })
- })
-  
-
 //update a feedback
-router.route("/updatef/:id").put(async(req,res)=> {
+router.route("/updatefe/:id").put(async(req,res)=> {
        let userId= req.params.id; //passing id through url as a parameter
        const { username,email,type,contactNumber,message } =req.body; //destructure frontend variables passing to backend through a object
 
-       const updateFeedback= {       
+       const updateEmpFeedback= {       
         username,
         email,
         type,
@@ -80,7 +64,7 @@ router.route("/updatef/:id").put(async(req,res)=> {
          
        }
 
-       const update = await Feedback.findByIdAndUpdate(userId, updateFeedback).then(() =>{
+       const update = await EmpFeedback.findByIdAndUpdate(userId, updateEmpFeedback).then(() =>{
         res.status(200).send({status: "User updated"})
        }).catch((err)=>{
            console.log(err);
@@ -90,10 +74,10 @@ router.route("/updatef/:id").put(async(req,res)=> {
 })
 
 //delete feedback
-router.route("/deletef/:id").delete(async(req,res) =>{
+router.route("/deletefe/:id").delete(async(req,res) =>{
        let userId=req.params.id;
 
-       await Feedback.findByIdAndDelete(userId).then(() =>{
+       await EmpFeedback.findByIdAndDelete(userId).then(() =>{
         res.status(200).send({status: "User deleted"})
     }).catch((err)=>{
         console.log(err);

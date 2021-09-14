@@ -1,7 +1,7 @@
 const mongoose = require('mongoose'); //export
 const Schema = mongoose.Schema; //store attributes in schema
 
-const feedbackSchema = new Schema({ //create new object
+const empFeedbackSchema = new Schema({ //create new object
 
      
   //properties
@@ -23,7 +23,7 @@ const feedbackSchema = new Schema({ //create new object
 
     contactNumber :{
         type: String, //data type
-        required :true//validation
+        required :true //validation
     },
 
     message :{
@@ -34,6 +34,6 @@ const feedbackSchema = new Schema({ //create new object
     
 })
 
-const Feedback = mongoose.model("Feedback",feedbackSchema); //feedback schema data goes to feedback table
+const EmpFeedback = mongoose.model("EmpFeedback",empFeedbackSchema); //feedback schema data goes to feedback table
 
-module.exports = Feedback;
+module.exports = EmpFeedback;

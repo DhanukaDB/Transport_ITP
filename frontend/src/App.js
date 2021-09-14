@@ -57,6 +57,16 @@ import DriverDetails from "./components/DriverDetails";
 import EditDriver from "./components/EditDriver";
 import Homedriver from "./components/Homedriver";
 
+//It20198954
+
+import AddFeedback from "./components/PAddFeedback";
+import EAddFeedback from "./components/EAddFeedback";
+import AllFeedbacks from './components/PAllFeedbacks';
+import EAllFeedbacks from './components/EAllFeedback';
+import AdminAllFeedbacks from './components/AdminViewFeedbacks';
+import AdminAllEmpFeedbacks from './components/AdminViewDriverFeedbacks';
+import FeedbackHandler from './components/FeedbackAdminHome';
+
 
 const App =()=> {
   return (
@@ -199,7 +209,25 @@ const App =()=> {
             <Switch><Route path="/driverdetails/:id" component={DriverDetails}></Route></Switch>
         
          </div>
+  
 
+            {/* Thisara */}
+            
+          
+          <switch>  <Route path="/addf" exact component={AddFeedback} />  </switch>
+          <switch>  <Route path="/readf" exact component={AllFeedbacks} /> </switch>
+           
+
+          <switch>   <Route path="/addfe" exact component={EAddFeedback} /></switch>
+          <switch>  <Route path="/readfe" exact component={EAllFeedbacks} /></switch>
+
+          <switch>  <Route path="/readfadmin" exact component={AdminAllFeedbacks} /></switch>
+          <switch>  <Route path="/readfeadmin" exact component={AdminAllEmpFeedbacks} /></switch>
+          <switch>
+              <Route exact path="/feedbackhandler" component={FeedbackHandler} />
+            </switch>
+           
+      
 
             <Footer/> 
 

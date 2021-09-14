@@ -34,11 +34,7 @@ connection.once("open",()=>{
 const vehicleRouter = require("./routes/vehicle.js");
 app.use("/vehicle",vehicleRouter); 
  
-
-const feedbackRouter =require("./routes/Feedback.js");
-
-app.use("/Feedback",feedbackRouter);
-
+ 
 const reviewRouter =require("./routes/Review.js");
 
 app.use("/Review",reviewRouter);
@@ -72,6 +68,14 @@ app.use("/time",timeRouter);
 //IT20201296 Driver management
 const driverRoutes = require('./routes/driver.js');
 app.use(driverRoutes);
+
+//IT20198954
+
+const feedbackRouter =require("./routes/Feedback.js"); //import  feedback routes
+app.use("/feedback",feedbackRouter); //create feedback routes
+  
+const empFeedbackRouter =require("./routes/EmpFeedback.js"); 
+app.use("/empFeedback",empFeedbackRouter);
 
 
 app.listen(PORT, () => {

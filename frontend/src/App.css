@@ -192,3 +192,20 @@ body {
    font-size: 30px;
    color:rgb(33, 150, 150);
  }
+
+ .topi{
+  color: #6c757d;
+  text-align:right;
+  font-style: italic;
+}
+
+.fbhome {
+  text-align: center;
+  background-image: url(./assets/fd.jpg);
+  background-size: cover;
+  font-family: monospace;
+  height: 800px;
+  width: cover;
+
+  
+}  
