@@ -115,7 +115,7 @@ onChange={this.handleSearchArea}>
     ))}
     
          </tbody></table>
-         <button className ="btn btn-success"><a href = "/addRes" style={{textDecoration:'none',color:'Black'}}>Reserve New Seat</a></button>&nbsp;&nbsp;
+         <button className ="btn btn-success"><a href = "/addRes" style={{textDecoration:'none',color:'Black'}}>Reserve New Seat</a></button>&nbsp;
          <Button variant="secondary"><a href = "/reservationHome" style={{textDecoration:'none',color:'Black'}}>Back to Home</a></Button>
 
  </div></div>
