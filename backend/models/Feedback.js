@@ -23,10 +23,7 @@ const feedbackSchema = new Schema({ //create new object
 
     contactNumber :{
         type: String, //data type
-
         required :true//validation
-        required :true //validation
-
     },
 
     message :{
