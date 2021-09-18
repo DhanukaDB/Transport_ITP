@@ -44,6 +44,7 @@ import AddBooking from './components/AddBooking';
 import EditBooking from './components/EditBooking';
 import BookingDetails from './components/BookingDetails';
 import ReservationManagement from './components/ReservationManagement';
+import Seat from './components/Seat';
 
 //IT20201982
 import ViewTimetable from './components/Viewtimetable';
@@ -181,7 +182,7 @@ const App =()=> {
       <ReservationManagement/>
       </Route>
       </Switch>
-
+    <Switch><Route exact path="/seatsb" component={Seat}/></Switch>
     <Switch><Route exact path="/all"  component={Allbooking}/></Switch>
     <Switch><Route exact path="/addRes" component={AddBooking}/></Switch>
     <Switch><Route exact path="/editRes/:id"  component={EditBooking}/></Switch>
