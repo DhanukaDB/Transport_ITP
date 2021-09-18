@@ -124,7 +124,78 @@ body {
  
   
 }
+h1 {
+  text-align: center;
+}
 
+DrawGrid .container {
+  width: 800px;
+  margin: auto;
+  
+ 
+  
+}
+
+.grid td {
+  width: 200px;
+  height: 50px;
+  padding: 50px 60px;
+  border: 2px solid orange;
+  text-align: center;
+  float: left;
+  margin: 20px;
+  
+  
+}
+
+.grid td:hover {
+  opacity: .7;
+  cursor: pointer;
+  display: flex;
+  
+}
+
+.reserved {
+  background:rgb(201, 28, 28);
+  color: #fff;
+  display: inline-block;
+}
+
+.reserved::after {
+  content: 'RESERVED'
+   
+}
+
+.available::after {
+  content: 'AVAILABLE'
+  
+}
+
+.available {
+  color: #333;
+}
+
+li {
+  list-style: none;
+  
+}
+.bt12{
+  width: 300px;
+   border-radius: 20px;
+   border:2px solid blue;
+   letter-spacing: 2px;
+   padding: 15px;
+   background-color: blue;
+   color: white;
+   font-weight: 700;
+   margin: 50px 450px;
+   transition: background-color 0.4s;
+
+}
+.bt12:hover{
+   cursor: pointer;
+   background-color: transparent;
+}
 
 /* IT20207236 */
 

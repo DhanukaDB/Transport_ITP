@@ -9,7 +9,7 @@ const ReservationManagement=()=>{
                     <h1>Welcome to Reservation Management</h1>
                </div>
                <div className="b1">
-               <b1><center><a href = "/all" style={{textDecoration:'none',color:'Black'}}>GET STARTED</a></center></b1>
+               <b1><center><a href = "/seatsb" style={{textDecoration:'none',color:'Black'}}>GET STARTED</a></center></b1>
 
                </div>
           </section>
