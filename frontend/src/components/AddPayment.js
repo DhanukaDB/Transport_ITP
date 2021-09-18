@@ -25,23 +25,6 @@ export default function AddPayment(){
         city,
         postalcode,
         phonenum,
-        
-      }
-
-      
-      
-      axios.post("http://localhost:5000/payment/add", newPayment).then(()=>{
-        alert("Payment details was recorded by assuring security");
-      }).catch((err)=>{
-          alert(err)
-      })
-
-    }
-
-    function sendData2(e) {
-      e.preventDefault();
-      
-      const newPayment = {
         cardnum,
         expirydate,
         ccv
@@ -58,6 +41,7 @@ export default function AddPayment(){
 
     }
 
+    
     function toggleText() {
       var x = document.getElementById("payId");
       if (x.style.display === "none") {
@@ -115,31 +99,25 @@ export default function AddPayment(){
   </Form.Group>
 
   
-  <Button variant="primary" type="submit" className="sub">
-    Submit
-  </Button>
-  
   <Button onClick={toggleText} className="pay"> Proceed to payment</Button>
-</Form>   
-
-
+ 
 <div id="payId" class="container" className="card1">
  <Image src="https://res.cloudinary.com/dbw0cho6v/image/upload/v1631211287/Siyatha/Card1_etkils.jpg" fluid className="img1" /> 
 
-<Form onSubmit={sendData2}>
-  <Form.Group className="pay1" >
+
+  <Form.Group className="pay1" controlId="cardNumber">
 <Form.Control as="textarea" rows={1} size="lg" type="text" placeholder="Enter Card Number"
 onChange={(e)=>{
   setCard(e.target.value);
 }} required />
   </Form.Group>
-  <Form.Group controlId="container" className="pay2">
+  <Form.Group controlId="expiryDate" className="pay2">
 <Form.Control type="text" placeholder="MM/YY" 
 onChange={(e)=>{
   setDate(e.target.value);
 }} required/>
   </Form.Group>
-  <Form.Group controlId="container" className="pay3">   
+  <Form.Group controlId="CCV" className="pay3">   
 <Form.Control type="text" placeholder="Enter CCV" 
 onChange={(e)=>{
   setCcv(e.target.value);
@@ -149,9 +127,9 @@ onChange={(e)=>{
   <Button variant="primary" type="submit" className="sub1" >
     Pay
   </Button>
-</Form>
-</div>
 
+</div>
+</Form>
 
      </div>
 

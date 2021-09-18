@@ -2,26 +2,7 @@ import React from "react";
 import {Image} from "react-bootstrap"; 
 
 
-    function ready(){
-    //Take your div into one js variable
-    var div = ("#divToShowHide");
-    //Take the current position (vertical position from top) of your div in the variable
-    var pos = div.position();
-    //Now when scroll event trigger do following
-    window.scroll(function () {
-     var windowpos = window.scrollTop();
-     //Now if you scroll more than 100 pixels vertically change the class to AfterScroll
-     // I am taking 100px scroll, you can take whatever you need
-     if (windowpos >= (pos.top - 100)) {
-       div.addClass("AfterScroll");
-     }
-     //If scroll is less than 100px, remove the class AfterScroll so that your content will be hidden again 
-     else {
-       div.removeClass("AfterScroll");
-     }
-    });
-}
-  
+    
 
 function Aboutus (){
     return(
@@ -40,12 +21,16 @@ function Aboutus (){
                       holds 10 years of great service and a well-reputative customer based platform. From this plan, we decided to simplify this software for everyone.</p>
                 </div>
           
-                <div >
-                 <video controls autoplay className="vid">
-                 <source src="https://res.cloudinary.com/dbw0cho6v/video/upload/v1631337926/Siyatha/Siyatha_gcte6l.mp4" type="video/mp4"/>
-                     </video>
+               
+                <br/>
+                <div>
+                  <h1 className="headstaff"> Main Pillars of the Company</h1>
                 </div>
+                <div><Image src="https://res.cloudinary.com/dbw0cho6v/image/upload/v1631591095/Siyatha/4c0b528805aa65778aa92625407e4e2f_wl5rza.jpg" className="headImg"/></div>
+                <div><Image src="https://res.cloudinary.com/dbw0cho6v/image/upload/v1631591102/Siyatha/professional-employee-workplace_23-2147650830_tcdsfz.jpg" className="managestaff"/></div>
+                <div><Image src="https://res.cloudinary.com/dbw0cho6v/image/upload/v1631614196/Siyatha/USR1018776_120605_SeanSullivan_25-8b38574_eue9j1.jpg" className="leadgroup"/></div>
             </div>
+            
         </div>
               
     )

@@ -44,7 +44,7 @@ const Signin = (props) => {
 
          }).catch((err) =>{
              
-             alert(err)
+            alert("Invalid email or password")
          })
         
     }

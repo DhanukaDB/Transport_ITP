@@ -26,7 +26,6 @@ import AddPayment from './components/AddPayment';
 import AllPayment from './components/AllPayments';
 import Aboutus from './components/AboutUs';
 import Successpage from './components/Success';
-import UpdatePayment from './components/Updatepayment';
 
 //IT20197032
 import AddEmployee from './components/AddEmployee';
@@ -149,10 +148,7 @@ const App =()=> {
             <Switch>
               <Route exact path="/success" component={Successpage} />
             </Switch>
-            <Switch>
-              <Route exact path="/updatepayment" component={UpdatePayment} />
-            </Switch>
-          
+           
 
          {/* Sayuri */}
         
