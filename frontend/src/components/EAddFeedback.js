@@ -27,7 +27,6 @@ export default function EAddFeedback(){  //adding function
       }
 
      axios.post(`http://localhost:5000/empFeedback/addfe`, newFeedback).then(() =>{  //route from the backend
-     axios.post(`http://localhost:8070/empFeedback/addfe`, newFeedback).then(() =>{  //route from the backend
 
         alert("Feedback Added") //display if adding is successful
      }).catch((err) =>{   //display error if adding is not successful
@@ -45,8 +44,6 @@ export default function EAddFeedback(){  //adding function
   <footer class="blockquote-footer">Show us some love....<cite title="Source Title"> </cite></footer>
 </blockquote>
        
-       <h1 class="font-italic">Complaints and Feedback</h1>
-       <h3 class="font-italic" >Show us some love....</h3>
        <br></br>
         <form className="container"  onSubmit={sendData} > 
 
@@ -76,9 +73,7 @@ export default function EAddFeedback(){  //adding function
   </label>
 </div>
 <div class="form-check">
-
   <input class="form-check-input"   type="radio" name="type" id="complaint" value="complaint" onChange={(e) =>{
-  <input class="form-check-input"   type="radio" name="type" id="complaint" value="complint" onChange={(e) =>{
       setType(e.target.value);
      }}  />
   <label class="form-check-label" for="complaint">
@@ -102,7 +97,7 @@ export default function EAddFeedback(){  //adding function
   </div>
 
   
-  <button type="submit" class="btn btn-dark">Submit</button> <a href="/readfe" class="btn btn-dark">View some feedbacks</a>        
+  <button  type="submit" class="btn btn-dark">Submit</button> <a href="/readfe" class="btn btn-dark">View some feedbacks</a>        
 </form>
 
  
