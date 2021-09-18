@@ -49,6 +49,9 @@ function Hirebus() {
   }
   
     return (
+      <div>
+
+      <center>  <h1> Hirebus </h1> </center>
 
       <Form onSubmit={sendData}>
 
@@ -120,6 +123,8 @@ setquestions(e.target.value);
   </Form.Group>
  
 </Form>
+
+</div>
 
     );
   }

@@ -78,6 +78,14 @@ app.use("/time",timeRouter);
 const driverRoutes = require('./routes/driver.js');
 app.use(driverRoutes);
 
+//IT20198954
+
+const feedbackRouter =require("./routes/Feedback.js"); //import  feedback routes
+app.use("/feedback",feedbackRouter); //create feedback routes
+  
+const empFeedbackRouter =require("./routes/EmpFeedback.js"); 
+app.use("/empFeedback",empFeedbackRouter);
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port no :${PORT}`)})

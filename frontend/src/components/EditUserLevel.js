@@ -67,8 +67,8 @@ export default function EditUserLevel () {
                  <div className="col-sm-4 bg-c-lite-green user-profile">
                         <div className="card-block text-center text-white">
 
-
-                            <Image  src="ulogin.png"/>
+                        <Image  src="https://res.cloudinary.com/hidl3r/image/upload/v1631611510/itp/ulogin_b64etx.png" roundedCircle />
+                
                              <h5 >User ID</h5>
                              <input 
                                  type = "text"

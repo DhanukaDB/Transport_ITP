@@ -29,6 +29,8 @@ router.route("/addfe").post((req,res)=> {
 
 })
 
+
+ //view all the data from table by drivers
  //view all the data from table
 router.route("/readfe").get((req,res)=>{              
       EmpFeedback.find().then((EmpFeedback)=>{
@@ -39,6 +41,15 @@ router.route("/readfe").get((req,res)=>{
    
  })
 
+ //view all the data from table by admin
+router.route("/readfeadmin").get((req,res)=>{              
+    EmpFeedback.find().then((EmpFeedback)=>{
+          res.json(EmpFeedback)
+    }) .catch((err)=>{
+         console.log(err)
+    })
+ 
+})
   
 //update a feedback
 router.route("/updatefe/:id").put(async(req,res)=> {

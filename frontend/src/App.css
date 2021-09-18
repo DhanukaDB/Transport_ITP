@@ -192,3 +192,225 @@ body {
    font-size: 30px;
    color:rgb(33, 150, 150);
  }
+
+ .topi{
+  color: #6c757d;
+  text-align:right;
+  font-style: italic;
+}
+
+.fbhome {
+  text-align: center;
+  background-image: url(./assets/fd.jpg);
+  background-size: cover;
+  font-family: monospace;
+  height: 800px;
+  width: cover;
+
+  
+}  
+
+/* Kishan */
+
+.payments{
+  align-items: center;
+  width: 1400px;
+  height: 400px;
+  border:2px solid black;
+  margin: 10px;
+}
+
+
+
+
+
+.delpay{
+  position: relative;
+  width: 250px;
+  height: 35px;
+  font-size: 18px;
+  text-align: center;
+  margin:5px;
+  left: 300px;
+  bottom: 30px;
+
+}
+
+.sub{
+  width:  250px;
+  height: 40px;
+  font-size: 16px;
+  margin: 5px;
+}
+
+.ref{
+  position: relative;
+  height: 35px;
+  width:250px;
+  bottom: 35px;
+  font-size: 18px;
+  left: 1100px;
+
+}
+
+.finalpay{
+  position: relative;
+  width:  250px;
+  height: 40px;
+  font-size: 16px;
+  margin: 5px;
+  top: 1px;
+  
+}
+
+.img1{
+  position: relative;
+  width: 900px;
+  height: 500px;
+  top: 50px;
+}
+
+.pay1{
+  position: relative;
+  width: 625px;
+  height: 100px;
+  bottom: 175px;
+  left: 130px;
+}
+
+.pay2{
+  position: relative;
+  bottom: 20px;
+  width: 200px;
+  bottom: 220px;
+  left: 390px;
+}
+
+.pay3{
+  position: relative;
+  bottom: 20px;
+  width: 200px;
+  bottom: 200px;
+  left: 500px;
+}
+
+.sub1{
+  position: relative;
+  width:  400px;
+  height: 40px;
+  font-size: 16px;
+  margin: 5px;
+  bottom: 120px;
+  left: 230px;
+}
+
+.card1{
+  display: none;
+}
+
+.para{
+  position: relative;
+  width: 1575px;
+  height: 250px;
+  padding: 10px;
+  font-family: cursive;
+  margin: 0;
+  background-color: burlywood;
+  top: 100px;
+}
+
+.us{
+  font-size: 25px;
+}
+
+.heade{
+  position: relative;
+  height: 120px;
+  top: 50px;
+}
+
+
+
+.pic{
+  position: relative;
+  left: 1250px;
+  bottom: 100px;
+}
+
+.headstaff{
+  position: relative;
+  top: 200px;
+  text-align: center;
+}
+
+.headImg{
+  border-radius: 15px 50px 30px 5px;
+  position: relative;
+  height: 450px;
+  width: 300px;
+  top: 250px;
+  left: 100px;
+}
+
+.getfunc{
+ 
+  height: 150000px;
+  width: 1500px;
+}
+
+.modal-content {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: .3rem;
+  outline: 0;
+}
+
+.uppay{
+  position: relative;
+  width: 250px;
+  height: 35px;
+  font-size: 18px;
+  text-align: center;
+  margin:5px;
+  top: 15px;
+  left: 40px;
+  
+}
+
+.rethome{
+  position: relative;
+  width: 270px;
+  right: 10px;
+  height: 40px;
+}
+
+.succeedpay{
+  position: relative;
+  text-align: center;
+  top: 200px;
+}
+
+.managestaff{
+  border-radius: 15px 50px 30px 5px;
+  position: relative;
+  height: 450px;
+  width: 300px;
+  left: 570px;
+}
+
+.leadgroup{
+  border-radius: 15px 50px 30px 5px;
+  position: relative;
+  height: 420px;
+  width: 300px;
+  left: 1050px;
+  bottom: 200px;
+}

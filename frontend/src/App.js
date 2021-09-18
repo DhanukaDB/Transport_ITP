@@ -26,7 +26,6 @@ import AddPayment from './components/AddPayment';
 import AllPayment from './components/AllPayments';
 import Aboutus from './components/AboutUs';
 import Successpage from './components/Success';
-import UpdatePayment from './components/Updatepayment';
 
 //IT20197032
 import AddEmployee from './components/AddEmployee';
@@ -56,6 +55,16 @@ import CreateDriver from "./components/CreateDriver";
 import DriverDetails from "./components/DriverDetails";
 import EditDriver from "./components/EditDriver";
 import Homedriver from "./components/Homedriver";
+
+//It20198954
+
+import AddFeedback from "./components/PAddFeedback";
+import EAddFeedback from "./components/EAddFeedback";
+import AllFeedbacks from './components/PAllFeedbacks';
+import EAllFeedbacks from './components/EAllFeedback';
+import AdminAllFeedbacks from './components/AdminViewFeedbacks';
+import AdminAllEmpFeedbacks from './components/AdminViewDriverFeedbacks';
+import FeedbackHandler from './components/FeedbackAdminHome';
 
 
 const App =()=> {
@@ -139,10 +148,7 @@ const App =()=> {
             <Switch>
               <Route exact path="/success" component={Successpage} />
             </Switch>
-            <Switch>
-              <Route exact path="/updatepayment" component={UpdatePayment} />
-            </Switch>
-          
+           
 
          {/* Sayuri */}
         
@@ -199,7 +205,25 @@ const App =()=> {
             <Switch><Route path="/driverdetails/:id" component={DriverDetails}></Route></Switch>
         
          </div>
+  
 
+            {/* Thisara */}
+            
+          
+          <switch>  <Route path="/addf" exact component={AddFeedback} />  </switch>
+          <switch>  <Route path="/readf" exact component={AllFeedbacks} /> </switch>
+           
+
+          <switch>   <Route path="/addfe" exact component={EAddFeedback} /></switch>
+          <switch>  <Route path="/readfe" exact component={EAllFeedbacks} /></switch>
+
+          <switch>  <Route path="/readfadmin" exact component={AdminAllFeedbacks} /></switch>
+          <switch>  <Route path="/readfeadmin" exact component={AdminAllEmpFeedbacks} /></switch>
+          <switch>
+              <Route exact path="/feedbackhandler" component={FeedbackHandler} />
+            </switch>
+           
+      
 
             <Footer/> 
 

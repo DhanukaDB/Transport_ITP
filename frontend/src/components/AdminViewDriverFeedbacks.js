@@ -3,8 +3,9 @@ import axios from "axios";  //send our form data to the mock server
 import { NavLink } from "react-router-dom";
 import { Button,Table,useParams } from "react-router-dom";
  
-
-export default function EAllFeedbacks(){   
+ 
+ 
+export default function AdminAllEmpFeedbacks(){   
 
     //creating states
     const[feedbackList,SetFeedbackList] = useState([]);
@@ -17,24 +18,25 @@ export default function EAllFeedbacks(){
  
 
     useEffect(() =>{ //view all the feedbacks
-        axios.get(`http://localhost:5000/empFeedback/readfe`).then((response) => { //pass response as a function
-        axios.get(`http://localhost:8070/empFeedback/readfe`).then((response) => { //pass response as a function
+        axios.get(`http://localhost:8070/empFeedback/readfeadmin`).then((response) => { //pass response as a function
           SetFeedbackList(response.data);
         });
       }, []);
-      
+
       const onDelete = (_id) => { //delete data row
-        axios.delete(`http://localhost:5000/empFeedback/deletefe/${_id}`).then((response)=>{ 
+        axios.delete(`http://localhost:8070/empFeedback/deletefe/${_id}`).then((response)=>{ 
         alert("deleted successfully");
           feedbackList.map(response.data)
       })
       }
         
      
+       
 
-    return(  //return db data into frontend table
+    return(
         <div className="container">
-            <br></br>
+
+          <br></br>
             <h1>Driver feedbacks and complaints</h1><br></br>
             <table class ="table table-hover border shadow">
               <thead class="thead-dark">
@@ -47,7 +49,7 @@ export default function EAllFeedbacks(){
                       <th scope="col">Type</th>
                       <th scope="col">Contact Number</th> 
                       <th scope="col">Message</th>
-                       
+                      <th scope="col"></th>
                       </tr>
                       </thead>
               <tbody>
@@ -62,16 +64,17 @@ export default function EAllFeedbacks(){
                 <td> {val.contactNumber}</td>
                 <td>   {val.message}</td>
 
+                <td>
                  
+
+                 <a href={`/readfeadmin`} class="badge badge-warning" onClick={() => onDelete(val._id)} >Delete</a>
+                
+                </td>
                 </tr>
             ))}
-               </tbody> </table>
-                <h3 class="topi" >We would love to hear from you🖤🖤</h3>
-               </div>
-  
-                  
+               </tbody> </table></div>
   )
 
-       
+ 
   
 }

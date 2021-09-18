@@ -29,6 +29,7 @@ router.route("/addf").post((req,res)=> {
 
 })
 
+ //view all the data from table by passenger
  //view all the data from table
 router.route("/readf").get((req,res)=>{              
       Feedback.find().then((Feedback)=>{
@@ -39,6 +40,16 @@ router.route("/readf").get((req,res)=>{
    
  })
 
+ //view all the data from table by admin
+router.route("/readfadmin").get((req,res)=>{              
+    Feedback.find().then((Feedback)=>{
+          res.json(Feedback)
+    }) .catch((err)=>{
+         console.log(err)
+    })
+ 
+})
+
   
  //view a specific feedback by id
  router.route("/getf/:id").get(async(req,res)=> {
@@ -46,6 +57,8 @@ router.route("/readf").get((req,res)=>{
 
     let userId= req.params.id;
     const user= await Feedback.findById(userId)
+    .then((feedback) =>{
+        res.status(200).send({ status : "user fetched",feedback})
     .then(() =>{
         res.status(200).send({ status : "user fetched"})
 
@@ -91,4 +104,5 @@ router.route("/deletef/:id").delete(async(req,res) =>{
     })
        
 })
+   
 module.exports = router;
