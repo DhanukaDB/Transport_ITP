@@ -13,16 +13,23 @@ const vehicleSchema =  new Schema({
         type : String,
         required: true
     },
-
-    manufacYear :{
-        type: Number,
-        required: true
+    nicNo : {
+        type : String,
+        
     },
-
     ownerName:{
         type:String,
         required: true
     },
+    manufacYear :{
+        type: Number,
+        required: true
+    },
+    vType :{
+        type:String,
+        required: true
+    },
+   
 
 
 

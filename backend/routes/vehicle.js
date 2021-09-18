@@ -9,15 +9,19 @@ router.route("/create").post((req,res)=>{
 
     const vehicleNo = req.body.vehicleNo;
     const vModel = req.body.vModel;
-    const manufacYear = Number(req.body.manufacYear);
+    const nicNo = req.body.nicNo;
     const ownerName = req.body.ownerName;
+    const manufacYear = Number(req.body.manufacYear);
+    const vType = req.body.vType;
 
 const newVehicle = new Vehicle({
 
     vehicleNo,
     vModel,
-    manufacYear,
+    nicNo,
     ownerName,
+    manufacYear,
+    vType,
 
 })
 
@@ -48,13 +52,16 @@ router.route("/").get((req,res)=>{
 
 router.route("/update/:id").put(async (req, res) =>{
     let vehicleID = req.params.id;
-    const { vehicleNo,vModel,manufacYear,ownerName} = req.body;
+    const { vehicleNo,vModel,nicNo,ownerName,manufacYear,vType} = req.body;
 
     const updateVehicle = {
         vehicleNo,
         vModel,
+        nicNo,
+        ownerName,
         manufacYear,
-        ownerName
+        vType
+       
 
     }
 
@@ -89,7 +96,8 @@ router.route("/get/:id").get(async (req, res) =>{
 
     const vehicle = await Vehicle.findById(vehicleID)
     .then((vehicle)=>{
-        res.status(200).send({status: "Vehicle fetched", vehicle: vehicle});
+        // res.status(200).send({status: "Vehicle fetched", vehicle: vehicle});
+        res.json(vehicle);
         
     }).catch((err) =>{
         console.log(err.message)

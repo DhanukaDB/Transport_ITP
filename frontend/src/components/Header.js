@@ -14,19 +14,18 @@ function Header(){
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link href="#booking">Buy Tickets</Nav.Link>
+      <Nav.Link href="/reservationHome">Buy Tickets</Nav.Link>
       <Nav.Link href="#pricing">Timetables</Nav.Link>
       <NavDropdown title="More" id="collasible-nav-dropdown">
         <NavDropdown.Item href="/hirebus">Hire Bus</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Feedbacks</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">About us</NavDropdown.Item>
+        <NavDropdown.Item href="/aboutus">About us</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Packages</NavDropdown.Item>
       </NavDropdown>
     </Nav>
     <Nav>
-      <Nav.Link href="#deets">Sign in</Nav.Link>
-      <Nav.Link href="#deets">Sign up</Nav.Link>
+    
       <Nav.Link eventKey={2} href="#Siyatha">
       👤
         </Nav.Link>

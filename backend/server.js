@@ -44,9 +44,39 @@ const reviewRouter =require("./routes/Review.js");
 app.use("/Review",reviewRouter);
 
 
+
 const empFeedbackRouter =require("./routes/EmpFeedback.js"); 
 
 app.use("/empFeedback",empFeedbackRouter);
+
+//give access to employee router file
+const employeeRouter = require("./routes/Employees.js");
+app.use("/employee", employeeRouter);//1st parameter is the url name to call js file
+//give access to salaryInfo router file
+const salaryRouter = require("./routes/SalaryInfo");
+app.use("/salary", salaryRouter);//1st parameter is the url name to call js file
+
+//Passenger_ IT20190798
+const passegerRouter = require("./routes/passengers.js");
+app.use("/passenger", passegerRouter);
+
+//IT20205256-Payment
+const paymentRouter = require("./routes/payments.js");
+app.use("/payment",paymentRouter);
+
+//IT20192532-Reservation
+//import routes
+const postRoutes = require("./routes/bookings");
+//route middleware
+app.use(postRoutes);
+
+//IT20201982-Time table
+const timeRouter = require("./routes/times.js");
+app.use("/time",timeRouter);
+
+//IT20201296 Driver management
+const driverRoutes = require('./routes/driver.js');
+app.use(driverRoutes);
 
 
 app.listen(PORT, () => {
