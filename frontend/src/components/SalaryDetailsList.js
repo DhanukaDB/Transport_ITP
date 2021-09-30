@@ -7,6 +7,7 @@ export default function SalaryDetailsList() {
 
     //set state
     const[salary, setsalary] = useState([]);//array
+    const[searchsal,setSearchsal] = useState("");
 
     
     useEffect(()=>{
@@ -42,12 +43,25 @@ export default function SalaryDetailsList() {
             <Link to="/employeeManagementHome" className="nav-link">Home</Link>
         </nav><br/><br/> 
             <div className="container">
-          <form className="d-flex">
-                <input className="form-control form-controlEmp me-2" type="search" placeholder="Search" />
+            <form className="d-flex">
+                <input 
+                className="form-control me-2" 
+                type="search" 
+                placeholder="Search from employee ID"
+                name = "searchQuerySal"
+                onChange = {(e)=>setSearchsal(e.target.value)} />
                 
           </form><br/><br/>
             <h1 style={{textAlign:'center'}}>Salary Details</h1><hr/>
-            {salary.map((val, key)=>{
+            {salary.filter(val=>{
+              if(searchsal==""){
+                return val
+              }
+              else if(val.empID.toLowerCase().includes(searchsal.toLowerCase())){
+                return val
+              }
+            })
+            .map((val, key)=>{
                 return<div key={key} className="container"><table className="table">
                 <thead>
                   <tr>

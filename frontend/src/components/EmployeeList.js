@@ -6,6 +6,7 @@ export default function EmployeeList() {
 
     //set state
     const[employees, setemployees] = useState([]);//array
+    const[search,setSearch] = useState("");
     
 
     useEffect(()=>{
@@ -30,11 +31,24 @@ export default function EmployeeList() {
             <Link to="/employeeManagementHome" className="nav-link">Home</Link>
           </nav><br/>
           <form className="d-flex">
-                <input className="form-control form-controlEmp me-2" type="search" placeholder="Search" />
+                <input 
+                className="form-control me-2" 
+                type="search" 
+                placeholder="Search Employee"
+                name = "searchQueryEmp"
+                onChange = {(e)=>setSearch(e.target.value)} />
                 
           </form><br/><br/>
             <h1 style={{textAlign:'center'}}>Employee List</h1><hr/><br/>
-            {employees.map((val, key)=>{
+            {employees.filter(val=>{
+              if(search==""){
+                return val
+              }
+              else if(val.full_name.toLowerCase().includes(search.toLowerCase())){
+                return val
+              }
+            })
+            .map((val, key)=>{
                 return<div key={key} className="container"><table className="table">
                 <thead>
                   <tr>
