@@ -15,7 +15,7 @@ function Header(){
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
       <Nav.Link href="/reservationHome">Buy Tickets</Nav.Link>
-      <Nav.Link href="#pricing">Timetables</Nav.Link>
+      <Nav.Link href="/table">Timetables</Nav.Link>
       <NavDropdown title="More" id="collasible-nav-dropdown">
         <NavDropdown.Item href="/hirebus">Hire Bus</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Feedbacks</NavDropdown.Item>

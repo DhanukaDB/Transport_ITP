@@ -49,7 +49,7 @@ import Seat from './components/Seat';
 //IT20201982
 import ViewTimetable from './components/Viewtimetable';
 import AddTimetable from './components/Timetable';
-
+import Table from './components/Table';
 
 //IT20201296
 import CreateDriver from "./components/CreateDriver";
@@ -193,6 +193,7 @@ const App =()=> {
   <Switch>
   <Route exact path="/addtimetable" component={AddTimetable} />
   <Route exact path="/ViewTimetable" component={ViewTimetable} />
+  <Route exact path="/table" component={Table} />
 </Switch>
 
 

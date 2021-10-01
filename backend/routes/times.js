@@ -6,12 +6,13 @@ router.route("/add").post((req,res)=>{
     
     const from = req.body.from;
     const to = req.body.to;
-    
+    const time=req.body.time;
 
     const newTime = new Time({
 
         from,
         to,
+        time,
     })
     newTime.save().then(()=>{
         res.json("Time Added")
@@ -31,11 +32,12 @@ router.route("/").get((req,res)=>{
 
 router.route("/update/:id").put(async (req,res) => {
     let userId = req.params.id;
-    const {from, to} = req.body;
+    const {from, to,time} = req.body;
 
     const updateTime = {
         from,
-        to
+        to,
+        time
     }
     const update = await  Time.findByIdAndUpdate(userId, updateTime)
     .then(() => {
