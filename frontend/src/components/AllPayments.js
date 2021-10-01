@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {container, row, ListGroup} from 'react-bootstrap';
-import { Button,Modal,Form } from 'react-bootstrap';
+import { Button,Modal,Form, InputGroup, FormControl } from 'react-bootstrap';
 
 export default function AllPayment(){
     const[Values, setValues] = useState([]);
@@ -18,10 +18,11 @@ export default function AllPayment(){
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const [search, setSearch] = useState("");
 
     useEffect(()=>{
       function getPayments(){
-          axios.get("http://localhost:5000/payment/",).then((res)=>{
+          axios.get("http://localhost:3005/payment/",).then((res)=>{
               setPayments(res.data);
           }).catch((err)=>{
               alert(err.message)
@@ -31,7 +32,7 @@ export default function AllPayment(){
     },[])
     
     const deletepayment = (id) =>{
-        axios.delete(`http://localhost:5000/payment/delete/${id}`);
+        axios.delete(`http://localhost:3005/payment/delete/${id}`);
     }
 
 
@@ -108,7 +109,7 @@ export default function AllPayment(){
         console.log('form submit payload =====',updatePayment)
 
 
-        axios.put(`http://localhost:5000/payment/update/${updatePayment.id}`, updatePayment).then(()=>{
+        axios.put(`http://localhost:3005/payment/update/${updatePayment.id}`, updatePayment).then(()=>{
             alert("Payment Details Updated");
             handleClose();
             window.location = `/all`;
@@ -125,8 +126,27 @@ export default function AllPayment(){
     return(
         <div>
             <h1>All Payments</h1>
+
+            <InputGroup className="mb-3">
+    <InputGroup.Text id="inputGroup-sizing-default">Search</InputGroup.Text>
+    <FormControl
+      aria-label="Default"
+      aria-describedby="inputGroup-sizing-default" onChange={(e) =>{
+          setSearch(e.target.value);
+      }}
+    />
+  </InputGroup>
+
+  {payments.filter(Payment =>{
+      if(search === ""){
+          return Payment
+      }
+      else if(Payment.name.toLowerCase().includes(search.toLowerCase())){
+          return Payment
+      }
+  })
             
-        {payments.map((val,key)=>{
+    .map((val,key)=>{
             return(
              <div key={key} className="payments">
                  <container length="100px">

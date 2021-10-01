@@ -345,57 +345,50 @@ li {
 
 .img1{
   position: relative;
-  width: 900px;
-  height: 500px;
-  top: 50px;
+  width: 800px;
+  height: 450px;
+  top: 100px;
 }
 
 .pay1{
   position: relative;
-  width: 625px;
-  height: 100px;
-  bottom: 175px;
-  left: 130px;
+  bottom: 110px;
+  width: 600px;
+  left: 100px;
 }
 
 .pay2{
   position: relative;
-  bottom: 20px;
-  width: 200px;
-  bottom: 220px;
-  left: 390px;
+  bottom: 100px;
+  width: 150px;
+  left: 350px;
 }
 
 .pay3{
-  position: relative;
-  bottom: 20px;
-  width: 200px;
-  bottom: 200px;
-  left: 500px;
+ position: relative;
+ bottom: 154px;
+ left: 550px;
+ width: 150px;
 }
 
 .sub1{
   position: relative;
-  width:  400px;
-  height: 40px;
+  width: 200px;
   font-size: 16px;
   margin: 5px;
-  bottom: 120px;
-  left: 230px;
+  bottom: 150px;
+  left: 500px;
 }
 
-.card1{
-  display: none;
-}
+
 
 .para{
   position: relative;
-  width: 1575px;
-  height: 250px;
+  width: 1518px;
+  height: 230px;
   padding: 10px;
-  font-family: cursive;
+  font-family: Arial;
   margin: 0;
-  background-color: burlywood;
   top: 100px;
 }
 
@@ -411,7 +404,7 @@ li {
 
 
 
-.pic{
+.aboutpic{
   position: relative;
   left: 1250px;
   bottom: 100px;
@@ -484,13 +477,61 @@ li {
   height: 450px;
   width: 300px;
   left: 570px;
+  bottom: 200px;
 }
 
 .leadgroup{
   border-radius: 15px 50px 30px 5px;
   position: relative;
-  height: 420px;
+  height: 450px;
   width: 300px;
-  left: 1050px;
-  bottom: 200px;
+  left: 1030px;
+  bottom: 645px;
 }
+
+.paymentName{
+  position: relative;
+  height: 100px;
+  width: 500px;
+  top: 20px;
+}
+
+.paymentAddress{
+  position: relative;
+  height: 100px;
+  width: 500px;
+}
+
+.paymentCity{
+  position: relative;
+  height: 100px;
+  width: 500px;
+  bottom: 30px;
+}
+
+.paymentCode{
+  position: relative;
+  height: 100px;
+  width: 500px;
+  bottom: 50px;
+}
+
+.paymentNumber{
+  position: relative;
+  height: 100px;
+  width: 500px;
+  bottom: 70px;
+}
+
+.card1{
+  position: relative;
+  bottom: 650px;
+  left: 500px;
+}
+
+.paymentGateway{
+  position: relative;
+  width: 850px;
+  left: 150px;
+}
+
