@@ -12,6 +12,10 @@ const timeSchema = new Schema({
     to : {
         type: String,
         required: true
+    },
+    time : {
+        type: String,
+        required: true
     }
     
 })

@@ -264,6 +264,15 @@ li {
    color:rgb(33, 150, 150);
  }
 
+ .contactnow:hover {
+  transition: 1s ease-in-out;
+  transform: rotate(-15deg);
+  stroke-dashoffset: -480;
+  color:rgb(150, 95, 33);
+  
+
+}
+
  .topi{
   color: #6c757d;
   text-align:right;

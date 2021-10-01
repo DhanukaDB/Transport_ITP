@@ -15,7 +15,7 @@ function Footer(){
 <Link to= "/aboutus"><Button variant="/aboutus">ABOUT US 🏷️</Button> </Link>
      <center> <p>Copyright @ {curr_year}</p></center>
 
-     <div  className ="footerIcons">
+     <div >
      <img src="https://img.icons8.com/material/24/fa314a/youtube--v1.png"/>
     
      <img src="https://img.icons8.com/ios-glyphs/30/000000/visa.png"/>
