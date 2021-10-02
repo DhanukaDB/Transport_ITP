@@ -1,6 +1,6 @@
 import React from "react";
 import {Image} from "react-bootstrap"; 
-
+import {withRouter} from "react-router-dom";
 
     
 
@@ -36,4 +36,4 @@ function Aboutus (){
     )
 }
 
-export default Aboutus;
+export default withRouter(Aboutus);

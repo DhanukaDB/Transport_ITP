@@ -1,41 +1,54 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {Button ,Image} from "react-bootstrap";
-import { useParams } from "react-router";
-import {useHistory} from 'react-router-dom'
+import "react-router-dom";
+import {Button ,Image,Form} from "react-bootstrap";
 
-export default function EditUserLevel () {
-    const history = useHistory()
-    const[setPassenger] = useState("");
+
+function EditUserLevel (props) {
+    
+    const [_id, set_id] = useState("");
     const [username, setUsername] = useState("");
     const [nic, setNic] = useState("");
     const [email, setEmail] = useState("");
     const [phoneno, setPhoneno] = useState("");
     const [userlevel, setUserlevel] = useState("");
-    const {id, setId} = useParams();
 
-    useEffect(() => {
-     axios.get(`http://localhost:5000/passenger/get/${id}`).then((res) =>{
-        console.log(res.data);
-        setUsername(res.data.username);
-        setNic(res.data.nic);
-        setEmail(res.data.email);
-        setPhoneno(res.data.phoneno);
-        setUserlevel(res.data.userlevel)
-     }).catch((err) =>{
-            alert(err)
-        })
-    },[]);
+    const [passengers, setPassengers] = useState([]); 
+
+    useEffect(() =>{
+        function getPassenger(){
+
+            const _id =props.match.params.id;
+            console.log(_id);
+            axios.get("http://localhost:5000/passenger/get/"+_id).then((res) =>{
+
+               setPassengers(res.data);
+                set_id(res.data._id);
+                setUsername(res.data.username);
+                setNic(res.data.nic);
+                setEmail(res.data.email);
+                setPhoneno(res.data.phoneno);
+                setUserlevel(res.data.userlevel);
+
+               console.log(res.data);
+               console.log(res.data.username);
+            }).catch((err) => {
+                alert(err.message);
+            })
+     }
+        getPassenger();
+       },[])
+
+    
 
    
         
-
-
-    function SendUpdateUserLevel(e){
-        e.preventDefault(); 
+       function SendUpdateUserLevel(e){
+         e.preventDefault();
+  
     
-        const updateUserLevel = {
-
+        const newPassenger = {
+            _id,
             username,
             nic,
             email,
@@ -43,123 +56,97 @@ export default function EditUserLevel () {
             userlevel
 
      }
-                axios.put(`http://localhost:5000/passenger/update/${id}`, updateUserLevel).then(() =>{
+                axios.put("http://localhost:5000/passenger/update/"+_id,newPassenger).then(() =>{
                       alert("successfully updated"); 
                        window.location = `/`;
+                
 
+                       setUsername("");
+                       setNic("");
+                       setEmail("");
+                       setPhoneno("");
+                       setUserlevel("")
                     
       
         }).catch((err) =>{
+            console.log(err);
             alert(err);
         })
     
-   }
+    }
 
 
    return (
-    <div className="page-content page-container" id="page-content"  onSubmit = {SendUpdateUserLevel}>
-        <form >
-        <div className="padding">
-        
-                
-             <div className="row m-l-0 m-r-0">
-                        
-                 <div className="col-sm-4 bg-c-lite-green user-profile">
-                        <div className="card-block text-center text-white">
+   <div>
+          
+        <Form onSubmit={SendUpdateUserLevel}>
 
-                        <Image  src="https://res.cloudinary.com/hidl3r/image/upload/v1631611510/itp/ulogin_b64etx.png" roundedCircle />
-                
-                             <h5 >User ID</h5>
-                             <input 
-                                 type = "text"
-                                 placeholder = ""
-                                 id="id"
-                                 value = {id}
-                                 onChange={(e) => setId (e.target.value)}
-                                 />
+<Form.Group className="container" controlId="_id">
+  <Form.Label>Passenger ID</Form.Label>
+  <Form.Control type="text" readonly="readonly" value = {_id} placeholder="" />
 
-                             <p>UserLevel</p>
-                             <input 
-                               type = "text"
-                                placeholder = ""
-                                id="userlevel"
-                                value = {userlevel}
-                                onChange={(e) => setUserlevel (e.target.value)}
-                            />
+</Form.Group>
 
-                         </div>
-                     </div>
-                           <div className="col-sm-8">
+<Form.Group className="container" controlId="username">
+  <Form.Label>Username</Form.Label>
+  
+  <Form.Control type="text"  value = {username} placeholder="Enter UserName" onChange={(e)=>{
 
-                               <h6 className="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
-                                     <div className="row">
+    setUsername(e.target.value);
+
+  }}/>
+  <Form.Text className="text-muted">
+  </Form.Text>
+</Form.Group>
+
+<Form.Group className="container" controlId="nic">
+  <Form.Label>NIC</Form.Label>
+  <Form.Control type="text"  value = {nic} placeholder="Enter NIC" onChange={(e)=>{
+
+setNic(e.target.value);
+
+}}/>
+</Form.Group>
+
+<Form.Group className="container" controlId="email">
+  <Form.Label>Email</Form.Label>
+  <Form.Control type="text"  value = {email} placeholder="Enter Email" onChange={(e)=>{
+
+setEmail(e.target.value);
+
+}}/>
+</Form.Group>
+
+<Form.Group className="container" controlId="phone">
+  <Form.Label>Phone Number</Form.Label>
+  <Form.Control type="text"  value = {phoneno} placeholder="Enter Owner Name" onChange={(e)=>{
+
+setPhoneno(e.target.value);
+
+}}/>
+</Form.Group>
+
+
+
+
+
+<Form.Group className="container" controlId="formBasicCheckbox">
  
-                                      <div className="col-sm-6">
-                                          <p className="m-b-10 f-w-600">UserName</p>
-                                          <input 
-                                             type = "text"
-                                             placeholder = ""
-                                             id="username"
-                                             value = {username}
-                                             onChange={(e) => setUsername (e.target.value)}
-                                          />
 
-                                        </div>
+  <Button type="submit" variant="outline-warning">Confirm Edit Details</Button>{' '}
+  
+</Form.Group>
 
-                                        <div className="col-sm-6">
-                                        <p className="m-b-10 f-w-600">NIC</p>
-                                        <input 
-                                             type = "text"
-                                             placeholder = ""
-                                             id="nic"
-                                             value = {nic}
-                                             onChange={(e) => setNic (e.target.value)}
-                                          />
-                                        </div>
-                                    </div>
-
-                                    <h6 className="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Projects</h6>
-                                    <div className="row">
-
-                                        <div className="col-sm-6">
-                                        <p className="m-b-10 f-w-600">Email</p>
-                                        <input 
-                                             type = "text"
-                                             placeholder = ""
-                                             id="email"
-                                             value = {email}
-                                             onChange={(e) => setEmail (e.target.value)}
-                                          />
-                                         </div>
+</Form>
 
 
 
-                                        <div className="col-sm-6">
-                                        <p className="m-b-10 f-w-600">Phone Number</p>
-                                        <input 
-                                             type = "text"
-                                             placeholder = ""
-                                             id="phoneno"
-                                             value = {phoneno}
-                                             onChange={(e) => setPhoneno (e.target.value)}
-                                          />
-                                        </div>
-
-                                
-                                   </div>   
-                 </div>
-             </div>
-             <center>
-             <Button variant="primary" href={`/update/${id}`}>Confirm to give UserLevel</Button>{' '}
-             <Button variant="secondary"><a href="/userlevel"> Cancel </a></Button>{' '}
-             </center>
-      </div> 
-     
-      
-      </form>
- </div>
+   </div>
+       
 
    )
 
 
 }
+
+export default EditUserLevel;

@@ -2,11 +2,13 @@ import React, {useState,useEffect} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import { Form, Button} from "react-bootstrap";
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 
 
 
-function EditVehicleDetails (props){
+function VehicleDetails (props){
 
     const [_id, set_id] = useState("");
     const [vehicleNo, setvehicleNo] = useState("");
@@ -17,7 +19,7 @@ function EditVehicleDetails (props){
     const [vType, setvType] = useState("");
 
     const [vehicles, setVehicles] = useState([]);
-
+   
     useEffect(() =>{
         function getVehicles(){
 
@@ -86,13 +88,59 @@ function EditVehicleDetails (props){
       props.history.push("/vehicledelete/"+_id);
   }
 
-    
+  const createPDF = (_id,vehicleNo,vModel,nicNo,ownerName,manufacYear,vType) =>{
+    console.log(_id);
+    console.log(vehicleNo);
+    console.log(vModel);
+    console.log(nicNo);
+    console.log(ownerName);
+    console.log(manufacYear);
+    console.log(vType);
+
+const unit = "pt";
+const size = "A4"; //page size
+const orientation = "landscape";
+const marginLeft = 40;
+const doc = new jsPDF( orientation , unit , size ); //create document
+const title = `| Siyatha - Reservations |- Vehicle ID: ${_id} `;
+const vehicleNOs = `Vehicle Number: ${vehicleNo} `;
+const vModels = `Vehicle Model: ${vModel} `;
+const nicNos = `NIC Number: ${nicNo} `;
+const ownerNames = `Owner's Name: ${ownerName} `;
+const manufacYears=`Manufatured year :  ${manufacYear}`;
+const vTypes=`Vehicle Type :  ${vType}`;
+const image =  "https://res.cloudinary.com/hidl3r/image/upload/v1633023488/itp/red_travel_bus_clip_art_12881_tfuz8f.jpg"; 
+const back ="https://res.cloudinary.com/hidl3r/image/upload/v1633023476/itp/traveling_bus_icon_classical_flat_design_6840690_c5ttaf.jpg";
+const left = 30;
+const top = 8;
+const imgWidth = 100;
+const imgHeight = 100;   
+const lefts = 500;
+const tops = 300;
+const imgWidths = 300;
+const imgHeights = 300;
+doc.setFontSize( 20 );
+doc.text (150, 40,title);
+doc.text(60, 200, vehicleNOs);  
+doc.text(60, 250, vModels);  
+doc.text(60, 300, nicNos);  
+doc.text(60, 350, ownerNames);  
+doc.text(60, 400, manufacYears); 
+doc.text(60, 450, vTypes); 
+doc.addImage(image, 'PNG', left, top, imgWidth, imgHeight);
+doc.addImage(back, 'PNG', lefts, tops, imgWidths, imgHeights);
+   doc.save (`Vehicle${nicNo}.pdf`)
+}
+
+     
   
 
     return(
         <div>
 
-<center><h1>Vehicle Details</h1></center>
+<center><h1>Edit Vehicle Details</h1></center>
+
+
 
         <Form onSubmit={sendData}>
 
@@ -167,6 +215,8 @@ function EditVehicleDetails (props){
           <Button type="submit" variant="outline-warning">Confirm Edit Details</Button>{' '}
           
           <Button variant="outline-danger" onClick={()=>Delete(_id)}>Delete Details</Button>{' '}
+         
+          <Button variant="outline-dark" onClick = {()=>createPDF(_id,vehicleNo,vModel,nicNo,ownerName,manufacYear,vType)} >Generate PDF</Button>
           <Link to ="/vhome"> <Button variant="info">Go  Back To Vehicle home</Button></Link>
         </Form.Group>
        
@@ -177,4 +227,4 @@ function EditVehicleDetails (props){
       </div>
     )
 }
-export default EditVehicleDetails;
+export default VehicleDetails;

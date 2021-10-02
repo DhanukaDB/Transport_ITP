@@ -3,7 +3,7 @@ import Header from './components/Header';
 import AddVehicle from './components/AddVehicle';
 import AllVehicle from './components/AllVehicle';
 import VehicleDetails from './components/VehicleDetails';
-import { BrowserRouter as BRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter as BRouter, Switch, Route,Link } from "react-router-dom";
 import Home from './components/Home';
 import Footer from './components/Footer';
 import HireBus from './components/HireBus';
@@ -11,6 +11,8 @@ import AboutUS from './components/AboutUs';
 import EditVehicleDetails from './components/EditVehicleDetails';
 import VHome from './components/VehicleHome';
 import DeleteVehicle from './components/DeleteVehicle';
+import ProtectedRouter from './components/ProtectedRoutes';
+import { useState } from 'react';
 
 //it20190798
 import Signin from './components/Signin';
@@ -69,6 +71,9 @@ import FeedbackHandler from './components/FeedbackAdminHome';
 
 
 const App =()=> {
+
+  const [isAuthUser, setIsAuthUser] = useState(false);
+  const [isAuthAdmin, setIsAuthAdmin] = useState(false);
   return (
   
        <BRouter>
@@ -81,7 +86,7 @@ const App =()=> {
               <Route exact path="/allvehicle" component={AllVehicle} />
             </Switch>
             <Switch>
-              <Route exact path="/vehicledetails/:id" component={VehicleDetails} />
+              
             </Switch>
             <Switch>
               <Route exact path="/" component={Home} />
@@ -89,11 +94,10 @@ const App =()=> {
             <Switch>
               <Route exact path="/hirebus" component={HireBus} />
             </Switch>
-              <Switch>
-              <Route exact path="/aboutus" component={AboutUS} />
-            </Switch>
+            
+
             <Switch>
-              <Route exact path="/editvdetails" component={EditVehicleDetails} />
+              <Route exact path="/editvdetails/:id" component={EditVehicleDetails} />
             </Switch>
             <Switch>
               <Route exact path="/vhome" component={VHome} />
@@ -101,6 +105,27 @@ const App =()=> {
             <Switch>
               <Route exact path="/vehicledelete/:id" component={DeleteVehicle} />
             </Switch>
+
+            <Route path="/" exact>
+      
+      <button onClick={()=>{setIsAuthUser(true);}}>LogIn</button>
+      <button onClick={()=>{setIsAuthUser(false);}}>LogOut</button>
+      <Link to="/about">Link</Link>  
+      
+     
+     
+      <button onClick={()=>{setIsAuthAdmin(true);}}>LogIn</button>
+      <button onClick={()=>{setIsAuthAdmin(false);}}>LogOut</button>
+      
+      <Link to="/adminPanel">Link</Link>  </Route>
+     
+      
+        <ProtectedRouter path="/about" component={Aboutus} isAuth={isAuthUser} />
+        <ProtectedRouter path="/adminPanel"  component= {AdminPanel} isAuth= {isAuthAdmin} />
+          
+
+
+        
             
 {/* IT20190798 */}
 
@@ -129,7 +154,7 @@ const App =()=> {
             </Switch>
 
             <Switch>
-              <Route exact path="/edituserlevel" component={EditUserLevel} />
+              <Route exact path="/edituserlevel/:id" component={EditUserLevel} />
             </Switch>
        
             
@@ -154,9 +179,7 @@ const App =()=> {
          {/* Sayuri */}
         
             <Switch>
-              <Route path="/adminPanel" exact>
-                <AdminPanel/>
-              </Route> 
+              
             </Switch> 
             <Switch> 
               <Route path="/employeeManagementHome" exact>

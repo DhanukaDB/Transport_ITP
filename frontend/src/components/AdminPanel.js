@@ -1,8 +1,9 @@
 import React from "react";
+import { withRouter } from "react-router";
 import "../assets/css/styles.css";
 
 
-export default function AdminPanel() {
+function AdminPanel() {
 
     return(
         <div>       
@@ -28,4 +29,5 @@ export default function AdminPanel() {
     );
 }
 
+export default withRouter (AdminPanel);
 
