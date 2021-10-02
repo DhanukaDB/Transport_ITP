@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {container, row, ListGroup} from 'react-bootstrap';
 import { Button,Modal,Form, InputGroup, FormControl } from 'react-bootstrap';
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 export default function AllPayment(){
     const[Values, setValues] = useState([]);
@@ -43,6 +45,48 @@ export default function AllPayment(){
         handleShow()
     }
     
+    const createPDF = (_id, name, address, city, postalcode, phonenum)=>{
+        console.log(_id);
+        console.log(name);
+        console.log(address);
+        console.log(city);
+        console.log(postalcode);
+        console.log(phonenum);
+
+        const unit = "pt";
+        const size = "A4";
+        const orientation = "landscape";
+        const marginLeft = 40;
+        const doc = new jsPDF(orientation, unit, size);
+        const title = `Siyatha Payments        ID- ${_id}`;
+        const paymentName = `Payee Name: ${name}`;
+        const paymentAddress = `Payee Address: ${address}, ${city}`;
+        const paymentCode = `Postal Code: ${postalcode}`;
+        const paymentNumber = `Phone Number: ${phonenum}`;
+        const image1 = "https://res.cloudinary.com/dbw0cho6v/image/upload/v1633115457/Siyatha/depositphotos_403895126-stock-illustration-isometric-online-payments-online-payment_lvsqn9.jpg"
+        const image2 = "https://res.cloudinary.com/dbw0cho6v/image/upload/v1633115435/Siyatha/GettyImages-1154092756-e31f198466e443018b44a088ead1250b_yfga2y.jpg"
+        const success = `The payment was successful and assured by Siyatha`;
+        const left = 20;
+        const top = 8;
+        const imgWidth = 150;
+        const imgHeight = 100;
+        const lefts = 450;
+        const tops = 300;
+        const imgWidths = 350;
+        const imgHeights = 250;
+        doc.setFontSize(20);
+        doc.text(200,40 ,title);
+        doc.text(60,200, paymentName );
+        doc.text(60,250, paymentAddress);
+        doc.text(60, 300, paymentCode);
+        doc.text(60, 350, paymentNumber);
+        doc.addImage(image1, 'PNG', left, top ,imgWidth, imgHeight);
+        doc.addImage(image2, 'PNG' , lefts, tops, imgWidths, imgHeights);
+        doc.text(60, 575, success);
+        
+        doc.save(`${name}'s Payment.pdf`);
+     
+    }
 
     function sendData(e) {
        
@@ -165,7 +209,7 @@ export default function AllPayment(){
       </Button>
                  
                  <Button className="delpay" onClick={()=> deletepayment(val._id)}> Delete</Button>
-              
+                 <Button className="generatePdF" onClick={()=> createPDF(val._id, val.name, val.address, val.city, val.postalcode, val.phonenum)}>Generate report</Button>
                  </ListGroup>
                 
                  </row>
