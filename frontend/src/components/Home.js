@@ -45,12 +45,14 @@ function Home(){
 
 
 
+
  
 <Image src="https://res.cloudinary.com/hidl3r/image/upload/v1631381654/itp/LeBus-interior-luxury-coach-bus-background_pdzuvu.jpg" fluid />
 
     <Link to="/table"><button className="time">Time</button></Link>
-    <Link to="/table"><button className="booknow">Book Now</button></Link>
-    <Link to="/table"> <button className="contactnow">Contact Us</button></Link>
+    <Link to="/reservationHome"><button className="booknow">Book Now</button></Link>
+    <Link to="/contactus"> <button className="contactnow">Contact Us</button></Link>
+
  
 
 

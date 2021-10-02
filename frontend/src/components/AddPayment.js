@@ -42,21 +42,15 @@ export default function AddPayment(){
     }
 
     
-    function toggleText() {
-      var x = document.getElementById("payId");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
+
 
     return(
-        <div class="container">
+        <div class="container" className="paymentGateway">
+
          
          <Form onSubmit={sendData1}>
-  <Form.Group controlId="container">
-    <Form.Label for="name">Name</Form.Label>
+  <Form.Group controlId="container" className="paymentName">
+    <Form.Label for="name">Name on Card</Form.Label>
     <Form.Control type="text" placeholder="Enter name" 
     onChange={(e)=>{
       setName(e.target.value);
@@ -66,7 +60,7 @@ export default function AddPayment(){
     </Form.Text>
   </Form.Group>
 
-  <Form.Group controlId="container">
+  <Form.Group controlId="container" className="paymentAddress">
     <Form.Label for="address">Address</Form.Label>
     <Form.Control type="text" placeholder="Ex: No,Street name" 
      onChange={(e)=>{
@@ -74,7 +68,7 @@ export default function AddPayment(){
     }} required/>
     </Form.Group>
 
-    <Form.Group controlId="container">
+    <Form.Group controlId="container" className="paymentCity">
     <Form.Label for="city">City</Form.Label>
     <Form.Control type="text" placeholder="Enter city name" 
     onChange={(e)=>{
@@ -82,7 +76,7 @@ export default function AddPayment(){
     }} required/>
     </Form.Group>
 
-    <Form.Group controlId="container">
+    <Form.Group controlId="container" className="paymentCode">
     <Form.Label for="postalcode">Postal Code</Form.Label>
     <Form.Control type="text" placeholder="Enter code"
     onChange={(e)=>{
@@ -90,7 +84,7 @@ export default function AddPayment(){
     }} required/>
     </Form.Group>
 
-  <Form.Group>
+  <Form.Group controlId="container" className="paymentNumber">
     <Form.Label for="phonenum">Phone Number</Form.Label>
     <Form.Control type="text" placeholder="07********" 
     onChange={(e)=>{
@@ -99,7 +93,7 @@ export default function AddPayment(){
   </Form.Group>
 
   
-  <Button onClick={toggleText} className="pay"> Proceed to payment</Button>
+  
  
 <div id="payId" class="container" className="card1">
  <Image src="https://res.cloudinary.com/dbw0cho6v/image/upload/v1631211287/Siyatha/Card1_etkils.jpg" fluid className="img1" /> 

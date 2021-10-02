@@ -95,7 +95,7 @@ function VehicleDetails (props){
 
   const createPDF = (_id,vehicleNo,vModel,nicNo,ownerName,manufacYear,vType) =>{
     console.log(_id);
-  
+
 const unit = "pt";
 const size = "A4"; //page size
 const orientation = "landscape";
@@ -216,6 +216,7 @@ doc.addImage(back, 'PNG', lefts, tops, imgWidths, imgHeights);
           <Button variant="outline-danger" onClick={()=>Delete(_id)}>Delete Details</Button>{' '}
          
           <Button variant="outline-dark" onClick = {()=>createPDF(_id,vehicleNo,vModel,nicNo,ownerName,manufacYear,vType)} >Generate PDF</Button>
+
           <Link to ="/vhome"> <Button variant="info">Go  Back To Vehicle home</Button></Link>
         </Form.Group>
        
