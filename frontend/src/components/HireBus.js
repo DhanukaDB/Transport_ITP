@@ -15,7 +15,7 @@ function Hirebus() {
 
     e.preventDefault();
 
-    const nerHirebus ={
+    const newHireBus ={
 
       name,
       mobileNumber,
@@ -26,7 +26,7 @@ function Hirebus() {
 
     }
 
-    axios.post("http://localhost:5000//create",nerHirebus).then(()=>{
+    axios.post("http://localhost:5000/hirebus/create",newHireBus).then(()=>{
 
       alert("Hire requested Successfully");
     window.location = `/allhirebus`;
@@ -83,7 +83,7 @@ setmobileNumber(e.target.value);
   </Form.Group>
   <br/>
   <Form.Group className="container" controlId="from">
-    <Form.Label>Nic Number</Form.Label>
+    <Form.Label>From</Form.Label>
     <Form.Control type="text" placeholder="Enter NIC Number" onChange={(e)=>{
 
 setfrom(e.target.value);
@@ -92,7 +92,7 @@ setfrom(e.target.value);
   </Form.Group>
   <br/>
   <Form.Group className="container" controlId="to1">
-    <Form.Label>Owner Name</Form.Label>
+    <Form.Label>To</Form.Label>
     <Form.Control type="text" placeholder="Enter Owner Name" onChange={(e)=>{
 
 setto1(e.target.value);
@@ -101,7 +101,7 @@ setto1(e.target.value);
   </Form.Group>
   <br/>
   <Form.Group className="container" controlId="date">
-    <Form.Label>date</Form.Label>
+    <Form.Label>Date</Form.Label>
     <Form.Control type="date" placeholder="Enter Manufactured Year" onChange={(e)=>{
 
 setdate(e.target.value);
@@ -110,7 +110,7 @@ setdate(e.target.value);
   </Form.Group>
   <br/>
   <Form.Group className="container" controlId="questions">
-    <Form.Label>Vehicle Typer</Form.Label>
+    <Form.Label>Questios</Form.Label>
     <Form.Control type="text" placeholder="Enter Vehicle Typer" onChange={(e)=>{
 
 setquestions(e.target.value);

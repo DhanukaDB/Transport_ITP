@@ -1,5 +1,5 @@
 const router = require("express").Router();
-let hirebus = require("../models/hirebus");
+let Hirebus = require("../models/HireBus");
 
 /*http://localhost:5000/vehicle/add */ 
 

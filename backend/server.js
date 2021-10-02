@@ -31,8 +31,12 @@ connection.once("open",()=>{
     console.log("MongoDB connection Success!!!");
 })
 
+//IT20207236-Dhanuka
 const vehicleRouter = require("./routes/vehicle.js");
 app.use("/vehicle",vehicleRouter); 
+
+const hirebusRouter = require("./routes/hirebus.js");
+app.use("/hirebus",hirebusRouter); 
  
 
 

@@ -83,6 +83,11 @@ function VehicleDetails (props){
      
     }
 
+    function Edit(_id) {
+      console.log(_id)
+      props.history.push("/editvdetails/"+_id);
+  }
+
     function Delete(_id) {
       console.log(_id)
       props.history.push("/vehicledelete/"+_id);
@@ -90,12 +95,6 @@ function VehicleDetails (props){
 
   const createPDF = (_id,vehicleNo,vModel,nicNo,ownerName,manufacYear,vType) =>{
     console.log(_id);
-    console.log(vehicleNo);
-    console.log(vModel);
-    console.log(nicNo);
-    console.log(ownerName);
-    console.log(manufacYear);
-    console.log(vType);
 
 const unit = "pt";
 const size = "A4"; //page size
@@ -153,7 +152,7 @@ doc.addImage(back, 'PNG', lefts, tops, imgWidths, imgHeights);
         <Form.Group className="container" controlId="vehicleNo">
           <Form.Label>Vehicle Number</Form.Label>
           
-          <Form.Control type="text"  value = {vehicleNo} placeholder="Enter Vehicle Number" onChange={(e)=>{
+          <Form.Control type="text" readonly="readonly" value = {vehicleNo} placeholder="Enter Vehicle Number" onChange={(e)=>{
       
             setvehicleNo(e.target.value);
       
@@ -164,7 +163,7 @@ doc.addImage(back, 'PNG', lefts, tops, imgWidths, imgHeights);
       
         <Form.Group className="container" controlId="vModel">
           <Form.Label>Vehicle Model</Form.Label>
-          <Form.Control type="text"  value = {vModel} placeholder="Enter Vehicle Number" onChange={(e)=>{
+          <Form.Control type="text" readonly="readonly" value = {vModel} placeholder="Enter Vehicle Number" onChange={(e)=>{
       
       setvModel(e.target.value);
       
@@ -173,7 +172,7 @@ doc.addImage(back, 'PNG', lefts, tops, imgWidths, imgHeights);
       
         <Form.Group className="container" controlId="nicNo">
           <Form.Label>Nic Number</Form.Label>
-          <Form.Control type="text"  value = {nicNo} placeholder="Enter NIC Number" onChange={(e)=>{
+          <Form.Control type="text" readonly="readonly" value = {nicNo} placeholder="Enter NIC Number" onChange={(e)=>{
       
       setnicNo(e.target.value);
       
@@ -182,7 +181,7 @@ doc.addImage(back, 'PNG', lefts, tops, imgWidths, imgHeights);
       
         <Form.Group className="container" controlId="ownerName">
           <Form.Label>Owner Name</Form.Label>
-          <Form.Control type="text"  value = {ownerName} placeholder="Enter Owner Name" onChange={(e)=>{
+          <Form.Control type="text" readonly="readonly" value = {ownerName} placeholder="Enter Owner Name" onChange={(e)=>{
       
       setownerName(e.target.value);
       
@@ -191,7 +190,7 @@ doc.addImage(back, 'PNG', lefts, tops, imgWidths, imgHeights);
       
         <Form.Group className="container" controlId="manufacYear">
           <Form.Label>Manufactured Year</Form.Label>
-          <Form.Control type="text"  value = {manufacYear} placeholder="Enter Manufactured Year" onChange={(e)=>{
+          <Form.Control type="text" readonly="readonly" value = {manufacYear} placeholder="Enter Manufactured Year" onChange={(e)=>{
       
       setmanufacYear(e.target.value);
       
@@ -200,7 +199,7 @@ doc.addImage(back, 'PNG', lefts, tops, imgWidths, imgHeights);
       
         <Form.Group className="container" controlId="vType">
           <Form.Label>Vehicle Typer</Form.Label>
-          <Form.Control type="text"  value = {vType} placeholder="Enter Vehicle Typer" onChange={(e)=>{
+          <Form.Control type="text" readonly="readonly" value = {vType} placeholder="Enter Vehicle Typer" onChange={(e)=>{
       
       setvType(e.target.value);
       
@@ -212,11 +211,12 @@ doc.addImage(back, 'PNG', lefts, tops, imgWidths, imgHeights);
         <Form.Group className="container" controlId="formBasicCheckbox">
          
       
-          <Button type="submit" variant="outline-warning">Confirm Edit Details</Button>{' '}
+          <Button variant="outline-warning" onClick={()=>Edit(_id)}> Edit Details</Button>{' '}
           
           <Button variant="outline-danger" onClick={()=>Delete(_id)}>Delete Details</Button>{' '}
          
-          <Button variant="outline-dark" onClick = {()=>createPDF(_id,vehicleNo,vModel,nicNo,ownerName,manufacYear,vType)} >Generate Report</Button>
+          <Button variant="outline-dark" onClick = {()=>createPDF(_id,vehicleNo,vModel,nicNo,ownerName,manufacYear,vType)} >Generate PDF</Button>
+
           <Link to ="/vhome"> <Button variant="info">Go  Back To Vehicle home</Button></Link>
         </Form.Group>
        
