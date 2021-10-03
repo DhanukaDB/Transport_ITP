@@ -37,8 +37,8 @@ newHireBus.save().then(()=>{
 
 router.route("/").get((req,res)=>{
 
-    newHireBus.find().then((newHireBus)=>{
-        res.json(newHireBus)
+    Hirebus.find().then((hires)=>{
+        res.json(hires)
     }).catch((err)=>{
         console.log(err)
     })
@@ -63,7 +63,7 @@ router.route("/update/:id").put(async (req, res) =>{
 
     }
 
-    const update = await newHireBus.findByIdAndUpdate(hireID,updateHireBus)
+    const update = await Hirebus.findByIdAndUpdate(hireID,updateHireBus)
     .then(()=>{
         res.status(200).send({status: "Vehicle Updated"})
         
@@ -79,7 +79,7 @@ router.route("/update/:id").put(async (req, res) =>{
 router.route("/delete/:id").delete(async (req, res) =>{
     let hireID = req.params.id;
 
-    await newHireBus.findByIdAndDelete()
+    await Hirebus.findByIdAndDelete(hireID)
     .then(()=>{
         res.status(200).send({status: "Hire Deleted"});
         

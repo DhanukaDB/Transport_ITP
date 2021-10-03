@@ -1,13 +1,15 @@
 import './App.css';
+import { BrowserRouter as BRouter, Switch, Route,Link } from "react-router-dom";
+
+//IT20207236 - Dhanuka
 import Header from './components/Header';
 import AddVehicle from './components/AddVehicle';
 import AllVehicle from './components/AllVehicle';
 import VehicleDetails from './components/VehicleDetails';
-import { BrowserRouter as BRouter, Switch, Route,Link } from "react-router-dom";
 import Home from './components/Home';
 import Footer from './components/Footer';
 import HireBus from './components/HireBus';
-import AboutUS from './components/AboutUs';
+import AllHires from './components/AllHires';
 import EditVehicleDetails from './components/EditVehicleDetails';
 import VHome from './components/VehicleHome';
 import DeleteVehicle from './components/DeleteVehicle';
@@ -95,10 +97,14 @@ const App =()=> {
             <Switch>
               <Route exact path="/hirebus" component={HireBus} />
             </Switch>
-            
-
+            <Switch>
+              <Route exact path="/allhires" component={AllHires} />
+            </Switch>
             <Switch>
               <Route exact path="/editvdetails/:id" component={EditVehicleDetails} />
+            </Switch>
+            <Switch>
+              <Route exact path="/vehicledetails/:id" component={VehicleDetails} />
             </Switch>
             <Switch>
               <Route exact path="/vhome" component={VHome} />
