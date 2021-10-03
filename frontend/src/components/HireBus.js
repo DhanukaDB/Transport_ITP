@@ -13,6 +13,10 @@ function Hirebus() {
 
   function sendData(e){
 
+    if(mobileNumber.trim().length != 10){
+      alert("Invalid Phone Number!");
+      return
+    }
     e.preventDefault();
 
     const newHireBus ={
@@ -28,7 +32,7 @@ function Hirebus() {
 
     axios.post("http://localhost:5000/hirebus/create",newHireBus).then(()=>{
 
-      alert("Hire requested Successfully");
+      alert("Hire requested Successfully. We'll contact you soon!");
     window.location = `/allhirebus`;
 
 
@@ -63,7 +67,7 @@ function Hirebus() {
 
 <Form.Group className="container" controlId="name">
     <Form.Label>Name</Form.Label>
-    <Form.Control type="text"  placeholder="Enter Vehicle Number" onChange={(e)=>{
+    <Form.Control type="text"  placeholder="Enter Your Name" onChange={(e)=>{
 
       setname(e.target.value);
 
@@ -75,7 +79,7 @@ function Hirebus() {
   <br/>
   <Form.Group className="container" controlId="mobileNumber">
     <Form.Label>phone No</Form.Label>
-    <Form.Control type="tel" placeholder="Enter Vehicle Number" onChange={(e)=>{
+    <Form.Control type="tel" placeholder="Enter Your Mobile Number" onChange={(e)=>{
 
 setmobileNumber(e.target.value);
 
@@ -84,7 +88,7 @@ setmobileNumber(e.target.value);
   <br/>
   <Form.Group className="container" controlId="from">
     <Form.Label>From</Form.Label>
-    <Form.Control type="text" placeholder="Enter NIC Number" onChange={(e)=>{
+    <Form.Control type="text" placeholder="Enter Start Location" onChange={(e)=>{
 
 setfrom(e.target.value);
 
@@ -93,7 +97,7 @@ setfrom(e.target.value);
   <br/>
   <Form.Group className="container" controlId="to1">
     <Form.Label>To</Form.Label>
-    <Form.Control type="text" placeholder="Enter Owner Name" onChange={(e)=>{
+    <Form.Control type="text" placeholder="Enter Destination" onChange={(e)=>{
 
 setto1(e.target.value);
 
@@ -110,8 +114,8 @@ setdate(e.target.value);
   </Form.Group>
   <br/>
   <Form.Group className="container" controlId="questions">
-    <Form.Label>Questios</Form.Label>
-    <Form.Control type="text" placeholder="Enter Vehicle Typer" onChange={(e)=>{
+    <Form.Label>Email</Form.Label>
+    <Form.Control type="email" placeholder="Enter Vehicle Typer" onChange={(e)=>{
 
 setquestions(e.target.value);
 

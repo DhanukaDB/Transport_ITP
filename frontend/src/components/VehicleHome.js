@@ -22,17 +22,28 @@ function VHome(){
 <Container>
   <Row>
     <Col>
-    <br/><br/><br/><br/><br/><Link to = "/addvehicle">
+    <br/><br/><br/><br/><br/>
+    
+  <Link to = "/addvehicle">
   <Button variant="primary" size="lg" block>
   Add Vehicle
   </Button>
   </Link>
   <br/>
+  
   <Link to ="/allvehicle">
   <Button variant="secondary" size="lg" block>
   View All Vehicles Details
   </Button>
-  </Link></Col>
+  </Link>
+  <br/>
+  
+  <Link to ="/allhires">
+  <Button variant="secondary" size="lg" block>
+  All requested Hire Details
+  </Button>
+  </Link>
+  </Col>
     <Col><Carousel>
   <Carousel.Item>
     <img

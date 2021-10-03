@@ -14,6 +14,11 @@ function AddVehicle(){
   const [vType, setvType] = useState("");
 
   function sendData(e){
+    if(nicNo.trim().length != 10){
+      alert("Invalid NIC number!");
+      return
+      
+  }
     e.preventDefault();
 
     const newVehicle ={
@@ -58,7 +63,7 @@ function AddVehicle(){
     <Form onSubmit={sendData}>
   <Form.Group className="container" controlId="vehicleNo">
     <Form.Label>Vehicle Number</Form.Label>
-    <Form.Control type="text" required placeholder="Enter Vehicle Number" onChange={(e)=>{
+    <Form.Control type="text" required placeholder="Enter Vehicle Number"  maxlength="8" onChange={(e)=>{
 
       setvehicleNo(e.target.value);
 
@@ -79,7 +84,7 @@ setvModel(e.target.value);
 
   <Form.Group className="container" controlId="nicNo">
     <Form.Label>Nic Number</Form.Label>
-    <Form.Control type="text" required placeholder="Enter NIC Number" onChange={(e)=>{
+    <Form.Control type="text" required placeholder="Enter NIC Number"  maxlength="10" onChange={(e)=>{
 
 setnicNo(e.target.value);
 
@@ -97,7 +102,7 @@ setownerName(e.target.value);
 
   <Form.Group className="container" controlId="manufacYear">
     <Form.Label>Manufactured Year</Form.Label>
-    <Form.Control type="text" required placeholder="Enter Manufactured Year" onChange={(e)=>{
+    <Form.Control type="text" required placeholder="Enter Manufactured Year" maxlength="8" onChange={(e)=>{
 
 setmanufacYear(e.target.value);
 
