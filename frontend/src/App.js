@@ -22,6 +22,7 @@ import AllPassengers from './components/AllPassengers';
 import UserHandler from './components/UserHandler';
 import UserLevel from './components/UserLevel';
 import EditUserLevel from './components/EditUserLevel';
+import Adminlog from './components/Adminlog';
 
 //IT20205256
 import AddPayment from './components/AddPayment';
@@ -157,7 +158,9 @@ const App =()=> {
               <Route exact path="/edituserlevel/:id" component={EditUserLevel} />
             </Switch>
        
-            
+            <Switch>
+              <Route exact path="/adminlog" component={Adminlog} />
+            </Switch>
 
 
 

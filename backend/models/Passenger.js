@@ -28,7 +28,9 @@ const passengerSchema = new Schema({
     require: true
    },
 
-  
+   userlevel: {
+      type: String,
+    },
 
 })
 

@@ -51,6 +51,9 @@ app.use("/salary", salaryRouter);//1st parameter is the url name to call js file
 const passegerRouter = require("./routes/passengers.js");
 app.use("/passenger", passegerRouter);
 
+const adminloginRouter = require("./routes/adminlogins.js");
+app.use("/adminlogin", adminloginRouter);
+
 //IT20205256-Payment
 const paymentRouter = require("./routes/payments.js");
 app.use("/payment",paymentRouter);
