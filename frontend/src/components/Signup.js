@@ -54,93 +54,64 @@ const Signup = () => {
          })
     }
 
-    return (
-        <div>
-            <Form onSubmit={sendData}>
-        <div className = "mycard">
-            
-           <div className= "card auth-card">
 
-               <div >
-               <Col xs={1} md={12}  >
-               
-               <Image className="im" src="https://res.cloudinary.com/hidl3r/image/upload/v1631475740/itp/pngwing.com_ktdfmg.png" roundedCircle />
-             </Col>
-
-
-           {/*<Col xs={1} md={12}  >       
-           <Image className="im" src="ulogin.png" roundedCircle />
-            </Col> */} 
-               <h1>Sign Up</h1>
-          </div>
-                 <br/>
-               <input 
-                type = "text"
-                placeholder = "Username"
-                id="username"
-                value = {username}
-                onChange={(e) => setUsername (e.target.value)}
-                />
-
-                 <br/>
-               <input 
-                type = "text"
-                placeholder = "Nic"
-                id="nic"
-                value = {nic}
-                onChange={(e) => setNic (e.target.value)}
-                />
-                <br/>
-
-               <input 
-                type = "text"
-                placeholder = "Email"
-                id="email"
-                value = {email}
-                onChange={(e) => setEmail (e.target.value)}
-                />
-                <br/>
+    return(
+        <div> 
+          <Form className="container" onSubmit={sendData} >
+          <div className = "signin1">
+            <div className= "signin">
+          <Col xs={1} md={12}  >
+                <Image  className="im" src="https://res.cloudinary.com/hidl3r/image/upload/v1631611510/itp/ulogin_b64etx.png" roundedCircle />
                 
-               <input 
-                type = "text"
-                placeholder = "Phoneno"
-                id="phoneno"
-                value = {phoneno}
-                onChange={(e) => setPhoneno (e.target.value)}
-                />
-                <br/>
-                <input
-                 type ="password"
-                 placeholder="Password"
-                 id="password"
-                 value = {password}
-                 onChange={(e) => setPassword (e.target.value)}
-                 />
-                 <br></br>
-                 
-                 <Button className= "btn waves-effect waves-light #64b5f6 blue lighten-2" 
-                    
-                 type="submit">
-         
-                      Signup
-                 </Button>
-                 
+              </Col>
+ 
+                <h1 className="login">Sign Up</h1>
+                <Form.Group className="mb-3" controlId="formBasicUsername">
+                     <Form.Control type="text" placeholder="Enter Username"  value = {username}
+                        onChange={(e) => setUsername (e.target.value)} />
+               </Form.Group>
 
-                 <br></br>
-                 <h5>
-                     <Link to = "/signin"> Already have an account? </Link>
-                 </h5>
+               <Form.Group className="mb-3" controlId="formBasicNic">
+                     <Form.Control type="text" placeholder="Enter Nic"  value = {nic}
+                        onChange={(e) => setNic (e.target.value)} />
+     
+               </Form.Group>
+
+                
+                 
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                     <Form.Control type="email" placeholder="Enter email"  value = {email}
+                        onChange={(e) => setEmail (e.target.value)} />
+     
+                </Form.Group>
+
+
+               <Form.Group className="mb-3" controlId="formBasicPhoneno">
+                     <Form.Control type="Number" placeholder="Enter Phone number"  value = {phoneno}
+                        onChange={(e) => setPhoneno (e.target.value)} />
+     
+                     </Form.Group>
+ 
+               <Form.Group className="mb-3" controlId="formBasicPassword">
+               <Form.Control type="password" placeholder="Password" value = {password}
+                  onChange={(e) => setPassword (e.target.value)}/>
+               </Form.Group>
+ 
+              <br/><br/>
+       <Button variant="primary" type="submit">
+           Sign Up
+      </Button>
+      <br/><br/>
+       <h5>
+       <Link to = "/signin">Already have an account?  </Link>
+      </h5>
+ 
+               </div>
            </div>
-
-
-
-        </div>
-        </Form>
-</div>
-
-
-    
-    )
+         </Form>
+      </div>
+   )  
+ 
 }
 
 export default Signup

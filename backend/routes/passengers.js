@@ -3,12 +3,14 @@ let Passenger = require("../models/Passenger");
 
 
 
+//Add Passenger
 router.route("/add").post((req,res) => {
     const username = req.body.username;
     const nic      = req.body.nic;
     const email    = req.body.email;
     const phoneno  = Number(req.body.phoneno);
     const password   = req.body.password;
+    const userlevel  = req.body.userlevel;
 
     if(!username || !nic || !email || !phoneno || !password){
         return res.status(422).json({error:"please add all the feilds"})
@@ -27,7 +29,8 @@ router.route("/add").post((req,res) => {
         nic,
         email,
         phoneno,
-        password
+        password,
+        userlevel
 
     })
 
@@ -57,16 +60,18 @@ router.route("/").get((req,res) => {
 })
 
 
+//update passenger using an ID
 router.route("/update/:id").put(async (req, res) => {
       let userId = req.params.id;
-      const {username, nic,email, phoneno,password} = req.body;
+      const {username, nic,email, phoneno,password,userlevel} = req.body;
 
       const updatePassenger = {
           username,
           nic,
           email,
           phoneno,
-          password
+          password,
+          userlevel
       }
 
 
@@ -79,6 +84,8 @@ router.route("/update/:id").put(async (req, res) => {
 })
 
 
+
+//Delete passenger Using an Id
 router.route("/delete/:id").delete(async (req, res) => {
       let userId = req.params.id;
       
@@ -125,6 +132,7 @@ const username = req.body.username;
     const email    = req.body.email;
     const phoneno  = Number(req.body.phoneno);
     const password   = req.body.password;
+    const userlevel = req.body.userlevel;
 
     const newPassenger = new Passenger ({
         username,
@@ -132,6 +140,7 @@ const username = req.body.username;
         email, 
         phoneno,
         password,
+        userlevel,
 
     })
  if(!email || !password){
@@ -167,3 +176,4 @@ const username = req.body.username;
 
 
 module.exports = router;
+

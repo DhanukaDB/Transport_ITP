@@ -2,7 +2,7 @@ import React from "react";
 import {Link,useHistory} from  'react-router-dom'
 import { useState} from 'react';
 import axois from "axios";
-import {Form,Button} from "react-bootstrap";
+import {Col,Image,Form,Button} from "react-bootstrap";
 
 const Signin = (props) => {
 
@@ -48,50 +48,46 @@ const Signin = (props) => {
          })
         
     }
-       
-    
+     return(
+       <div>
+         
+         <Form className="container" onSubmit={sendData} >
+         <div className = "signin1">
+           <div className= "signin">
+         <Col xs={1} md={12}  >
+               <Image  className="im" src="https://res.cloudinary.com/hidl3r/image/upload/v1631611510/itp/ulogin_b64etx.png" roundedCircle />
+               
+             </Col>
 
-    return (
-        <div>
-        <form className="container" onSubmit={sendData}>
-        <div className = "mycard">
-           <div className= "card auth-card">
-               <h2>Sign In</h2>
+               <h1 className="login">Sign In</h1>
                 
-               <input 
-                type = "text"
-                placeholder = "Email"
-                id="email"
-                value = {email}
-                onChange={(e) => setEmail (e.target.value)}
-                />
-                <br></br>
+               <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Control type="email" placeholder="Enter email"  value = {email}
+                       onChange={(e) => setEmail (e.target.value)} />
+    
+                    </Form.Group>
 
-                <input
-                 type ="password"
-                 placeholder="Password"
-                 id="password"
-                 value = {password}
-                 onChange={(e) => setPassword (e.target.value)}
-                 />
-                <br></br>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Control type="password" placeholder="Password" value = {password}
+                 onChange={(e) => setPassword (e.target.value)}/>
+              </Form.Group>
 
-                 <button className = "btn waves-effect waves-light #64b5f6 blue lighten-2">
-                      Signin
-                 </button>
-                 
-                 <br></br>
-                 <h5>
-                     <Link to = "/signup"> Don't have an account? </Link>
-                 </h5>
+             <Form.Group className="mb-3" controlId="formBasicCheckbox">
+               <Form.Check type="checkbox" label="Check me out" />
+             </Form.Group>
+      <Button variant="primary" type="submit">
+          Sign In
+     </Button>
+      <br/>
+      <h5>
+      <Link to = "/signup" id="link"> Don't have an account? </Link>
+     </h5>
 
-           </div>
-
-
-        </div>
-      </form>
-      </div>  
-    )
+              </div>
+          </div>
+        </Form>
+     </div>
+  )  
 }
 
 export default Signin

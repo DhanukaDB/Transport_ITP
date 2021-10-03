@@ -38,47 +38,42 @@
 }
 
 /*  sahani */
-body {
-  background-color: #f9f9fa
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+.login{
+  font-family: 'Grand Hotel', cursive;
+}
+.im{
+  max-width: 70px;
 }
 
-.padding {
-  padding: 3rem !important
+.signin1{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  
+}
+.signin{
+  
+  padding: 20px;
+  max-height: 1600px;
+  text-align: center;
+  max-width: 800px;
+  margin: 10px auto;
+  border-style:solid;
+  background-color: lightslategrey;
 }
 
-
-
-.card {
-  border-radius: 5px;
-  -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
-  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
-  border: none;
-  margin-bottom: 30px
+a {
+  color: black;
 }
-
-
-
-.bg-c-lite-green {
-  background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
-  background: linear-gradient(to right, #ee5a6f, #f29263)
-}
-
-
-.card-block {
-  padding: 1.25rem
-}
-
-
-.b-b-default {
-  border-bottom: 1px solid #e0e0e0
-}
-
-.m-b-20 {
-  margin-bottom: 20px
-}
-
-.m-b-10 {
-  margin-bottom: 10px
+.signin-admin{
+  
+  padding: 20px;
+  max-height: 1600px;
+  text-align: center;
+  max-width: 800px;
+  margin: 10px auto;
+  border-style:solid;
+  background-color: gray;
 }
 /*charya*/
 .reservationManagement{
