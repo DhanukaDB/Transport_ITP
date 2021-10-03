@@ -307,12 +307,12 @@ li {
 .delpay{
   position: relative;
   width: 250px;
-  height: 35px;
+  height: 40px;
   font-size: 18px;
   text-align: center;
   margin:5px;
   left: 300px;
-  bottom: 30px;
+  bottom: 35px;
 
 }
 
@@ -535,3 +535,9 @@ li {
   left: 150px;
 }
 
+.generatePdF{
+  position: relative;
+  width: 300px;
+  left: 1000px;
+  bottom: 40px;
+}
