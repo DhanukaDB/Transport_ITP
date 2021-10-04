@@ -22,7 +22,7 @@ export default function AllPassengerFeedback(){
 
     useEffect(()=>{
       function getFeedbacks(){
-          axios.get("http://localhost:8070/feedback/readf/",).then((res)=>{
+          axios.get("http://localhost:5000/feedback/readf/",).then((res)=>{
               setFeedbacks(res.data);
           }).catch((err)=>{
               alert(err.message)
@@ -110,7 +110,7 @@ export default function AllPassengerFeedback(){
         console.log('form submit   =====',updateFeedback)
 
 
-        axios.put(`http://localhost:8070/feedback/updatef/${updateFeedback.id}`, updateFeedback).then(()=>{
+        axios.put(`http://localhost:5000/feedback/updatef/${updateFeedback.id}`, updateFeedback).then(()=>{
             alert("Feedback Details Updated");
             handleClose();
             window.location = `/updatef`;
@@ -127,7 +127,7 @@ export default function AllPassengerFeedback(){
 
         const r = window.confirm ("Delete this Feedback?"); 
             if(r ==true){
-        axios.delete(`http://localhost:8070/Feedback/deletef/${_id}`).then((response)=>{ 
+        axios.delete(`http://localhost:5000/Feedback/deletef/${_id}`).then((response)=>{ 
         alert("Feedback deleted successfully");
         window.location = `/readfadmin`;
       })

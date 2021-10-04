@@ -18,7 +18,7 @@ export default function AdminAllEmpFeedbacks(){
 
   // admin view all the feedbacks entered by drivers
     useEffect(() =>{  
-        axios.get(`http://localhost:8070/empFeedback/readfeadmin`).then((response) => { //pass response as a function
+        axios.get(`http://localhost:5000/empFeedback/readfeadmin`).then((response) => { //pass response as a function
           SetFeedbackList(response.data);
         });
       }, 

@@ -16,7 +16,7 @@ export default function EAllFeedbacks(){
  
 
     useEffect(() =>{ //view all the feedbacks
-        axios.get(`http://localhost:8070/empFeedback/readfe`).then((response) => { //pass response as a function
+        axios.get(`http://localhost:5000/empFeedback/readfe`).then((response) => { //pass response as a function
           SetFeedbackList(response.data);
         });
       }, []);

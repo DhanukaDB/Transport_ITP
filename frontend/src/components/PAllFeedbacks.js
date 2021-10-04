@@ -19,7 +19,7 @@ export default function AllFeedbacks(){
  
 
     useEffect(() =>{ //view all the feedbacks
-        axios.get(`http://localhost:8070/Feedback/readf`).then((response) => { //pass response as a function
+        axios.get(`http://localhost:5000/Feedback/readf`).then((response) => { //pass response as a function
           SetFeedbackList(response.data);
         });
       }, []);

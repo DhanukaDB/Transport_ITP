@@ -27,7 +27,7 @@ export default function AllEmployeeFeedback(){
     //read feedbacks by admin
     useEffect(()=>{
       function getFeedbacks(){
-          axios.get("http://localhost:8070/empFeedback/readfe/",).then((res)=>{
+          axios.get("http://localhost:5000/empFeedback/readfe/",).then((res)=>{
               setFeedbacks(res.data);
           }).catch((err)=>{
               alert(err.message)
@@ -116,7 +116,7 @@ export default function AllEmployeeFeedback(){
         console.log('form submit   =====',updateFeedback)
 
 
-        axios.put(`http://localhost:8070/empFeedback/updatefe/${updateFeedback.id}`, updateFeedback).then(()=>{
+        axios.put(`http://localhost:5000/empFeedback/updatefe/${updateFeedback.id}`, updateFeedback).then(()=>{
             alert("Feedback Details Updated");
             handleClose();
             window.location = `/updatefe`;
@@ -132,7 +132,7 @@ export default function AllEmployeeFeedback(){
     const onDelete = (_id) => {  
         const r = window.confirm ("Delete this feedback?"); 
             if(r ==true){
-        axios.delete(`http://localhost:8070/empFeedback/deletefe/${_id}`).then((response)=>{ 
+        axios.delete(`http://localhost:5000/empFeedback/deletefe/${_id}`).then((response)=>{ 
         alert("feedback deleted successfully");
         window.location = `/updatefe`;
       })

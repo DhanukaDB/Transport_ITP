@@ -32,7 +32,7 @@ export default function EAddFeedback(){  //adding function
 
       }
 
-     axios.post(`http://localhost:8070/empFeedback/addfe`, newFeedback).then(() =>{  //route from the backend
+     axios.post(`http://localhost:5000/empFeedback/addfe`, newFeedback).then(() =>{  //route from the backend
 
         alert("Feedback Added.Mail us for any updates or inqueries- siyathatravels@gmail.com") //display if adding is successful
         window.location = `/addfe`;  //redirect to adding page
