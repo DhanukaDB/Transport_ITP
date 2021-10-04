@@ -80,6 +80,7 @@ axios.post("/post/save",data).then((res)=>{
     )
   }
 })
+window.location=`/addpayment`;
 }
 
   }

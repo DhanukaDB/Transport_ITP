@@ -41,6 +41,35 @@ export default function AddPayment(){
 
     }
 
+    function isNumberKey(evt){
+      var charCode = (evt.which) ? evt.which : evt.keyCode
+      if (charCode > 31 && (charCode < 48 || charCode > 57))
+      return false;
+    
+      return true;
+    }
+    
+    function inputNumberLength(e) {
+      e.preventDefault();
+      alert("Input 10 numbers to your phone number");
+    }
+    
+    function inputCardLength(e){
+      e.preventDefault();
+      alert("Input valid 16 numbers for card number");
+    }
+    
+    function inputCcvLength(e){
+      e.preventDefault();
+      alert("Input 3 numbers for CCV");
+    }
+    
+    function inputDateLength(e){
+      e.preventDefault();
+      alert("Input valid date");
+    }
+    
+
     
 
 
@@ -78,7 +107,7 @@ export default function AddPayment(){
 
     <Form.Group controlId="container" className="paymentCode">
     <Form.Label for="postalcode">Postal Code</Form.Label>
-    <Form.Control type="text" placeholder="Enter code"
+    <Form.Control type="number" onKeyPress={isNumberKey} placeholder="Enter code"
     onChange={(e)=>{
       setCode(e.target.value);
     }} required/>
@@ -86,7 +115,7 @@ export default function AddPayment(){
 
   <Form.Group controlId="container" className="paymentNumber">
     <Form.Label for="phonenum">Phone Number</Form.Label>
-    <Form.Control type="text" placeholder="07********" 
+    <Form.Control type="number" onKeyPress={isNumberKey} placeholder="07********" min="010000000" max="1000000000" maxLength="10" onInvalid={inputNumberLength}
     onChange={(e)=>{
       setNum(e.target.value);
     }} required/>
@@ -100,19 +129,19 @@ export default function AddPayment(){
 
 
   <Form.Group className="pay1" controlId="cardNumber">
-<Form.Control as="textarea" rows={1} size="lg" type="text" placeholder="Enter Card Number"
+<Form.Control size="lg" type="number" placeholder="Enter Card Number" onKeyPress={isNumberKey} min="1000000000000000" max="9999999999999999" maxLength="16" onInvalid={inputCardLength} 
 onChange={(e)=>{
   setCard(e.target.value);
 }} required />
   </Form.Group>
   <Form.Group controlId="expiryDate" className="pay2">
-<Form.Control type="text" placeholder="MM/YY" 
+<Form.Control type="number" placeholder="MM/YY" min="0" max="3200" maxLength="4" onKeyPress={isNumberKey} onInvalid={inputDateLength}
 onChange={(e)=>{
   setDate(e.target.value);
 }} required/>
   </Form.Group>
   <Form.Group controlId="CCV" className="pay3">   
-<Form.Control type="text" placeholder="Enter CCV" 
+<Form.Control type="number" placeholder="Enter CCV" onKeyPress={isNumberKey} min="100" max="999" maxLength="3" onInvalid={inputCcvLength} 
 onChange={(e)=>{
   setCcv(e.target.value);
 }} required/>
