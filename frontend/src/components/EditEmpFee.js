@@ -160,7 +160,7 @@ export default function AllEmployeeFeedback(){
     const doc = new jsPDF( orientation , unit , size ); //create document
 
     //pdf data
-    const title = `| Siyatha - Feedbacks |- Feedback ID: ${_id} `;
+    const title = ` Siyatha Travels - Feedbacks and Complaints for Passengers - Type: ${type} `;
     const Eusername = `Username: ${username} `;
     const Eemail = `Email: ${email} `;
     const Etype = `Type: ${type} `;

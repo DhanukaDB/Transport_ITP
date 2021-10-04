@@ -152,7 +152,7 @@ export default function AllPassengerFeedback(){
     const marginLeft = 40;
     const doc = new jsPDF( orientation , unit , size ); //create document
     //pdf data
-    const title = `| Siyatha Travels- Feedbacks and Complaints for Drivers |- Type: ${type} `;
+    const title = ` Siyatha Travels - Feedbacks and Complaints for Drivers- Type: ${type} `;
     const Eusername = `Username: ${username} `;
     const Eemail = `Email: ${email} `;
     const Etype = `Type: ${type} `;
