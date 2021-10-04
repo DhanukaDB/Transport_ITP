@@ -233,8 +233,8 @@ window.location=`/addpayment`;
     
   </div>
 
-<button className="btn btn-success"> <a href = "/all" type="submit" style={{textDecoration:'none',color:'Black'}}onClick={this.onSubmit}>Reserve My Seat</a></button> &nbsp;
-<Button variant="primary"> <a href = "/all" style={{textDecoration:'none',color:'Black'}}>View All Booking</a></Button>
+  <Button variant="primary"> <a href = "/addpayment" type="submit" style={{textDecoration:'none',color:'Black'}}onClick={this.onSubmit}>Reserve My Seat</a></Button> &nbsp;
+  <Button variant="primary"> <a href = "/requesteditdelete" style={{textDecoration:'none',color:'Black'}}>Request edit or cancel booking</a></Button>
 </Card.Text>
 </Form>
 </Card.Body>

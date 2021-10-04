@@ -40,10 +40,9 @@ app.use("/hirebus",hirebusRouter);
  
 
 
-//give access to employee router file
+//IT20197032_employee and salary
 const employeeRouter = require("./routes/Employees.js");
 app.use("/employee", employeeRouter);//1st parameter is the url name to call js file
-//give access to salaryInfo router file
 const salaryRouter = require("./routes/SalaryInfo");
 app.use("/salary", salaryRouter);//1st parameter is the url name to call js file
 
@@ -61,8 +60,10 @@ app.use("/payment",paymentRouter);
 //IT20192532-Reservation
 //import routes
 const postRoutes = require("./routes/bookings");
+const requestRoutes = require("./routes/addrequests");
 //route middleware
 app.use(postRoutes);
+app.use(requestRoutes);
 
 //IT20201982-Time table
 const timeRouter = require("./routes/times.js");

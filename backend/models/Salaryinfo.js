@@ -12,29 +12,28 @@ const salarySchema = new Schema({
 
     },
     basicSalary : {
-        type : String,
+        type : Number,
         required : true//backend validation
 
     },
     OT : {
-        type : String,
+        type : Number,
         required : true//backend validation
 
     }, 
     allowances : {
-        type : String,
+        type : Number,
         required : true//backend validation
 
     },
     payrollDeduct : {
-        type : String,
+        type : Number,
         required : true//backend validation
 
     },
     netSalary : {
-        type : String
+        type : Number
         
-
     },
     salaryPeriod : {
         type : String,

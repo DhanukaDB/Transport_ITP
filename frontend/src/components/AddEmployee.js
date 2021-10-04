@@ -62,6 +62,7 @@ export default function AddEmployee() {
             
         }).catch((err)=>{
             alert("err");
+            alert(err.response.data.message);
             console.log(err.message);
         })
 

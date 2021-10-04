@@ -43,14 +43,19 @@ import DeleteEmployee from './components/DeleteEmployee';
 import SalaryDetailsList from './components/SalaryDetailsList';
 import EmployeeManagementHome from './components/EmployeeManagementHome';
 import AdminPanel from './components/AdminPanel';
+import FetchSalaryRecord from './components/FetchSalaryRecord';
+import EmployeereportRender from './components/EmployeereportRender';
+
 
 //IT20192532
-import Allbooking from './components/Allbooking';
+import Adminallbookings from './components/Adminallbookings';
 import AddBooking from './components/AddBooking';
 import EditBooking from './components/EditBooking';
 import BookingDetails from './components/BookingDetails';
 import ReservationManagement from './components/ReservationManagement';
 import Seat from './components/Seat';
+import Requesteditdetails from './components/Requesteditdetails';
+import Allrequest from './components/Allrequest'
 
 //IT20201982
 import ViewTimetable from './components/Viewtimetable';
@@ -64,14 +69,15 @@ import EditDriver from "./components/EditDriver";
 import Homedriver from "./components/Homedriver";
 
 //It20198954
-
 import AddFeedback from "./components/PAddFeedback";
 import EAddFeedback from "./components/EAddFeedback";
 import AllFeedbacks from './components/PAllFeedbacks';
 import EAllFeedbacks from './components/EAllFeedback';
-import AdminAllFeedbacks from './components/AdminViewFeedbacks';
+import AdminAllFeedbacks from './components/AdminViewPassengerFeedbacks';
 import AdminAllEmpFeedbacks from './components/AdminViewDriverFeedbacks';
 import FeedbackHandler from './components/FeedbackAdminHome';
+import AllEmployeeFeedback from './components/EditEmpFee';
+import AllPassengerFeedback from './components/EditPassengerFeedback';
 
 
 const App =()=> {
@@ -187,13 +193,15 @@ const App =()=> {
            
 
          {/* Sayuri */}
+
+            <div className="bodyEmp"> 
+              
          <Route path="/employeeManagementHome" component = {AdminHeader}/>
          <Route path="/employeeManagementHome" component = {EmployeeManagementHome}/>
              
-    
-            <div className="bodyEmp"> 
-
-            
+         <Route path="/generateReportEmployee" component = {AdminHeader}/>
+         <Route path="/generateReportEmployee" component = {EmployeereportRender}/>
+              
          <Route path="/addemp" component = {AdminHeader}/>
          <Route exact path="/addemp" component={AddEmployee}/>
 
@@ -214,12 +222,14 @@ const App =()=> {
 
          <Route path="/getallsal" component = {AdminHeader}/>
         <Route exact path="/getallsal" component={SalaryDetailsList}/>
+
             </div>
          
 
 {/*charya*/}
 
 <div className = "card auth-card">
+
  
     <Route exact path="/reservationHome" component={Header} />
     <Route exact path="/reservationHome" component={ReservationManagement} />
@@ -240,6 +250,7 @@ const App =()=> {
 
     <Route path="/editRes/:id" component = {AdminHeader}/>
     <Route exact path="/editRes/:id" component={BookingDetails}/>
+
 
   </div>
 
@@ -278,6 +289,7 @@ const App =()=> {
             {/* Thisara */}
             
           
+
             <Route path="/addf" component = {AdminHeader}/>    
             <Route path="/addf" exact component={AddFeedback} />  
 
@@ -300,7 +312,6 @@ const App =()=> {
             <Route exact path="/feedbackhandler" component={AdminHeader} />
             <Route exact path="/feedbackhandler" component={FeedbackHandler} />
             
-           
       
 
             <Footer/> 

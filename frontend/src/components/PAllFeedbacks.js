@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";  //send our form data to the mock server
-import { NavLink } from "react-router-dom";
-import { Button,Table,useParams } from "react-router-dom";
-
-
+ 
+ 
+ 
  
 
 
@@ -25,30 +24,30 @@ export default function AllFeedbacks(){
         });
       }, []);
 
-      const onDelete = (_id) => { //delete data row
-        axios.delete(`http://localhost:5000/Feedback/deletef/${_id}`).then((response)=>{ 
-        alert("deleted successfully");
-          feedbackList.map(response.data)
-      })
-      }
-        
+       
      
        
 
     return(
-        <div className="container">
-            <br></br>
-            <h1>Passenger feedbacks and complaints</h1><br></br>
+      <div className="container">
+
+      <blockquote class="blockquote"><br></br>
+        <h1 class="mb-0"> Complaints and Feedbacks for our Drivers</h1>
+        <footer class="blockquote-footer">thoughts of our Passengers...<cite title="Source Title"> </cite></footer>
+      </blockquote>
+      
+       <br></br><br></br>
+              <div className="allEfb">
+                  
             <table class ="table table-hover border shadow">
               <thead class="thead-dark">
                   <tr>
                    
                       <th scope="col">Number</th> 
-                      <th scope="col">ID</th>
                       <th scope="col">Username</th> 
-                      <th scope="col">Email Address</th>
+                     
                       <th scope="col">Type</th>
-                      <th scope="col">Contact Number</th> 
+                       
                       <th scope="col">Message</th>
                        
                       </tr>
@@ -58,19 +57,22 @@ export default function AllFeedbacks(){
                 <tr>                
                   
                 <th scope="row">{key +1}</th>    
-                <td>{val._id}</td>
+                
                 <td>{val.username}</td>
-                <td> {val.email}</td>
+                
                 <td>  {val.type}</td>
-                <td> {val.contactNumber}</td>
+                 
                 <td>   {val.message}</td>
 
                  
                 </tr>
             ))}
                </tbody> </table>
-                <h3 class="topi" >We would love to hear from you🖤🖤</h3>
+                 
                </div>
+               <h3 class="topi" >We would love to hear from you🖤🖤  <a className="btn btn-primary btn-lg" href="/addf"> Add Feedback</a>  </h3> 
+               </div>
+               
   
                   
   )
