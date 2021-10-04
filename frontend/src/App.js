@@ -63,14 +63,15 @@ import EditDriver from "./components/EditDriver";
 import Homedriver from "./components/Homedriver";
 
 //It20198954
-
 import AddFeedback from "./components/PAddFeedback";
 import EAddFeedback from "./components/EAddFeedback";
 import AllFeedbacks from './components/PAllFeedbacks';
 import EAllFeedbacks from './components/EAllFeedback';
-import AdminAllFeedbacks from './components/AdminViewFeedbacks';
+import AdminAllFeedbacks from './components/AdminViewPassengerFeedbacks';
 import AdminAllEmpFeedbacks from './components/AdminViewDriverFeedbacks';
 import FeedbackHandler from './components/FeedbackAdminHome';
+import AllEmployeeFeedback from './components/EditEmpFee';
+import AllPassengerFeedback from './components/EditPassengerFeedback';
 
 
 const App =()=> {
@@ -244,19 +245,21 @@ const App =()=> {
             {/* Thisara */}
             
           
-          <switch>  <Route path="/addf" exact component={AddFeedback} />  </switch>
-          <switch>  <Route path="/readf" exact component={AllFeedbacks} /> </switch>
+            <switch>  <Route path="/addf" exact component={AddFeedback} />  </switch>  {/* passenger adding feedback*/}
+          <switch>  <Route path="/readf" exact component={AllFeedbacks} /> </switch>   {/* passenger viewing feedbacks*/}
            
 
-          <switch>   <Route path="/addfe" exact component={EAddFeedback} /></switch>
-          <switch>  <Route path="/readfe" exact component={EAllFeedbacks} /></switch>
+          <switch>   <Route path="/addfe" exact component={EAddFeedback} /></switch>  {/* driver adding feedbacks*/}
+          <switch>  <Route path="/readfe" exact component={EAllFeedbacks} /></switch>  {/* driver viewing feedbacks*/}
+          
+          <switch>  <Route path="/readfadmin" exact component={AdminAllFeedbacks} /></switch> {/* admin viewing  passeenger feedback*/}
+          <switch>  <Route path="/readfeadmin" exact component={AdminAllEmpFeedbacks} /></switch> {/*admin viewing driver feedback*/}
 
-          <switch>  <Route path="/readfadmin" exact component={AdminAllFeedbacks} /></switch>
-          <switch>  <Route path="/readfeadmin" exact component={AdminAllEmpFeedbacks} /></switch>
-          <switch>
-              <Route exact path="/feedbackhandler" component={FeedbackHandler} />
-            </switch>
-           
+          <switch>  <Route path="/updatef" exact component={AllPassengerFeedback} /></switch> {/* admin updating passeenger feedback*/}
+          <switch>  <Route path="/updatefe" exact component={AllEmployeeFeedback} /> </switch> {/* admin updating driver feedback*/}
+          
+          
+          <switch> <Route exact path="/feedbackhandler" component={FeedbackHandler} /> {/* feedback admin homepage*/} </switch>
       
 
             <Footer/> 

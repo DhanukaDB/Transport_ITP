@@ -268,22 +268,6 @@ li {
 
 }
 
- .topi{
-  color: #6c757d;
-  text-align:right;
-  font-style: italic;
-}
-
-.fbhome {
-  text-align: center;
-  background-image: url(./assets/fd.jpg);
-  background-size: cover;
-  font-family: monospace;
-  height: 800px;
-  width: cover;
-
-  
-}  
 
 /* Kishan */
 
@@ -535,4 +519,50 @@ li {
   width: 300px;
   left: 1000px;
   bottom: 40px;
+}
+
+/*Thisara */
+
+.topi{
+  color: #6c757d;
+  text-align:right;
+   
+}
+
+.fbhome {
+  text-align: center;
+  background-image: url(./assets/33.png);
+  background-size: cover;
+  font-family: monospace;
+  height:800px;
+   width: cover;
+
+  
+}  
+
+.allPfb{
+ 
+  background-image: url(./assets/view2.png);
+  background-size: cover;
+  
+  width: cover;
+
+}
+  
+.allEfb{
+ 
+  background-image: url(./assets/view2.png);
+  background-size: cover;
+  
+  width: cover;
+
+}
+
+.adminAllEfb{
+ 
+  background-image: url(./assets/viewa.png);
+  background-size: cover;
+  
+  width: cover;
+
 }

@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";  //send our form data to the mock server
-import { NavLink } from "react-router-dom";
-import { Button,Table,useParams } from "react-router-dom";
+ 
  
  
  
@@ -17,27 +16,28 @@ export default function AdminAllEmpFeedbacks(){
   const [message,setMessage] = useState("");
  
 
-    useEffect(() =>{ //view all the feedbacks
+  // admin view all the feedbacks entered by drivers
+    useEffect(() =>{  
         axios.get(`http://localhost:8070/empFeedback/readfeadmin`).then((response) => { //pass response as a function
           SetFeedbackList(response.data);
         });
-      }, []);
+      }, 
+      []);
 
-      const onDelete = (_id) => { //delete data row
-        axios.delete(`http://localhost:8070/empFeedback/deletefe/${_id}`).then((response)=>{ 
-        alert("deleted successfully");
-          feedbackList.map(response.data)
-      })
-      }
-        
-     
-       
+            
 
     return(
-        <div className="container">
-
+      <div className="container"> 
+         
           <br></br>
-            <h1>Driver feedbacks and complaints</h1><br></br>
+
+          <blockquote class="blockquote">
+  <h1 class="mb-0"> Complaints and Feedbacks for Passengers</h1>
+  <footer class="blockquote-footer">thoughts of our Drivers...<cite title="Source Title"> </cite></footer>
+</blockquote>
+
+ <br></br><br></br>
+ <div class="adminAllEfb"> 
             <table class ="table table-hover border shadow">
               <thead class="thead-dark">
                   <tr>
@@ -66,13 +66,13 @@ export default function AdminAllEmpFeedbacks(){
 
                 <td>
                  
-
-                 <a href={`/readfeadmin`} class="badge badge-warning" onClick={() => onDelete(val._id)} >Delete</a>
+                
+                 
                 
                 </td>
                 </tr>
             ))}
-               </tbody> </table></div>
+               </tbody> </table></div></div> 
   )
 
  

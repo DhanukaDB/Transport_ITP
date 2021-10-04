@@ -1,8 +1,8 @@
 import React ,{useState, useEffect} from "react";
-import { Container } from "react-bootstrap";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
-
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+ 
 export default function EAddFeedback(){  //adding function
 
     //creating states
@@ -14,6 +14,12 @@ export default function EAddFeedback(){  //adding function
  
 
   function sendData(e){  //create event send data
+
+    if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){ //validate email address
+      alert("Incorrect Email type");
+      return
+  }
+
     e.preventDefault(); //execute setData function, when click submit button
 
       const newFeedback ={
@@ -26,9 +32,10 @@ export default function EAddFeedback(){  //adding function
 
       }
 
-     axios.post(`http://localhost:5000/empFeedback/addfe`, newFeedback).then(() =>{  //route from the backend
+     axios.post(`http://localhost:8070/empFeedback/addfe`, newFeedback).then(() =>{  //route from the backend
 
-        alert("Feedback Added") //display if adding is successful
+        alert("Feedback Added.Mail us for any updates or inqueries- siyathatravels@gmail.com") //display if adding is successful
+        window.location = `/addfe`;  //redirect to adding page
      }).catch((err) =>{   //display error if adding is not successful
         alert(err)
      })
@@ -97,7 +104,11 @@ export default function EAddFeedback(){  //adding function
   </div>
 
   
-  <button  type="submit" class="btn btn-dark">Submit</button> <a href="/readfe" class="btn btn-dark">View some feedbacks</a>        
+  <Button type="submit" variant="primary">Submit</Button>
+  <Button variant="light" ><Link to ="/readfe"> View some feedbacks</Link></Button>{' '}  
+      
+
+             
 </form>
 
  
