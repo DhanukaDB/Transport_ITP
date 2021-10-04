@@ -40,10 +40,9 @@ app.use("/hirebus",hirebusRouter);
  
 
 
-//give access to employee router file
+//IT20197032_employee and salary
 const employeeRouter = require("./routes/Employees.js");
 app.use("/employee", employeeRouter);//1st parameter is the url name to call js file
-//give access to salaryInfo router file
 const salaryRouter = require("./routes/SalaryInfo");
 app.use("/salary", salaryRouter);//1st parameter is the url name to call js file
 
