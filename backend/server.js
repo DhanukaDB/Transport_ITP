@@ -61,8 +61,10 @@ app.use("/payment",paymentRouter);
 //IT20192532-Reservation
 //import routes
 const postRoutes = require("./routes/bookings");
+const requestRoutes = require("./routes/addrequests");
 //route middleware
 app.use(postRoutes);
+app.use(requestRoutes);
 
 //IT20201982-Time table
 const timeRouter = require("./routes/times.js");
