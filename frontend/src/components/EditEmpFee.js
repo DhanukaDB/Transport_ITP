@@ -10,6 +10,7 @@ export default function AllEmployeeFeedback(){
     
     //creating states
     const[Values, setValues] = useState([]);
+    const[_id, setId] = useState("");
     const[username, setUsername] = useState("");
     const[email, setEmail] = useState("");
     const[type, setType] = useState("");
@@ -51,7 +52,7 @@ export default function AllEmployeeFeedback(){
        
         e.preventDefault();
        
-
+        var id =null;
         var username1=null;
         var email1=null;
         var type1=null;
@@ -59,7 +60,16 @@ export default function AllEmployeeFeedback(){
         var message1= null;
       
 
+        if (_id ===""){
+            console.log('test null cond')
+           // setid(Values.id)
+            id=Values._id;
+        }else{
+            //setid(id)
+            id=_id
+            console.log('test not null cond')
 
+        }
 
         if (username ===""){
             console.log('test null cond')
@@ -147,7 +157,6 @@ export default function AllEmployeeFeedback(){
 
         console.log(_id);
         console.log(username);
-        console.log(email);
         console.log(type);
         console.log(contactNumber);
         console.log(message);
@@ -160,25 +169,17 @@ export default function AllEmployeeFeedback(){
     const doc = new jsPDF( orientation , unit , size ); //create document
 
     //pdf data
-    const title = ` Siyatha Travels - Feedbacks and Complaints for Passengers - Type: ${type} `;
+    const title = ` Siyatha Travels - ${type} for a Passenger  `;
     const Eusername = `Username: ${username} `;
-    const Eemail = `Email: ${email} `;
     const Etype = `Type: ${type} `;
     const EcontactNumber = `contact Number: ${contactNumber} `;
     const Emessage = `Message: ${message} `;
      
-     const left = 30;
-    const top = 8;
-    const imgWidth = 100;
-    const imgHeight = 100;   
-    const lefts = 500;
-    const tops = 300;
-    const imgWidths = 300;
-    const imgHeights = 300;
+     
+     
     doc.setFontSize( 20 );
     doc.text (150, 40,title);
-    doc.text(60, 200, Eusername);  
-    doc.text(60, 250, Eemail);  
+    doc.text(60, 250, Eusername);  
     doc.text(60, 300, Etype);  
     doc.text(60, 350, EcontactNumber);  
     doc.text(60, 400, Emessage); 

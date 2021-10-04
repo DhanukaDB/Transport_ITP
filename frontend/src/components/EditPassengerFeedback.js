@@ -5,7 +5,8 @@ import jsPDF from 'jspdf';
  
 export default function AllPassengerFeedback(){
     const[Values, setValues] = useState([]);
-   
+
+    const[_id, setId] = useState("");
     const[username, setUsername] = useState("");
     const[email, setEmail] = useState("");
     const[type, setType] = useState("");
@@ -46,14 +47,23 @@ export default function AllPassengerFeedback(){
        
         e.preventDefault();
        
-
+        var id=null;
         var username1=null;
         var email1=null;
         var type1=null;
         var contactNumber1= null;
         var message1= null;
       
+        if (_id ===""){
+            console.log('test null cond')
+           // setId(Values.id)
+            id=Values._id;
+        }else{
+            //setId(id)
+            id=_id
+            console.log('test not null cond')
 
+        }
 
         if (username ===""){
             console.log('test null cond')
@@ -152,25 +162,17 @@ export default function AllPassengerFeedback(){
     const marginLeft = 40;
     const doc = new jsPDF( orientation , unit , size ); //create document
     //pdf data
-    const title = ` Siyatha Travels - Feedbacks and Complaints for Drivers- Type: ${type} `;
+    const title = `Siyatha Travels - ${type} for a Driver `;
     const Eusername = `Username: ${username} `;
-    const Eemail = `Email: ${email} `;
     const Etype = `Type: ${type} `;
     const EcontactNumber = `contact Number: ${contactNumber} `;
     const Emessage = `Message: ${message} `;
      
-   const left = 30;
-    const top = 8;
-    const imgWidth = 100;
-    const imgHeight = 100;   
-    const lefts = 500;
-    const tops = 300;
-    const imgWidths = 300;
-    const imgHeights = 300;
+     
+    
     doc.setFontSize( 20 );
     doc.text (150, 40,title);
-    doc.text(60, 200, Eusername);  
-    doc.text(60, 250, Eemail);  
+    doc.text(60, 250, Eusername);  
     doc.text(60, 300, Etype);  
     doc.text(60, 350, EcontactNumber);  
     doc.text(60, 400, Emessage); 
@@ -220,8 +222,8 @@ export default function AllPassengerFeedback(){
               }
           }).map(Feedbacks=>{  //map data to table
               return(
-            <tr key={Feedbacks._id}>
-            <td><button> <a href={`${feedbacks.id}`}>{feedbacks._id}</a></button></td> 
+                <tr key={Feedbacks._id}>
+                <td> {Feedbacks._id} </td>
             <td>{Feedbacks.username}</td>
             <td>{Feedbacks.email}</td>
             <td>{Feedbacks.type}</td>
