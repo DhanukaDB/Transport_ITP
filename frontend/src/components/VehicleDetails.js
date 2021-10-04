@@ -140,7 +140,7 @@ doc.addImage(back, 'PNG', lefts, tops, imgWidths, imgHeights);
 <center><h1>Vehicle Details</h1></center>
 
 
-
+        <br/>
         <Form onSubmit={sendData}>
 
         <Form.Group className="container" controlId="vModel">
