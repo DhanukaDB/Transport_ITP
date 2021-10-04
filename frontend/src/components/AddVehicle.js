@@ -58,7 +58,9 @@ function AddVehicle(){
 
   return(
     <div>
+      <br/>
     <center><h1>Add Vehicle</h1></center>
+    <br/>
 
     <Form onSubmit={sendData}>
   <Form.Group className="container" controlId="vehicleNo">

@@ -3,6 +3,7 @@ import { BrowserRouter as BRouter, Switch, Route,Link } from "react-router-dom";
 
 //IT20207236 - Dhanuka
 import Header from './components/Header';
+import AdminHeader from './components/AdminHeader';
 import AddVehicle from './components/AddVehicle';
 import AllVehicle from './components/AllVehicle';
 import VehicleDetails from './components/VehicleDetails';
@@ -81,43 +82,48 @@ const App =()=> {
   
        <BRouter>
           <main className="page-body-content">
-          <Header/>
-            <Switch>
-              <Route exact path="/addvehicle" component={AddVehicle} />
-            </Switch>
-            <Switch>
-              <Route exact path="/allvehicle" component={AllVehicle} />
-            </Switch>
-            <Switch>
-              
-            </Switch>
-            <Switch>
-              <Route exact path="/" component={Home} />
-            </Switch>
-            <Switch>
+    
+
+    {/* IT20207236 - Dhanuka */}
+
+    {/*  User */}
+
+              <Route  path="/home" component={Header} />
+              <Route exact path="/home" component={Home} />
+
+              <Route  path="/hirebus" component={Header} />
               <Route exact path="/hirebus" component={HireBus} />
-            </Switch>
-            <Switch>
+             
+
+     {/* Admin */}
+              <Route  path="/addvehicle" component={AdminHeader} />
+              <Route  path="/addvehicle" component={AddVehicle} />
+             
+
+              <Route  path="/allvehicle" component={AdminHeader} />
+              <Route exact path="/allvehicle" component={AllVehicle} />
+         
+              <Route  path="/allhires" component={AdminHeader} />
               <Route exact path="/allhires" component={AllHires} />
-            </Switch>
-            <Switch>
+      
+              <Route  path="/editvdetails/:id" component={AdminHeader} />
               <Route exact path="/editvdetails/:id" component={EditVehicleDetails} />
-            </Switch>
-            <Switch>
+           
+              <Route  path="/vehicledetails/:id" component={AdminHeader} />
               <Route exact path="/vehicledetails/:id" component={VehicleDetails} />
-            </Switch>
-            <Switch>
+         
+              <Route  path="/vhome" component={AdminHeader} />
               <Route exact path="/vhome" component={VHome} />
-            </Switch>
-            <Switch>
+      
+              <Route  path="/vehicledelete/:id" component={AdminHeader} />
               <Route exact path="/vehicledelete/:id" component={DeleteVehicle} />
-            </Switch>
+
 
             <Route path="/" exact>
       
       <button onClick={()=>{setIsAuthUser(true);}}>LogIn</button>
       <button onClick={()=>{setIsAuthUser(false);}}>LogOut</button>
-      <Link to="/about">Link</Link>  
+      <Link to="/book">Link</Link>  
       
      
      
@@ -136,107 +142,135 @@ const App =()=> {
             
 {/* IT20190798 */}
 
-<Switch>
-              <Route exact path="/signin" component={Signin} />
-            </Switch>
-
-            <Switch>
+              <Route exact path="/" component={Signin} />
+    
               <Route exact path="/signup" component={Signup} />
-            </Switch>
 
-            <Switch>
               <Route exact path="/profile/:email" component={Profile} />
-            </Switch>
 
-            <Switch>
+              <Route  path="/AllPassengers" component={AdminHeader} />
               <Route exact path="/AllPassengers" component={AllPassengers} />
-            </Switch>
 
-            <Switch>
+              <Route  path="/userhandler" component={AdminHeader} />
               <Route exact path="/userhandler" component={UserHandler} />
-            </Switch>
 
-            <Switch>
+
+              <Route  path="/userlevel" component={AdminHeader} />
               <Route exact path="/userlevel" component={UserLevel} />
-            </Switch>
-
-            <Switch>
+         
+              <Route  path="/edituserlevel/:id" component={AdminHeader} />
               <Route exact path="/edituserlevel/:id" component={EditUserLevel} />
-            </Switch>
-       
-            <Switch>
-              <Route exact path="/adminlog" component={Adminlog} />
-            </Switch>
+             
+
+
+              <Route exact path="/adminlog" component={AdminHeader} />
+              <Route exact path="/adminlog" component={UserLevel} />
 
 
 
        {/* Kishan's */}
-       <Switch>
-              <Route exact path="/about" component={Aboutus} />
-            </Switch>
-            <Switch>
-              <Route exact path="/addpayment" component={AddPayment} />
-            </Switch>
-            <Switch>
-              <Route exact path="/allpayment" component={AllPayment} />
-            </Switch>
-            <Switch>
-              <Route exact path="/success" component={Successpage} />
-            </Switch>
+
+            <Route exact path="/about" component={Header} />
+            <Route exact path="/about" component={Aboutus} />
+          
+          
+           <Route exact path="/addpayment" component={Header} />
+            <Route exact path="/addpayment" component={Adminlog} />
+
+
+            <Route exact path="/allpayment" component={AdminHeader} />
+            <Route exact path="/allpayment" component={AllPayment} />
+
+            <Route exact path="/success" component={Header} />
+            <Route exact path="/success" component={Successpage} />
+
            
 
          {/* Sayuri */}
-        
-            <Switch>
-              
-            </Switch> 
-            <Switch> 
-              <Route path="/employeeManagementHome" exact>
-                <EmployeeManagementHome/>
-              </Route>
-            </Switch>
+         <Route path="/employeeManagementHome" component = {AdminHeader}/>
+         <Route path="/employeeManagementHome" component = {EmployeeManagementHome}/>
+             
+    
             <div className="bodyEmp"> 
-            <Switch><Route exact path="/addemp" component={AddEmployee}/></Switch>
-            <Switch><Route exact path="/updateemp/:id" component={UpdateEmployee}/></Switch>
-            <Switch><Route exact path="/deleteemp/:id" component={DeleteEmployee}/></Switch>
-            <Switch><Route exact path="/entersal" component={AddSalaryDetails}/></Switch>
-            <Switch><Route exact path="/getemp/:id" component={FetchEmployee}/></Switch>
-            <Switch><Route exact path="/allemployee" component={EmployeeList}/></Switch>
-            <Switch><Route exact path="/getallsal" component={SalaryDetailsList}/></Switch>
+
+            
+         <Route path="/addemp" component = {AdminHeader}/>
+         <Route exact path="/addemp" component={AddEmployee}/>
+
+         <Route path="/updateemp/:id" component = {AdminHeader}/>
+         <Route exact path="/updateemp/:id" component={UpdateEmployee}/>
+
+         <Route path="/deleteemp/:id" component = {AdminHeader}/>
+         <Route exact path="/deleteemp/:id" component={DeleteEmployee}/>
+
+         <Route path="/entersal" component = {AdminHeader}/>
+         <Route exact path="/entersal" component={AddSalaryDetails}/>
+
+         <Route path="/getemp/:id" component = {AdminHeader}/>
+         <Route exact path="/getemp/:id" component={FetchEmployee}/>
+
+         <Route path="/allemployee" component = {AdminHeader}/>
+         <Route exact path="/allemployee" component={EmployeeList}/>
+
+         <Route path="/getallsal" component = {AdminHeader}/>
+        <Route exact path="/getallsal" component={SalaryDetailsList}/>
             </div>
          
 
 {/*charya*/}
 
 <div className = "card auth-card">
- <Switch>
-    <Route exact path="/reservationHome"  exact>
-      <ReservationManagement/>
-      </Route>
-      </Switch>
-    <Switch><Route exact path="/seatsb" component={Seat}/></Switch>
-    <Switch><Route exact path="/all"  component={Allbooking}/></Switch>
-    <Switch><Route exact path="/addRes" component={AddBooking}/></Switch>
-    <Switch><Route exact path="/editRes/:id"  component={EditBooking}/></Switch>
-    <Switch><Route exact path="/postRes/:id" component={BookingDetails}/></Switch>
+ 
+    <Route exact path="/reservationHome" component={Header} />
+    <Route exact path="/reservationHome" component={ReservationManagement} />
+      
+    
+    <Route exact path="/seatsb" component={Header} />
+    <Route exact path="/seatsb" component={Seat}/>
+
+    
+    <Route exact path="/all" component={Header} />
+    <Route exact path="/all"  component={Allbooking}/>
+
+    <Route exact path="/addRes" component={Header} />
+    <Route exact path="/addRes" component={AddBooking}/>
+
+    <Route path="/editRes/:id" component = {AdminHeader}/>
+    <Route exact path="/editRes/:id"  component={EditBooking}/>
+
+    <Route path="/editRes/:id" component = {AdminHeader}/>
+    <Route exact path="/editRes/:id" component={BookingDetails}/>
+
   </div>
 
   {/* Uditha */}
-  <Switch>
+  
+  <Route path="/addtimetable" component = {AdminHeader}/>
   <Route exact path="/addtimetable" component={AddTimetable} />
+
+  <Route path="/ViewTimetable" component = {Header}/>
   <Route exact path="/ViewTimetable" component={ViewTimetable} />
+
+  <Route path="/table" component = {AdminHeader}/>
   <Route exact path="/table" component={Table} />
-</Switch>
+
 
 
 
     {/*Dishma*/}
           
     <div className="centainer">
-            <Switch><Route path="/driverhome" exact component={Homedriver}></Route></Switch>
-            <Switch><Route path="/adddriver" component ={CreateDriver}></Route></Switch>
-            <Switch><Route path="/editdriver/:id" component={EditDriver}></Route></Switch>
-            <Switch><Route path="/driverdetails/:id" component={DriverDetails}></Route></Switch>
+    <Route path="/driverhome" component = {AdminHeader}/>
+    <Route path="/driverhome" exact component={Homedriver}></Route>
+
+    <Route path="/adddriver" component = {AdminHeader}/>
+     <Route path="/adddriver" component ={CreateDriver}></Route>
+
+     <Route path="/editdriver/:id" component = {AdminHeader}/>    
+     <Route path="/editdriver/:id" component={EditDriver}></Route>
+
+     <Route path="/driverdetails/:id" component = {AdminHeader}/>    
+    <Route path="/driverdetails/:id" component={DriverDetails}></Route>
         
          </div>
   
@@ -244,18 +278,28 @@ const App =()=> {
             {/* Thisara */}
             
           
-          <switch>  <Route path="/addf" exact component={AddFeedback} />  </switch>
-          <switch>  <Route path="/readf" exact component={AllFeedbacks} /> </switch>
+            <Route path="/addf" component = {AdminHeader}/>    
+            <Route path="/addf" exact component={AddFeedback} />  
+
+            <Route path="/readf" exact component={Header} /> 
+            <Route path="/readf" exact component={AllFeedbacks} /> 
            
 
-          <switch>   <Route path="/addfe" exact component={EAddFeedback} /></switch>
-          <switch>  <Route path="/readfe" exact component={EAllFeedbacks} /></switch>
+            <Route path="/addfe" exact component={AdminHeader} />
+             <Route path="/addfe" exact component={EAddFeedback} />
 
-          <switch>  <Route path="/readfadmin" exact component={AdminAllFeedbacks} /></switch>
-          <switch>  <Route path="/readfeadmin" exact component={AdminAllEmpFeedbacks} /></switch>
-          <switch>
-              <Route exact path="/feedbackhandler" component={FeedbackHandler} />
-            </switch>
+             <Route path="/readfe" exact component={AdminHeader} />
+            <Route path="/readfe" exact component={EAllFeedbacks} />
+
+            <Route path="/readfadmin" exact component={AdminHeader} />
+            <Route path="/readfadmin" exact component={AdminAllFeedbacks} />
+
+            <Route path="/readfeadmin" exact component={AdminHeader} />
+            <Route path="/readfeadmin" exact component={AdminAllEmpFeedbacks} />
+          
+            <Route exact path="/feedbackhandler" component={AdminHeader} />
+            <Route exact path="/feedbackhandler" component={FeedbackHandler} />
+            
            
       
 

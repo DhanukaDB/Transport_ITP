@@ -3,7 +3,7 @@ import {Link,useHistory} from 'react-router-dom'
 import {Col,Image} from "react-bootstrap";
 import { useState} from 'react';
 import axois from "axios";
-import{Form,Button} from "react-bootstrap";
+import{Form,Button,Container,Row} from "react-bootstrap";
 
 
 const Signup = () => {
@@ -47,7 +47,7 @@ const Signup = () => {
 
          axois.post("http://localhost:5000/passenger/add", newPassenger).then(() => {
              alert("Registration Success")
-             history.push('/signin')
+             history.push('/')
 
          }).catch((err) =>{
              alert(err)
@@ -57,12 +57,16 @@ const Signup = () => {
 
     return(
         <div> 
-          <Form className="container" onSubmit={sendData} >
+            <Container>
+  <Row>
+    <Col>  <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+     <Image src="https://res.cloudinary.com/hidl3r/image/upload/v1633338544/itp/icon_cadastro_v5_epxgov.gif" fluid /></Col>
+    <Col>  <Form className="container" onSubmit={sendData} >
           <div className = "signin1">
             <div className= "signin">
           <Col xs={1} md={12}  >
                 <Image  className="im" src="https://res.cloudinary.com/hidl3r/image/upload/v1631611510/itp/ulogin_b64etx.png" roundedCircle />
-                
+                <br/> <br/>
               </Col>
  
                 <h1 className="login">Sign Up</h1>
@@ -70,45 +74,47 @@ const Signup = () => {
                      <Form.Control type="text" placeholder="Enter Username"  value = {username}
                         onChange={(e) => setUsername (e.target.value)} />
                </Form.Group>
-
+                <br/>
                <Form.Group className="mb-3" controlId="formBasicNic">
                      <Form.Control type="text" placeholder="Enter Nic"  value = {nic}
                         onChange={(e) => setNic (e.target.value)} />
      
                </Form.Group>
-
-                
-                 
+               <br/> 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                      <Form.Control type="email" placeholder="Enter email"  value = {email}
                         onChange={(e) => setEmail (e.target.value)} />
      
                 </Form.Group>
 
-
+                <br/>
                <Form.Group className="mb-3" controlId="formBasicPhoneno">
                      <Form.Control type="Number" placeholder="Enter Phone number"  value = {phoneno}
                         onChange={(e) => setPhoneno (e.target.value)} />
      
                      </Form.Group>
- 
+                <br/>
                <Form.Group className="mb-3" controlId="formBasicPassword">
                <Form.Control type="password" placeholder="Password" value = {password}
                   onChange={(e) => setPassword (e.target.value)}/>
                </Form.Group>
  
               <br/><br/>
-       <Button variant="primary" type="submit">
+       <Button variant="primary" size="lg" type="submit">
            Sign Up
       </Button>
       <br/><br/>
        <h5>
        <Link to = "/signin">Already have an account?  </Link>
       </h5>
- 
+      <br/>
                </div>
            </div>
-         </Form>
+         </Form></Col>
+  </Row>
+ 
+</Container>
+        
       </div>
    )  
  
