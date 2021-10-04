@@ -14,7 +14,7 @@ router.route("/addemp").post((req,res)=>{
     const phoneNo = Number(req.body.phoneNo);
     const email = req.body.email;
     const add = req.body.add;
-    const regDate = Date(req.body.regDate);
+    const regDate = req.body.regDate;
 
     const newEmployee = new Employee({
         empID,
@@ -35,6 +35,7 @@ router.route("/addemp").post((req,res)=>{
         res.json("Employee Added")
     }).catch((err)=>{
         console.log(err);
+        res.status(401).send({message:'Employee ID already exist!'});
     })
 })
 

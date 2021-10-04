@@ -70,6 +70,7 @@ export default function SalaryDetailsList() {
                     <th scope="col">OT</th>
                     <th scope="col">Allowances</th>
                     <th scope="col">Payroll Deductions</th>
+                    <th scope="col">Net Salary</th>
                     <th scope="col">Salary Peroid</th>
                     <th scope="col">Actions</th>
                   
@@ -77,11 +78,16 @@ export default function SalaryDetailsList() {
                 </thead>
                 <tbody>
                   <tr>
-                    <th valign="middle" scope="row">{val.empID}</th>
+                    <th valign="middle" scope="row">
+                      <a href={`/fetchsal/${val.empID}`} style={{textDecoration:'none'}}>
+                      {val.empID}
+                      </a>
+                    </th>
                     <td valign="middle">Rs.{val.basicSalary}</td>
                     <td valign="middle">Rs.{val.OT}</td>
                     <td valign="middle">Rs.{val.allowances}</td>                    
                     <td valign="middle">Rs.{val.payrollDeduct}</td>
+                    <td valign="middle">Rs.{val.netSalary}</td>
                     <td valign="middle">{val.salaryPeriod}</td>
 
                     <td><button className="btn btnEmp btn-danger customEmp" onClick={()=>{onDelete(val.empID)}}><i className="fas fa-trash-alt"></i>&nbsp;Delete</button></td>

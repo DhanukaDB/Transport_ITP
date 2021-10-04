@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 export default function AddSalaryDetails(){
     const[empID, setEmpID] = useState("");
-    const[basicSalary, setbasicSalary] = useState("");
-    const[OT, setOT] = useState("");
-    const[allowances, setallowances] = useState("");
-    const[payrollDeduct, setpayrollDeduct] = useState("");
-    const[netSalary, setnetSalary] = useState("");
+    const[basicSalary, setbasicSalary] = useState(0);
+    const[OT, setOT] = useState(0);
+    const[allowances, setallowances] = useState(0);
+    const[payrollDeduct, setpayrollDeduct] = useState(0);
+    const[netSalary, setnetSalary] = useState(0);
     const[salaryPeriod, setsalaryPeriod] = useState("");
 
 
@@ -23,6 +23,7 @@ export default function AddSalaryDetails(){
             OT, 
             allowances,
             payrollDeduct,
+            netSalary,
             salaryPeriod
         }
       
@@ -32,8 +33,16 @@ export default function AddSalaryDetails(){
             
         }).catch((err)=>{
             alert("err");
+            console.log(err.response.data);
+            alert(err.response.data.message);
         })
 
+    }
+
+    //salary calculating function
+    function calSalary(){
+        const net_Salary = (basicSalary+OT+allowances)-payrollDeduct;
+        setnetSalary(net_Salary);
     }
 
     return(
@@ -52,25 +61,25 @@ export default function AddSalaryDetails(){
                 <div className="mb-3">
                     <label for="basicSalary" className="form-label">Basic Salary(Rs.)</label>
                     <input type="text" className="form-control form-controlEmp" id="basicSalary" onChange={(e)=>{
-                        setbasicSalary(e.target.value);//updating state using value taken from the form 
+                        setbasicSalary(Number(e.target.value));//updating state using value taken from the form 
                     }}/>
                 </div>
                 <div className="mb-3">
                     <label for="OT" className="form-label">OT(Rs.)</label>
                     <input type="text" className="form-control form-controlEmp" id="OT" onChange={(e)=>{
-                        setOT(e.target.value);//updating state using value taken from the form 
+                        setOT(Number(e.target.value));//updating state using value taken from the form 
                     }}/>
                 </div>
                 <div className="mb-3">
                     <label for="allowances" className="form-label">Allowances(Rs.)</label>
                     <input type="text" class="form-control form-controlEmp" id="allowances" onChange={(e)=>{
-                        setallowances(e.target.value);//updating state using value taken from the form 
+                        setallowances(Number(e.target.value));//updating state using value taken from the form 
                     }}/>
                 </div>
                 <div className="mb-3">
                     <label for="payrollDeduct" className="form-label">Payroll Deductions(Rs.)</label>
                     <input type="text" className="form-control form-controlEmp" id="payrollDeduct" onChange={(e)=>{
-                        setpayrollDeduct(e.target.value);//updating state using value taken from the form 
+                        setpayrollDeduct(Number(e.target.value));//updating state using value taken from the form 
                     }}/>
                 </div>
                 <div className="mb-3">
@@ -80,7 +89,7 @@ export default function AddSalaryDetails(){
                     }}/>
                 </div>
                 
-                <button type="submit" className="btn btnEmp btn-primary"><i class="fas fa-plus"></i>&nbsp;Add Record</button>
+                <button onClick={()=>{calSalary()}} type="submit" className="btn btnEmp btn-primary"><i class="fas fa-plus"></i>&nbsp;Add Record</button>
             </form><br/><br/>
         </div>
     )

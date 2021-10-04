@@ -61,8 +61,8 @@ const employeeSchema = new Schema({
 
     },
     regDate :{
-        type : Date,
-        required : true
+        type : String,
+        required : true//backend validation
     },
 })
 //data coming from routes go to DB through models

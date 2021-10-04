@@ -42,6 +42,9 @@ import DeleteEmployee from './components/DeleteEmployee';
 import SalaryDetailsList from './components/SalaryDetailsList';
 import EmployeeManagementHome from './components/EmployeeManagementHome';
 import AdminPanel from './components/AdminPanel';
+import FetchSalaryRecord from './components/FetchSalaryRecord';
+import EmployeereportRender from './components/EmployeereportRender';
+
 
 //IT20192532
 import Adminallbookings from './components/Adminallbookings';
@@ -191,7 +194,9 @@ const App =()=> {
          {/* Sayuri */}
         
             <Switch>
-              
+              <Route path="/generateReportEmployee" exact>
+                <EmployeereportRender/>
+              </Route>
             </Switch> 
             <Switch> 
               <Route path="/employeeManagementHome" exact>
@@ -206,6 +211,7 @@ const App =()=> {
             <Switch><Route exact path="/getemp/:id" component={FetchEmployee}/></Switch>
             <Switch><Route exact path="/allemployee" component={EmployeeList}/></Switch>
             <Switch><Route exact path="/getallsal" component={SalaryDetailsList}/></Switch>
+            <Switch><Route path="/fetchsal/:id" exact component={FetchSalaryRecord}/></Switch>
             </div>
          
 

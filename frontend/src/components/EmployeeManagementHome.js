@@ -1,6 +1,4 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import { useHistory } from "react-router";
 import "../assets/css/styles.css";
 
 export default function EmployeeManagementHome(){

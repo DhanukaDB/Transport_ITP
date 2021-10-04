@@ -4,11 +4,11 @@ let Salary = require("../models/Salaryinfo");
 //add salary details route
 router.route("/entersal").post((req,res)=>{
     const empID = req.body.empID;
-    const basicSalary = req.body.basicSalary;
-    const OT = req.body.OT; 
-    const allowances = req.body.allowances;
-    const payrollDeduct = req.body.payrollDeduct;
-    const netSalary = req.body.netSalary;
+    const basicSalary = Number(req.body.basicSalary);
+    const OT = Number(req.body.OT); 
+    const allowances = Number(req.body.allowances);
+    const payrollDeduct = Number(req.body.payrollDeduct);
+    const netSalary = Number(req.body.netSalary);
     const salaryPeriod = req.body.salaryPeriod;
 
     const newSalary = new Salary({
@@ -25,6 +25,7 @@ router.route("/entersal").post((req,res)=>{
         res.json("Salary details Added")
     }).catch((err)=>{
         console.log(err);
+        res.status(401).send({message:'Employee ID already exist!'});
     })
 })
 
