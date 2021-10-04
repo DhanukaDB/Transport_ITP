@@ -1,5 +1,5 @@
 import React from "react";
-import {Image,Button} from "react-bootstrap";
+ 
  
 
 const FeedbackHandler= () => {
@@ -8,9 +8,8 @@ const FeedbackHandler= () => {
 
     <div>  
         <center>
-        <h1>WELCOME TO FEEDBACK MANAGEMENT</h1>
-        <h1>HOME PAGE</h1>
-        <br></br><br></br><br></br><br></br>
+         
+        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
           
         </center>
         <br></br>  
@@ -18,10 +17,14 @@ const FeedbackHandler= () => {
     </div>
         <div >
          <center>
-             
-           <a className="btn btn-danger btn-lg" href="/readfadmin">Manage Passenger feedbacks</a> {' '} 
-          <a className="btn btn-warning btn-lg" href="/readfeadmin">Manage Driver feedbacks</a> {' '} 
+         <br></br>  <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br> 
+    
+           <a className="btn btn-danger btn-lg" href="/readfadmin">View Feedbacks for Drivers</a> {' '} 
+          <a className="btn btn-danger btn-lg" href="/readfeadmin">View Feedbacks for Passengers</a> {' '} <br></br><br></br>
+          <a className="btn btn-warning btn-lg" href="/updatef">Manage  Feedbacks for Drivers</a> {' '} 
            
+          <a className="btn btn-warning btn-lg" href="/updatefe">Manage Feedbacks for Passengers</a> {' '} 
+          
          </center>
          </div>
     </div>

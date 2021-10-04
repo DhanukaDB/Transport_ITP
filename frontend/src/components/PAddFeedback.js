@@ -1,6 +1,7 @@
 import React ,{useState, useEffect} from "react";
-import { container } from "react-bootstrap";
 import axios from "axios";
+import { Button } from "react-bootstrap";
+import {Link} from "react-router-dom";
  
 
 export default function AddFeedback(){  //adding function
@@ -35,7 +36,8 @@ export default function AddFeedback(){  //adding function
 
      axios.post(`http://localhost:5000/feedback/addf`, newFeedback).then(() =>{  //route from the backend
 
-        alert("Feedback Added") //display if adding is successful
+        alert("Feedback Added.Mail us for any updates or inqueries- siyathatravels@gmail.com") //display if adding is successful
+        window.location = `/addf`;  //redirect to adding page
      }).catch((err) =>{   //display error if adding is not successful
         alert(err)
      })
@@ -78,7 +80,7 @@ export default function AddFeedback(){  //adding function
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input"   type="radio" name="type" id="complaint" value="complaint" onChange={(e) =>{
+  <input class="form-check-input"   type="radio" name="type" id="complaint" value="complint" onChange={(e) =>{
       setType(e.target.value);
      }}  />
   <label class="form-check-label" for="complaint">
@@ -102,7 +104,11 @@ export default function AddFeedback(){  //adding function
   </div>
 
   
-  <button type="submit" class="btn btn-dark">Submit</button> <a href="/readf" class="btn btn-dark">View some feedbacks</a>        
+  <Button type="submit" >Submit</Button>   
+   
+  <Button variant="light" ><Link to ="/readf"> View some feedbacks</Link></Button>{' '}  
+    
+        
 </form>
 
  
