@@ -196,8 +196,8 @@ componentDidMount(){
       onChange={this.handleInputChange}/>
       </div>
     
-    <Button variant="primary"> <a style={{textDecoration:'none',color:'Black'}} onClick={this.onSubmit}>Update</a></Button>&nbsp;
-    <Button variant="secondary"> <a href = "/all" style={{textDecoration:'none',color:'Black'}}>Back to All Bookings</a></Button>
+      <Button variant="primary"><a style={{textDecoration:'none',color:'Black'}} onClick={this.onSubmit}>Update</a></Button>&nbsp;
+    <Button variant="primary"> <a href = "/adminall" style={{textDecoration:'none',color:'Black'}}>Back to All Bookings</a></Button>
     </Card.Text>
     </form>
     

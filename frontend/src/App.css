@@ -78,16 +78,16 @@ a {
 /*charya*/
 .reservationManagement{
    
-  background: url('./assets/bus5.jpg') no-repeat center/cover;
+  background: url('./assets/bus3.jpg') no-repeat center/cover;
    height: 720px ;
    }
-.overlay{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   height: 400px;
-   color: black;
-  justify-content: center;
+   .overlay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 600px;
+    color:blue;
+   justify-content: center;
    
 }
 .b1{
