@@ -51,6 +51,7 @@ import EmployeereportRender from './components/EmployeereportRender';
 
 
 //IT20192532
+import Allbooking from './components/Adminallbookings';
 import Adminallbookings from './components/Adminallbookings';
 import AddBooking from './components/AddBooking';
 import EditBooking from './components/EditBooking';
@@ -143,7 +144,7 @@ const App =()=> {
       <Link to="/adminPanel">Link</Link>  </Route>
      
       
-        <ProtectedRouter path="/about" component={Aboutus} isAuth={isAuthUser} />
+  
         <ProtectedRouter path="/adminPanel"  component= {AdminPanel} isAuth= {isAuthAdmin} />
           
 
