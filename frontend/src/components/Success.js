@@ -6,7 +6,7 @@ export default function Successpage (){
 function returnpage(e){
     e.preventDefault();
 
-    window.location=`/`;
+    window.location=`/home`;
 }
     return(
     <div className="succeedpay">
