@@ -26,6 +26,9 @@ import UserHandler from './components/UserHandler';
 import UserLevel from './components/UserLevel';
 import EditUserLevel from './components/EditUserLevel';
 import Adminlog from './components/Adminlog';
+import PassengerReport from './components/PassengerReport';
+import UserHandlerReport from './components/UserHandlerReport';
+
 
 //IT20205256
 import AddPayment from './components/AddPayment';
@@ -55,7 +58,8 @@ import BookingDetails from './components/BookingDetails';
 import ReservationManagement from './components/ReservationManagement';
 import Seat from './components/Seat';
 import Requesteditdetails from './components/Requesteditdetails';
-import Allrequest from './components/Allrequest'
+import Allrequest from './components/Allrequest';
+import Allbooking from './components/Adminallbookings';
 
 //IT20201982
 import ViewTimetable from './components/Viewtimetable';
@@ -171,7 +175,14 @@ const App =()=> {
 
               <Route exact path="/adminlog" component={AdminHeader} />
               <Route exact path="/adminlog" component={UserLevel} />
+              
+              <Route exact path="/passengerreport" component={AdminHeader} />
+              <Route exact path="/passengerreport" component={PassengerReport} />
+            
 
+              <Route exact path="/userhandlerreport" component={AdminHeader} />
+              <Route exact path="/userhandlerreport" component={UserHandlerReport} />
+              
 
 
        {/* Kishan's */}
