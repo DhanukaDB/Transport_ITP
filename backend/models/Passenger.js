@@ -32,6 +32,11 @@ const passengerSchema = new Schema({
       type: String,
     },
 
+    userleveldate :{
+      type : Date,
+  },
+
+
 })
 
 const Passenger = mongoose.model("Passenger", passengerSchema);

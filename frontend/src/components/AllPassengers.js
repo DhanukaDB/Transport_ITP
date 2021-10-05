@@ -114,7 +114,7 @@ const AllPassengers = (props) => {
                 </tbody>
               </Table>
 
-              <Button variant="secondary"><a href="/userhandler"> Back </a></Button>{' '}
+              <Button variant="secondary" size="lg"><a href="/userhandler"> Back </a></Button>{' '}
                   </div>
               );
 };
