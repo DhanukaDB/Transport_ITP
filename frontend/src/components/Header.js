@@ -25,8 +25,8 @@ function Header(){
     </Nav>
     <Nav>
     
-      <Nav.Link eventKey={2} href="#Siyatha">
-      👤
+      <Nav.Link eventKey={2} href="/">
+      👤 
         </Nav.Link>
     </Nav>
   </Navbar.Collapse>

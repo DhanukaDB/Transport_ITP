@@ -61,7 +61,7 @@ export default function AddEmployee() {
             window.location = `/allemployee`;
             
         }).catch((err)=>{
-            alert("err");
+           
             alert(err.response.data.message);
             console.log(err.message);
         })

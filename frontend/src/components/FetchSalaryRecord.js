@@ -77,7 +77,7 @@ export default function FetchSalaryRecord() {
             <tr><th  style={{textAlign:"left"}} scope="col">Net Salary </th> <td style={{textAlign:"left"}}>Rs.{netSal}</td></tr>           
             </table><br/><br/>
 
-            <Button className="btn btn-primary" onClick={()=>GeneratePayroll(array)}>&nbsp;Download Payroll</Button>
+            <Button className="btn btn-primary" onClick={()=>GeneratePayroll(array)}>Download Payroll</Button>
             <br/><br/><br/>
             
         </div>

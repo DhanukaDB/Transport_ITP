@@ -40,7 +40,7 @@ export default function EmployeeList() {
                 
           </form><br/><br/>
 
-          <button className="btn btn-primary"><a className="nounderline" href={`/generateReportEmployee`} style={{color:'white'}} >&nbsp;Employee Report</a></button>
+          <button className="btn btn-primary"><a className="nounderline" href={`/generateReportEmployee`} style={{color:'white'}} ><i class="fa-solid fa-file-chart-column"></i>&nbsp;Employee Report</a></button>
           
             <h1 style={{textAlign:'center'}}>Employee List</h1><hr/><br/>
             {employees.filter(val=>{

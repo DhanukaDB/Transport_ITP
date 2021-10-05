@@ -7,7 +7,7 @@ function ProtectedRouter({isAuth: isAuthent, component: Component, ...rest}){
     if(isAuthent){
         return <Component/>
     }else{
-        return (<Redirect to={{pathname: "/", state: {from: props.location}}}/>
+        return (<Redirect to={{pathname: "/adminlog", state: {from: props.location}}}/>
         );
     }
     }}
