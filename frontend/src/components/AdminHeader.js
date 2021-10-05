@@ -11,10 +11,10 @@ function AdminHeader(){
 <Navbar bg="primary" variant="dark">
 <Navbar.Brand href="/home">Siyatha Travels 🚌</Navbar.Brand>
 <Nav className="mr-auto">
-  <Nav.Link href="#home">Bookings</Nav.Link>
-  <Nav.Link href="#features">Payments</Nav.Link>
-  <Nav.Link href="#features">Employees</Nav.Link>
-  <Nav.Link href="#pricing">Hires</Nav.Link>
+  <Nav.Link href="/reservationHome">Bookings</Nav.Link>
+  <Nav.Link href="/allpayment">Payments</Nav.Link>
+  <Nav.Link href="/employeeManagementHome">Employees</Nav.Link>
+  <Nav.Link href="/allhires">Hires</Nav.Link>
 </Nav>
 
 </Navbar>

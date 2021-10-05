@@ -37,7 +37,7 @@ export default function AddFeedback(){  //adding function
      axios.post(`http://localhost:5000/feedback/addf`, newFeedback).then(() =>{  //route from the backend
 
         alert("Feedback Added.Mail us for any updates or inqueries- siyathatravels@gmail.com") //display if adding is successful
-        window.location = `/addf`;  //redirect to adding page
+        window.location = `/home`;  //redirect to adding page
      }).catch((err) =>{   //display error if adding is not successful
         alert(err)
      })

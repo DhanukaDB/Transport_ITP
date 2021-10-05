@@ -56,6 +56,7 @@ import ReservationManagement from './components/ReservationManagement';
 import Seat from './components/Seat';
 import Requesteditdetails from './components/Requesteditdetails';
 import Allrequest from './components/Allrequest'
+import Allbooking from './components/Adminallbookings';
 
 //IT20201982
 import ViewTimetable from './components/Viewtimetable';
@@ -167,10 +168,7 @@ const App =()=> {
               <Route  path="/edituserlevel/:id" component={AdminHeader} />
               <Route exact path="/edituserlevel/:id" component={EditUserLevel} />
              
-
-
-              <Route exact path="/adminlog" component={AdminHeader} />
-              <Route exact path="/adminlog" component={UserLevel} />
+             <Route exact path="/adminlog" component={Adminlog} />
 
 
 
@@ -181,7 +179,7 @@ const App =()=> {
           
           
            <Route exact path="/addpayment" component={Header} />
-            <Route exact path="/addpayment" component={Adminlog} />
+            <Route exact path="/addpayment" component={AddPayment} />
 
 
             <Route exact path="/allpayment" component={AdminHeader} />
@@ -230,17 +228,15 @@ const App =()=> {
 
 <div className = "card auth-card">
 
- 
-    <Route exact path="/reservationHome" component={Header} />
-    <Route exact path="/reservationHome" component={ReservationManagement} />
-      
-    
+    <Route exact path="/requesteditdelete" component={Header} />
+    <Route exact path="/requesteditdelete" component={Requesteditdetails} />
+
     <Route exact path="/seatsb" component={Header} />
     <Route exact path="/seatsb" component={Seat}/>
 
     
     <Route exact path="/all" component={Header} />
-    <Route exact path="/all"  component={Allbooking}/>
+    <Route exact path="/all"  component={Allbooking}/> 
 
     <Route exact path="/addRes" component={Header} />
     <Route exact path="/addRes" component={AddBooking}/>
@@ -250,6 +246,15 @@ const App =()=> {
 
     <Route path="/editRes/:id" component = {AdminHeader}/>
     <Route exact path="/editRes/:id" component={BookingDetails}/>
+
+    <Route path="/adminall" component = {AdminHeader}/>
+    <Route path="/adminall" component = {Adminallbookings}/>
+
+    <Route path="/allrequest" component = {AdminHeader}/>
+    <Route path="/allrequest" component = {Allrequest}/>
+
+    <Route exact path="/reservationHome" component={AdminHeader} />
+    <Route exact path="/reservationHome" component={ReservationManagement} />
 
 
   </div>
@@ -262,7 +267,7 @@ const App =()=> {
   <Route path="/ViewTimetable" component = {Header}/>
   <Route exact path="/ViewTimetable" component={ViewTimetable} />
 
-  <Route path="/table" component = {AdminHeader}/>
+  <Route path="/table" component = {Header}/>
   <Route exact path="/table" component={Table} />
 
 
@@ -290,7 +295,7 @@ const App =()=> {
             
           
 
-            <Route path="/addf" component = {AdminHeader}/>    
+            <Route path="/addf" component = {Header}/>    
             <Route path="/addf" exact component={AddFeedback} />  
 
             <Route path="/readf" exact component={Header} /> 
@@ -311,8 +316,13 @@ const App =()=> {
           
             <Route exact path="/feedbackhandler" component={AdminHeader} />
             <Route exact path="/feedbackhandler" component={FeedbackHandler} />
-            
-      
+
+            <Route exact path="/updatef" component={AdminHeader} />
+            <Route exact path="/updatef" component={AllPassengerFeedback} />
+
+            <Route exact path="/updatefe" component={AdminHeader} />
+            <Route exact path="/updatefe" component={AllEmployeeFeedback} />
+
 
             <Footer/> 
 

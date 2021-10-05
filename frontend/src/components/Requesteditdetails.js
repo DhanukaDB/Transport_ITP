@@ -6,7 +6,6 @@ import {Form} from "react-bootstrap"
 
 
 
-
 export default class Requesteditdeletedetails extends Component{
   constructor(props){
     super(props);
@@ -46,6 +45,9 @@ console.log(data)
 
 axios.post("/addrequest/save",data).then((res)=>{
   alert("Request send Sucessfully");
+  
+
+
   if(res.data.sucess){
     this.setState(
       {
@@ -110,7 +112,7 @@ axios.post("/addrequest/save",data).then((res)=>{
  </div>
 
 
-<Button variant="primary"> <a href = "/" type="submit" style={{textDecoration:'none',color:'Black'}}onClick={this.onSubmit}>Send Request</a></Button> &nbsp;
+<Button variant="primary"> <a href = "/home" type="submit" style={{textDecoration:'none',color:'Black'}}onClick={this.onSubmit}>Send Request</a></Button> &nbsp;
 
 
 </Card.Text>

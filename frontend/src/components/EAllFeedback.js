@@ -30,6 +30,7 @@ export default function EAllFeedbacks(){
 
 <blockquote class="blockquote"><br></br>
   <h1 class="mb-0"> Complaints and Feedbacks for our Passengers</h1>
+
   <footer class="blockquote-footer">thoughts of our Drivers...<cite title="Source Title"> </cite></footer>
 </blockquote>
 
