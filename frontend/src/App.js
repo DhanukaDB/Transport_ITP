@@ -71,6 +71,8 @@ import CreateDriver from "./components/CreateDriver";
 import DriverDetails from "./components/DriverDetails";
 import EditDriver from "./components/EditDriver";
 import Homedriver from "./components/Homedriver";
+import searchfordrivers from './components/SearchforDrivers';
+import Contactusadmin from './components/Contactusadmin';
 
 //It20198954
 import AddFeedback from "./components/PAddFeedback";
@@ -295,7 +297,12 @@ const App =()=> {
 
      <Route path="/driverdetails/:id" component = {AdminHeader}/>    
     <Route path="/driverdetails/:id" component={DriverDetails}></Route>
-        
+
+    <Route path="//searchfordrivers" component = {Header}/> 
+    <Route path="/searchfordrivers" component={searchfordrivers}></Route>
+
+    <Route path="//searchfordrivers" component = {Header}/> 
+    <Route path="/contactusadmin" component={Contactusadmin}></Route>
          </div>
   
 

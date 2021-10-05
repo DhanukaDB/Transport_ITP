@@ -10,7 +10,8 @@ function Footer(){
   return (
     <footer><body>
        <Button variant="#">FAQ 💡</Button>
-       <Button variant="#">CONTACT US 📲</Button>
+      
+       <Button href="/contactusadmin" className="btn btn-light">CONTACT US 📲</Button>
      
 <Link to= "/about"><Button variant="/about">ABOUT US 🏷️</Button> </Link>
      <center> <p>Copyright @ {curr_year}</p></center>
