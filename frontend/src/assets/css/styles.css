@@ -58,3 +58,25 @@
   
   
 }
+
+.backgroundDriver {
+  
+  background-image: url(../driver.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: Verdana;
+  opacity: 2;
+}
+
+
+
+.driverHome {
+
+background-image: url(../back1.jpg);
+background-size: cover;
+font-family: monospace;
+height: 800px;
+width: cover;
+
+
+} 

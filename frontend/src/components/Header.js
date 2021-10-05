@@ -20,6 +20,7 @@ function Header(){
         <NavDropdown.Item href="/hirebus">Hire Bus</NavDropdown.Item>
         <NavDropdown.Item href="/readf">Feedbacks</NavDropdown.Item>
         <NavDropdown.Item href="/about">About us</NavDropdown.Item>
+        <NavDropdown.Item href="/searchfordrivers">Drivers</NavDropdown.Item>
         <NavDropdown.Divider />
       </NavDropdown>
     </Nav>
