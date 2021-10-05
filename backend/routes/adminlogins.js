@@ -8,11 +8,7 @@ router.route("/add").post((req,res) => {
     const email    = req.body.email;
     const password   = req.body.password;
 
-    if(!email || !password){
-        return res.status(422).json({error:"please add all the feilds"})
-
-    }
-     
+   
 
     AdminLogin.findOne({email: email})
     .then((savedAdminLogin) => {
