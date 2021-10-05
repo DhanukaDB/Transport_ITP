@@ -3,14 +3,41 @@ import axios from "axios";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 
+const GenerateEmpReport = tickets =>{
+    const doc = new jsPDF({orientation:"landscape",lineHeight:1.5});
+    const tableColumns = ["EmpID","Full name","DOB","Age","Gender","NIC","Nationality","Marital status","Contact No.","Email","Address","Registered date"];
+    const tableRows = [];
 
+    tickets.forEach(ticket => {
+        const ticketData=[
+            ticket.empID,
+            ticket.full_name,
+            ticket.dob,
+            ticket.age,
+            ticket.gender,
+            ticket.nic,
+            ticket.nationality,
+            ticket.marital_status,
+            ticket.phoneNo,
+            ticket.email,
+            ticket.add,
+            ticket.regDate
+        ];
+        tableRows.push(ticketData); 
+    });
+
+    doc.autoTable(tableColumns,tableRows,{startY:20});
+    doc.text("Employees Registered within a month",14,15);
+    doc.save(`Employee_MonthlyReport.pdf`);
+};
 
 const EmployeereportRender = () =>{
     const[reports,setReports]=useState([]);
-    
+    const[getmonth,setgetmonth]=useState(0);
 
     useEffect( () => {
         function getEmployeeOnMonth(){
+          
             axios.get("http://localhost:5000/employee/allemployee").then((res)=>{
                 console.log(res.data);
                 setReports(res.data);
@@ -22,17 +49,23 @@ const EmployeereportRender = () =>{
     }, []);
 
     
-
+    const reportEmployee = reports.filter(ticket=>ticket.regDate.substring(5, 7)==getmonth);
+    const filterEmp = ticket=>ticket.regDate.substring(5, 7)==getmonth;
 
     return(
         <div className="container"><br/><br/>
             <form className="d-flex">
-            
+                <input 
+                className="form-control me-2" 
+                type="getmonth" 
+                placeholder="Enter Month"
+                name = "getmonthQueryEmp"
+                onChange = {(e)=>setgetmonth(e.target.value)} />
              </form><br/><br/>
 
-            <button className="btn btn-primary">Generate Report</button>
+            <button className="btn btn-primary" onClick={()=>GenerateEmpReport(reportEmployee)}>Generate Report</button>
             <br/><br/>
-            {reports.map((val, key)=>{
+            {reports.filter(filterEmp).map((val, key)=>{
                 return<div key={key} className="container"><table className="table">
                 <thead>
                   <tr>
@@ -53,7 +86,7 @@ const EmployeereportRender = () =>{
                 <tbody >
                   <tr>
                     <th valign="middle" scope="row">
-                      <a href={`/get/${val.empID}`} style={{textDecoration:'none'}}>
+                      <a href={`/fetchsal/${val.empID}`} style={{textDecoration:'none'}}>
                       {val.empID}
                       </a>
                       </th>

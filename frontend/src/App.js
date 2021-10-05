@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter as BRouter, Switch, Route,Link } from "react-router-dom";
+import {Button} from "react-bootstrap";
 
 //IT20207236 - Dhanuka
 import Header from './components/Header';
@@ -129,19 +130,14 @@ const App =()=> {
               <Route exact path="/vehicledelete/:id" component={DeleteVehicle} />
 
 
-            <Route path="/" exact>
+      <Route path="/adminlog" exact>
       
-      <button onClick={()=>{setIsAuthUser(true);}}>LogIn</button>
-      <button onClick={()=>{setIsAuthUser(false);}}>LogOut</button>
-      <Link to="/book">Link</Link>  
+      <Link to="/adminPanel"> <Button className="signinadmin" onClick={()=>{setIsAuthAdmin(true);}}>LogIn</Button></Link> 
+      {/* <button onClick={()=>{setIsAuthAdmin(false);}}>LogOut</button>
+       */}
+     </Route>
       
-     
-     
-      <button onClick={()=>{setIsAuthAdmin(true);}}>LogIn</button>
-      <button onClick={()=>{setIsAuthAdmin(false);}}>LogOut</button>
-      
-      <Link to="/adminPanel">Link</Link>  </Route>
-     
+      <Route/>
       
         <ProtectedRouter path="/about" component={Aboutus} isAuth={isAuthUser} />
         <ProtectedRouter path="/adminPanel"  component= {AdminPanel} isAuth= {isAuthAdmin} />
@@ -228,6 +224,11 @@ const App =()=> {
 
          <Route path="/getallsal" component = {AdminHeader}/>
         <Route exact path="/getallsal" component={SalaryDetailsList}/>
+
+        <Route path="/getallsal" component = {AdminHeader}/>
+        <Route exact path="/fetchsal/:id" component={FetchSalaryRecord}/>
+
+
 
             </div>
          

@@ -32,7 +32,7 @@ export default function AddSalaryDetails(){
             window.location = `/getallsal`;
             
         }).catch((err)=>{
-            alert("err");
+           
             console.log(err.response.data);
             alert(err.response.data.message);
         })
@@ -56,37 +56,37 @@ export default function AddSalaryDetails(){
                     <label for="empID" className="form-label">Employee ID</label>
                     <input type="text" className="form-control form-controlEmp" id="empID" onChange={(e)=>{
                         setEmpID(e.target.value);//updating state using value taken from the form 
-                    }}/>
+                    }} required/>
                 </div>
                 <div className="mb-3">
                     <label for="basicSalary" className="form-label">Basic Salary(Rs.)</label>
                     <input type="text" className="form-control form-controlEmp" id="basicSalary" onChange={(e)=>{
                         setbasicSalary(Number(e.target.value));//updating state using value taken from the form 
-                    }}/>
+                    }} required/>
                 </div>
                 <div className="mb-3">
                     <label for="OT" className="form-label">OT(Rs.)</label>
                     <input type="text" className="form-control form-controlEmp" id="OT" onChange={(e)=>{
                         setOT(Number(e.target.value));//updating state using value taken from the form 
-                    }}/>
+                    }} required/>
                 </div>
                 <div className="mb-3">
                     <label for="allowances" className="form-label">Allowances(Rs.)</label>
                     <input type="text" class="form-control form-controlEmp" id="allowances" onChange={(e)=>{
                         setallowances(Number(e.target.value));//updating state using value taken from the form 
-                    }}/>
+                    }} required/>
                 </div>
                 <div className="mb-3">
                     <label for="payrollDeduct" className="form-label">Payroll Deductions(Rs.)</label>
                     <input type="text" className="form-control form-controlEmp" id="payrollDeduct" onChange={(e)=>{
                         setpayrollDeduct(Number(e.target.value));//updating state using value taken from the form 
-                    }}/>
+                    }} required/>
                 </div>
                 <div className="mb-3">
                     <label for="salaryPeriod" className="form-label">Salary Period</label>
                     <input type="text" className="form-control form-controlEmp" id="salaryPeriod" onChange={(e)=>{
                         setsalaryPeriod(e.target.value);//updating state using value taken from the form 
-                    }}/>
+                    }} required/>
                 </div>
                 
                 <button onClick={()=>{calSalary()}} type="submit" className="btn btnEmp btn-primary"><i class="fas fa-plus"></i>&nbsp;Add Record</button>
