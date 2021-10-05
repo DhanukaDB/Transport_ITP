@@ -51,7 +51,6 @@ import EmployeereportRender from './components/EmployeereportRender';
 
 
 //IT20192532
-import Allbooking from './components/Adminallbookings';
 import Adminallbookings from './components/Adminallbookings';
 import AddBooking from './components/AddBooking';
 import EditBooking from './components/EditBooking';
