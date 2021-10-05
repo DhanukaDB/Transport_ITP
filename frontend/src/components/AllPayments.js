@@ -24,7 +24,7 @@ export default function AllPayment(){
 
     useEffect(()=>{
       function getPayments(){
-          axios.get("http://localhost:3005/payment/",).then((res)=>{
+          axios.get("http://localhost:5000/payment/",).then((res)=>{
               setPayments(res.data);
           }).catch((err)=>{
               alert(err.message)
@@ -34,7 +34,8 @@ export default function AllPayment(){
     },[])
     
     const deletepayment = (id) =>{
-        axios.delete(`http://localhost:3005/payment/delete/${id}`);
+        axios.delete(`http://localhost:5000/payment/delete/${id}`);
+        alert("Details deleted.");
     }
 
 
@@ -153,10 +154,10 @@ export default function AllPayment(){
         console.log('form submit payload =====',updatePayment)
 
 
-        axios.put(`http://localhost:3005/payment/update/${updatePayment.id}`, updatePayment).then(()=>{
+        axios.put(`http://localhost:5000/payment/update/${updatePayment.id}`, updatePayment).then(()=>{
             alert("Payment Details Updated");
             handleClose();
-            window.location = `/all`;
+            window.location = `/allpayment`;
             
         }).catch((err)=>{
             console.log(err);

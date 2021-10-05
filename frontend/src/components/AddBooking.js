@@ -64,6 +64,7 @@ console.log(data)
 
 axios.post("/post/save",data).then((res)=>{
   alert("Seat Reserved Sucessfully");
+  window.location=`/addpayment`;
   if(res.data.sucess){
     this.setState(
       {
@@ -80,7 +81,7 @@ axios.post("/post/save",data).then((res)=>{
     )
   }
 })
-window.location=`/addpayment`;
+
 }
 
   }

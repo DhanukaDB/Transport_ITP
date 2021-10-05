@@ -143,7 +143,7 @@ const App =()=> {
       <Link to="/adminPanel">Link</Link>  </Route>
      
       
-        <ProtectedRouter path="/about" component={Aboutus} isAuth={isAuthUser} />
+        
         <ProtectedRouter path="/adminPanel"  component= {AdminPanel} isAuth= {isAuthAdmin} />
           
 
