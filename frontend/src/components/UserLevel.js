@@ -10,6 +10,8 @@ export default function UserLevel(){
     const[phoneno, setphoneno] = useState("");
     const[password, setpassword] = useState("");
     const[userlevel, setuserlevel] = useState("");
+    const[userleveldate, setuserleveldate] = useState("");
+
     const [passengers, setPassengers] = useState([]);
     const [show, setShow] = useState(false);
 
@@ -51,7 +53,7 @@ export default function UserLevel(){
         var phoneno1=null;
         var password1= null;
         var userlevel1= null;
-      
+        var userleveldate1 = null;
 
     //set values
 
@@ -94,6 +96,12 @@ export default function UserLevel(){
             userlevel1=userlevel
         }
 
+        if (userleveldate1===""){
+            userleveldate1=Values.userleveldate
+           }else{
+            userleveldate1=userleveldate
+        }
+
         const updatePassenger={
             id:Values._id,
             username:username1,
@@ -101,7 +109,8 @@ export default function UserLevel(){
             email:email1,
             phoneno:phoneno1,
             password:password1,
-            userlevel:userlevel1
+            userlevel:userlevel1,
+            userleveldate:userleveldate1
         }
 
         console.log('form submit payload =====',updatePassenger)
@@ -139,6 +148,7 @@ export default function UserLevel(){
 <th>Email</th>
 <th>Phone number</th>
 <th>UserLevel</th>
+<th>userleveldate</th>
 <th>Operation</th>
 </tr>
 </thead>
@@ -159,6 +169,7 @@ export default function UserLevel(){
             <td>{Passengers.email}</td>
             <td>{Passengers.phoneno}</td>
             <td>{Passengers.userlevel}</td>
+            <td>{Passengers.userleveldate}</td>
             <Button variant="primary" onClick={()=> UpdatePassengerDeatails(Passengers)} className="uppay">
            Update
       </Button>
@@ -230,6 +241,16 @@ export default function UserLevel(){
              setuserlevel(e.target.value);
             }} />
            </Form.Group>
+
+
+           <Form.Group controlId="container">
+           <Form.Label for="userleveldate">Issue Date</Form.Label>
+           <Form.Control type="Date" 
+            defaultValue={Values.userleveldate}
+             onChange={(e)=>{
+             setuserleveldate(e.target.value);
+            }} />
+           </Form.Group>
     
          <Button  className="upuserlevel" type="submit"> Edit details</Button>
          </Form>
@@ -239,7 +260,7 @@ export default function UserLevel(){
                 </Modal>
                  <br />
                 
-                 <Button variant="secondary"><a href="/userhandler"> Back </a></Button>{' '}
+                 <Button variant="secondary" size="lg"><a href="/userhandler"> Back </a></Button>{' '}
 
  </div>
   );

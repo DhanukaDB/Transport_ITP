@@ -11,6 +11,7 @@ router.route("/add").post((req,res) => {
     const phoneno  = Number(req.body.phoneno);
     const password   = req.body.password;
     const userlevel  = req.body.userlevel;
+    const userleveldate = Date(req.body.userleveldate);
 
     if(!username || !nic || !email || !phoneno || !password){
         return res.status(422).json({error:"please add all the feilds"})
@@ -30,7 +31,8 @@ router.route("/add").post((req,res) => {
         email,
         phoneno,
         password,
-        userlevel
+        userlevel,
+        userleveldate
 
     })
 
@@ -63,7 +65,7 @@ router.route("/").get((req,res) => {
 //update passenger using an ID
 router.route("/update/:id").put(async (req, res) => {
       let userId = req.params.id;
-      const {username, nic,email, phoneno,password,userlevel} = req.body;
+      const {username, nic,email, phoneno,password,userlevel,userleveldate} = req.body;
 
       const updatePassenger = {
           username,
@@ -71,7 +73,8 @@ router.route("/update/:id").put(async (req, res) => {
           email,
           phoneno,
           password,
-          userlevel
+          userlevel,
+          userleveldate
       }
 
 
@@ -133,6 +136,7 @@ const username = req.body.username;
     const phoneno  = Number(req.body.phoneno);
     const password   = req.body.password;
     const userlevel = req.body.userlevel;
+    const userleveldate = Date(req.body.userleveldate );
 
     const newPassenger = new Passenger ({
         username,
@@ -141,6 +145,7 @@ const username = req.body.username;
         phoneno,
         password,
         userlevel,
+        userleveldate,
 
     })
  if(!email || !password){

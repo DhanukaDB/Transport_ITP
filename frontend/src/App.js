@@ -26,6 +26,9 @@ import UserHandler from './components/UserHandler';
 import UserLevel from './components/UserLevel';
 import EditUserLevel from './components/EditUserLevel';
 import Adminlog from './components/Adminlog';
+import PassengerReport from './components/PassengerReport';
+import UserHandlerReport from './components/UserHandlerReport';
+
 
 //IT20205256
 import AddPayment from './components/AddPayment';
@@ -168,8 +171,13 @@ const App =()=> {
               <Route  path="/edituserlevel/:id" component={AdminHeader} />
               <Route exact path="/edituserlevel/:id" component={EditUserLevel} />
              
+
              <Route exact path="/adminlog" component={Adminlog} />
 
+
+              <Route exact path="/userhandlerreport" component={AdminHeader} />
+              <Route exact path="/userhandlerreport" component={UserHandlerReport} />
+              
 
 
        {/* Kishan's */}
